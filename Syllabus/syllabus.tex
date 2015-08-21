@@ -1,0 +1,299 @@
+%
+%  Syllabus template for use with http://kjhealy.github.com/latex-custom-kjh
+%
+\documentclass[11pt,article,oneside]{memoir}
+
+%% Script-based version control (requires vc package)
+% \input{vc}     
+
+\usepackage{graphicx, url}
+\usepackage{rotating}        
+\usepackage{memoir-article-styles} % in latex-custom-kjh/needs-memoir  
+\usepackage{termcal}
+\usepackage{enumitem}
+\usepackage{tikz}
+\DeclareGraphicsRule{.mps}{eps}{*}{}
+
+% Define light grey color
+\usepackage{xcolor}
+\definecolor{lightgrey}{gray}{0.85}
+\definecolor{uiblack}{RGB}{0, 0, 0}
+\definecolor{uigold}{RGB}{255, 225, 0}
+\definecolor{uigold2}{RGB}{246, 168, 0}
+
+\usepackage[listings,skins]{tcolorbox}
+\tcbset{colback=lightgrey, colframe = black, fonttitle=\large\bfseries, sharp corners,
+ enhanced, attach boxed title to top left={xshift=-2mm,yshift=-2mm}, boxed title style={colback=black}}
+%\newtcolorbox{mybox}[1]{colback=lightgrey,
+%colframe=black,fonttitle=\bfseries,
+%title=#1}
+
+\tcbuselibrary{skins,breakable}
+\newcounter{schedule}
+\colorlet{colexam}{red!75!black}
+
+\newtcolorbox[use counter=schedule]{schedule}[1]{%
+empty,title={#1},attach boxed title to top left,
+boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
+overlay={\draw[uiblack,line width=2pt]
+([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
+coltitle=uiblack,fonttitle=\large\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+breakable,pad at break=0mm,
+overlay unbroken={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west); },
+overlay first={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east); },
+overlay middle={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east); },
+overlay last={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+}
+
+
+\newtcolorbox{resource}[1]{%
+empty,title={#1},attach boxed title to top left,
+boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
+overlay={\draw[uiblack,line width=2pt]
+([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
+coltitle=uiblack,fonttitle=\Large\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+breakable,pad at break=0mm,
+overlay unbroken={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west); },
+overlay first={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east); },
+overlay middle={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east); },
+overlay last={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+}
+
+
+% increase margins
+\usepackage[left=1.25in, right = 1in, top = 1in, bottom = 1in]{geometry}  
+\usepackage{enumitem}
+
+% making all description lists bold
+\setlist[description]{font=\large\bfseries\itshape, style=nextline, noitemsep}
+
+%% Choose font system. Comment out these lines if you are not using xelatex
+\usepackage{fontspec}
+\usepackage{xunicode} 
+
+% Define light grey color
+%\usepackage{xcolor}
+%\definecolor{lightgrey}{gray}{0.9}
+
+% Ajust quote environment to add more indentation on left side
+%\newenvironment{myquote}{\list{}{\leftmargin=1.25in\rightmargin=0.5in}\mybox{lightgrey}{\item[]}{\endlist}}
+\newenvironment{myquote}{\list{}{\leftmargin=1.25in\rightmargin=0.5in}\item[]}{\endlist}
+
+% Biblatex
+\usepackage[american]{babel}
+\usepackage[babel]{csquotes}
+\usepackage[style=apa,
+           bibstyle=authoryear,
+           citestyle=authoryear-comp,
+           uniquename=false,
+           hyperref=true,
+           backend=biber, babel=hyphen, bibencoding=inputenc]{biblatex}
+
+% Fix biblatex's odd preference for using In: by default.
+\renewbibmacro{in:}{%
+ \ifentrytype{article}{}{%
+ \printtext{\bibstring{}\intitlepunct}}}
+
+%% Bibliography from http://kjhealy.github.com/socbibs/   
+\addbibresource{book.bib}
+
+
+%% Links
+%\usepackage[usenames,dvipsnames]{color}                     
+\usepackage[xetex, 
+	colorlinks=true,
+	urlcolor=blue,
+	plainpages=false,
+  	pdfpagelabels, 
+  	bookmarksnumbered
+  	]{hyperref}   
+
+\begin{document}
+
+%%% xelatex font choices
+%\defaultfontfeatures{}
+%\defaultfontfeatures{Scale=MatchLowercase}    
+% You will need to buy these fonts, change the names to fonts you own, or comment out if not using xelatex.      
+\setromanfont[Mapping=tex-text]{Minion Pro} 
+\setsansfont[Mapping=tex-text]{Myriad Pro} 
+\setmonofont[Mapping=tex-text,Scale=0.8]{Pragmata} 
+
+%% blank label items; hanging bibs for text
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+\def\labelitemi{$\cdot$}
+%\renewcommand{\labelitemii}{~}
+
+% Make figures as wide as the margins
+\setkeys{Gin}{width=1\textwidth} 
+
+%\chapterstyle{article-2}   % alternative styles are defined in latex-custom-kjh/needs-memoir/. Consider e.g.\chapterstyle{article-4}
+%\pagestyle{kjh} 
+  
+%\title{\mytitle}     
+%\author{\myauthor\smallskip\footnotesize\newline Office: 276 Sociology/Psychology \newline\texttt{\myemail}}
+%\date{}
+
+\begin{minipage}[b]{.7\linewidth}
+\begin{flushleft}
+{\huge PSQF 4143: Introduction to Statistical Methods} \\[.1in]
+{\large\sffamily Fall 2015 / MWF: 12:30 -- 1:20 pm / EPB 107} \\
+\vspace*{.25in}
+{\large Brandon LeBeau, Ph.D.} \\[.05in]
+{\normalsize E-mail: \href{mailto:brandon-lebeau@uiowa.edu}{brandon-lebeau@uiowa.edu} \\Office: 200B Lindquist Center South \\ Office Hours: MWF: 11 am -- 12 pm or by appointment}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{.3\linewidth}
+\includegraphics[width=.9\linewidth]{DomeUIed}
+\end{minipage}
+
+\vspace{.25in}
+
+
+\begin{myquote}
+An approximate answer to the right problem is worth a good deal more than an exact answer to an approximate problem. \hfill \emph{-- John Tukey} \\
+\rule{\linewidth}{.4pt}
+\end{myquote}
+
+
+% Include version information in footer if using vc package (see above). 
+% \thispagestyle{kjhgit}
+
+
+% Copyright Page
+% \textcopyright{} \mycopyright
+
+
+%
+% Main Content
+%
+
+\section*{Course Description}
+This course will provide an introduction to statistics. Upon completion of the course, students should be comfortable with basic descriptive statistics, inferential statistics, and the ability to reason logically using statistics. The focus will be less on computations and more on reasoning and interpreting statistical results.
+
+\section*{Course Objectives}
+The lectures have the following goals:
+\begin{enumerate}
+\item to clarify difficult concepts,
+\item to integrate new concepts with previous material,
+\item to relate new concepts with relevant external situations,
+\item to supply additional examples for illustrating concepts under discussion.
+\end{enumerate}
+
+In addition to lectures, there will be discussion sections held to provide more in depth exposure to materials in the text and class assignments. These can be a great avenue to ask questions and receive support for concepts that are difficult to grasp in lectures.
+
+\section*{Textbook}
+\nocite{*}
+\printbibliography[heading=none]
+
+\section*{Course Requirements}
+\begin{description}
+\item[Minimum Competency Exams] There will be three minimum competency exams taken during lectures. The dates can be found on the course schedule. A cut score will be established so that these exams are pass/fail. 
+  \begin{itemize}
+    \item If you should fail a minimum competency exam, you can taken another minimum competency exam over the same material.
+    \item It is your responsibility to contact the teaching assistant to arrange for a make-up exam.
+    \item An unexcused absence from a minimum competency exam will result in a score of zero on the exam with no opportunity for make-up.
+    \item Your final grade will be reduced by one full letter for each minimum competency exam not passed by the deadline date.
+  \end{itemize}
+\item[Application Exams] There will also be three application exams that are taken outside of lectures. The dates can be found on the course schedule. The application exams will be multiple choice exams that are designed to measure objectives at a higher cognitive level compared to the minimum competency exams. An unexcused absence from an application exam will result in a score of zero on the exam.
+\item[Absences] An absence from either exam must be cleared with the instructor \textbf{before} the exam date. 
+\item[Grading] To be eligible for a C- in the course, students must meet the following requirements:
+  \begin{enumerate}[label={(\alph*)}]
+   \item pass all three minimum competency exams
+   \item correctly answer a minimum of 25\% of the items across all three application exams
+  \end{enumerate}
+  The assignment of grades above C- is based on performance on the applications exams. Plus/minus grading will be used.
+\end{description}
+
+\section*{Course and University Policies}
+\begin{description}
+\item[Announcements and Communication] %\hfill \\
+Any announcements regarding the course will be communicated via e-mail so please check it daily. Course materials will be posted to ICON. Go to \href{http://icon.uiowa.edu}{icon.uiowa.edu} for access to the ICON site.
+\item[Adaptations and Modifications] Please inform me during the first two weeks if you require special adaptations or modifications to any assignment or due dates because of special circumstances such as learning disabilities, religious observances, or other appropriate needs.
+\item[Academic Misconduct] Plagiarism and cheating may result in grade reduction and/or serious penalties. College policy on student academic misconduct: \url{http://www.education.uiowa.edu/dean/policies/student-academic-misconduct.aspx}
+\item[Other Information] Please be aware of University policy statements regarding academic misconduct, academic accommodations, student complaint procedures, etc.  Consult the following websites:
+  \begin{itemize}
+    \item Student disability services \url{http://www.uiowa.edu/~sds/}
+    \item College policy on student complaints and dispute resolution \url{http://www.education.uiowa.edu/dean/policies/student-complaint.aspx}
+    \item University policies on sexual harassment \url{http://opsmanual.uiowa.edu/community-policies/sexual-harassment} or \url{http://www.sexualharassment.uiowa.edu/policy.php}
+    \item University statements on student rights and responsibilities \url{http://dos.uiowa.edu/policies/}
+    \item This course is provided by the College of Education and the Division of Continuing Education.  Policies on matters such as course requirements, grading, and sanctions for academic dishonesty are governed by the College of Education. Students wishing to add or drop this course after the official deadline must receive approval of the Dean of the College of Education. The University policy on cross enrollments is at \url{http://www.uiowa.edu/~provost/deos/crossenroll.doc}
+  \end{itemize}
+\end{description}
+
+\newpage
+\begin{small}
+\begin{tabular}{lllll}
+\toprule 
+Day Number & Date & Day of Week & Section of Coursepack & Notes \\
+\midrule
+1 & Aug 24 & M & Course Overview and Section 1 & \\
+2 & Aug 26 & W & Section 1 & \\
+3 & Aug 28 & F & Section 1 \& 2 & \\
+4 & Aug 31 & M & Section 2 & \\
+5 & Sep 2 & W & Section 2 & \\
+6 & Sep 4 & F & Section 2 & \\
+\multicolumn{5}{c}{\textbf{September 7, University Holiday -- No Class}} \\
+7 & Sep 9 & W & Section 2 & \\
+8 & Sep 11 & F & Section 2 & \\
+9 & Sep 14 & M & Section 3 & \\
+10 & Sep 16 & W & Section 3 & \\
+11 & Sep 18 & F & Section 4 & \\
+12 & Sep 21 & M & Section 4 & \\
+13 & Sep 23 & W & Section 5 & \\
+14 & Sep 25 & F & Section 5 & \\
+15 & Sep 28 & M & \textbf{Minimum Comp Exam 1} & In Class (See example in Coursepack) \\
+-- & Sep 29 & Tu & \textbf{APP Exam 1} & 1505 SC \& 2217 SC: : 6:30 -- 8:30 pm \\
+16 & Sep 30 & W & Section 6 & \\
+17 & Oct 2 & F & Section 6 & \\
+18 & Oct 5 & M & Section 7 & \\
+19 & Oct 7 & W & Section 7 & \\
+20 & Oct 9 & F & Section 8 & \textbf{Deadline to complete first MC1 retake} \\
+21 & Oct 12 & M & Section 8 & \\
+22 & Oct 14 & W & Section 9 & \\
+23 & Oct 16 & F & Section 9 & \textbf{Deadline to complete second MC1 retake} \\
+24 & Oct 19 & M & Section 9 & \\
+25 & Oct 21 & W & Section 9 & \\
+26 & Oct 23 & F & Section 9 & \\
+27 & Oct 26 & M & Section 9 & \\
+28 & Oct 28 & W & Section 10 & \\
+29 & Oct 30 & F & Section 10 & \\
+30 & Nov 2 & M & \textbf{Minimum Comp Exam 2} & In Class (See example in coursepack) \\
+-- & Nov 3 & Tu & \textbf{APP Exam 2} & 100 PH: 6:30 -- 8:30 pm \\
+31 & Nov 4 & W & Section 11 & \\
+32 & Nov 6 & F & Section 11 & \\
+33 & Nov 9 & M & Section 12 & \\
+34 & Nov 11 & W & Section 12 & \\
+35 & Nov 13 & F & Section 13 & \textbf{Deadline to complete first MC2 retake} \\
+36 & Nov 16 & M & Section 13 & \\
+37 & Nov 18 & W & Section 14 & \\
+38 & Nov 20 & F & Section 14 & \textbf{Deadline to complete second MC2 retake} \\
+\multicolumn{5}{c}{\textbf{Nov 22 to Nov 29, Thanksgiving Recess -- No Classes}} \\
+39 & Nov 30 & M & \textbf{Minimum Comp Exam 3} & In Class (See example in Coursepack) \\
+40 & Dec 2 & W & Section 14 & \\
+41 & Dec 4 & F & Section 15 & \\
+42 & Dec 7 & M & Section 16 & \textbf{Deadline to complete first MC3 retake} \\
+43 & Dec 9 & W & Section 16 & \\
+44 & Dec 11 & F & Section 16 &  \\
+-- & Dec 14 & M & -- & \textbf{Deadline to complete second MC3 retake} \\
+-- & Dec 14 & M & \textbf{APP Exam 3} & \\
+\bottomrule
+\end{tabular}
+\end{small}
+
+\end{document}
+

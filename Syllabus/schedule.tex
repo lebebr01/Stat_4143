@@ -1,0 +1,366 @@
+%
+%  Syllabus template for use with http://kjhealy.github.com/latex-custom-kjh
+%
+\documentclass[11pt,article,oneside]{memoir}
+
+%% Script-based version control (requires vc package)
+% \input{vc}     
+
+\usepackage{graphicx, url}
+\usepackage{rotating}        
+\usepackage{memoir-article-styles} % in latex-custom-kjh/needs-memoir  
+\usepackage{termcal}
+\usepackage{tikz}
+\DeclareGraphicsRule{.mps}{eps}{*}{}
+
+% Define light grey color
+\usepackage{xcolor}
+\definecolor{lightgrey}{gray}{0.85}
+\definecolor{uiblack}{RGB}{0, 0, 0}
+\definecolor{uigold}{RGB}{255, 225, 0}
+\definecolor{uigold2}{RGB}{246, 168, 0}
+
+\usepackage[listings,skins]{tcolorbox}
+\tcbset{colback=lightgrey, colframe = black, fonttitle=\large\bfseries, sharp corners,
+ enhanced, attach boxed title to top left={xshift=-2mm,yshift=-2mm}, boxed title style={colback=black}}
+%\newtcolorbox{mybox}[1]{colback=lightgrey,
+%colframe=black,fonttitle=\bfseries,
+%title=#1}
+
+\tcbuselibrary{skins,breakable}
+\newcounter{schedule}
+\colorlet{colexam}{red!75!black}
+
+\newtcolorbox[use counter=schedule]{schedule}[1]{%
+empty,title={#1},attach boxed title to top left,
+boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
+overlay={\draw[uiblack,line width=2pt]
+([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
+coltitle=uiblack,fonttitle=\large\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+breakable,pad at break=0mm,
+overlay unbroken={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west); },
+overlay first={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east); },
+overlay middle={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east); },
+overlay last={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+}
+
+
+\newtcolorbox{resource}[1]{%
+empty,title={#1},attach boxed title to top left,
+boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
+overlay={\draw[uiblack,line width=2pt]
+([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
+coltitle=uiblack,fonttitle=\Large\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+breakable,pad at break=0mm,
+overlay unbroken={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west); },
+overlay first={\draw[uigold2,line width=1pt]
+([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+--([xshift=-0.5pt]frame.south east); },
+overlay middle={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east); },
+overlay last={\draw[uigold2,line width=1pt] ([xshift=-0.5pt]frame.north east)
+--([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+}
+
+
+% increase margins
+\usepackage[left=1.25in, right = 1in, top = 1in, bottom = 1in]{geometry}  
+\usepackage{enumitem}
+
+% making all description lists bold
+\setlist[description]{font=\large\bfseries\itshape, style=nextline, noitemsep}
+
+%% Choose font system. Comment out these lines if you are not using xelatex
+\usepackage{fontspec}
+\usepackage{xunicode} 
+
+% Define light grey color
+%\usepackage{xcolor}
+%\definecolor{lightgrey}{gray}{0.9}
+
+% Ajust quote environment to add more indentation on left side
+%\newenvironment{myquote}{\list{}{\leftmargin=1.25in\rightmargin=0.5in}\mybox{lightgrey}{\item[]}{\endlist}}
+\newenvironment{myquote}{\list{}{\leftmargin=1.25in\rightmargin=0.5in}\item[]}{\endlist}
+
+% Biblatex
+%\usepackage[american]{babel}
+%\usepackage[babel]{csquotes}
+%\usepackage[style=apa,
+%            bibstyle=authoryear,
+%            citestyle=authoryear-comp,
+%            uniquename=false,
+%            hyperref=true,
+%            backend=biber, babel=hyphen, bibencoding=inputenc]{biblatex}
+
+%% Fix biblatex's odd preference for using In: by default.
+%\renewbibmacro{in:}{%
+%  \ifentrytype{article}{}{%
+%  \printtext{\bibstring{}\intitlepunct}}}
+
+
+%% Links
+%\usepackage[usenames,dvipsnames]{color}                     
+\usepackage[xetex, 
+	colorlinks=true,
+	urlcolor=blue,
+	plainpages=false,
+  	pdfpagelabels, 
+  	bookmarksnumbered
+  	]{hyperref}   
+
+\begin{document}
+%%% xelatex font choices
+%\defaultfontfeatures{}
+%\defaultfontfeatures{Scale=MatchLowercase}    
+% You will need to buy these fonts, change the names to fonts you own, or comment out if not using xelatex.      
+\setromanfont[Mapping=tex-text]{Minion Pro} 
+\setsansfont[Mapping=tex-text]{Myriad Pro} 
+\setmonofont[Mapping=tex-text,Scale=0.8]{Pragmata} 
+
+%% blank label items; hanging bibs for text
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+\def\labelitemi{$\cdot$}
+%\renewcommand{\labelitemii}{~}
+
+% Make figures as wide as the margins
+\setkeys{Gin}{width=1\textwidth} 
+
+%\chapterstyle{article-2}   % alternative styles are defined in latex-custom-kjh/needs-memoir/. Consider e.g.\chapterstyle{article-4}
+%\pagestyle{kjh} 
+  
+%\title{\mytitle}     
+%\author{\myauthor\smallskip\footnotesize\newline Office: 276 Sociology/Psychology \newline\texttt{\myemail}}
+%\date{}
+
+\begin{minipage}[b]{.7\linewidth}
+\begin{flushleft}
+{\huge PSQF 6250: Computer Packages for Statistical Analysis} \\[.1in]
+{\large\sffamily Spring 2015 - Online Course} \\
+\vspace*{.25in}
+{\large Brandon LeBeau, Ph.D.} \\[.05in]
+{\normalsize E-mail: \href{mailto:brandon-lebeau@uiowa.edu}{brandon-lebeau@uiowa.edu} \\Office: 200B Lindquist Center South \\ Office Hours: By appointment}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{.3\linewidth}
+\includegraphics[width=.9\linewidth]{DomeUIed}
+\end{minipage}
+
+\vspace{.25in}
+
+\section*{Schedule}
+% Week 1
+\begin{schedule}{Week 1: Jan 20 - Jan 25}
+\begin{description}
+\item[Topics:] Introduction \\ Introduction to SPSS \\ Data Manipulation/Cleaning with SPSS
+\item[Readings:] SPSS Programming \textit{Chapters 2 \& 3}
+
+\item[Lectures:] Introduction \\ Using Citrix Receiver (optional) \\ Introduction to SPSS \\ Loading Data SPSS \\ Missing Data SPSS \\ Commenting Syntax SPSS \\ Variable Creation SPSS
+
+\item[Homework:] \textbf{Complete Statistical Background Survey} 
+
+\end{description}
+\end{schedule}
+% Week 2
+\begin{schedule}{Week 2: Jan 26 - Feb 1}
+\begin{description}[style=nextline, noitemsep]
+\item[Topics:] Variable Creation with SPSS \\  Descriptive Statistics with SPSS
+
+\item[Readings:] SPSS Programming \textit{Chapters 4 -- 7}
+
+\item[Lectures:] Variable Creation SPSS -- DO IF \\ Value Labels SPSS \\ Data Management SPSS \\  Data Aggregation SPSS \\  Merge Data SPSS \\ Data Restructuring SPSS \\ Descriptive Data Analysis SPSS
+  
+
+\item[Homework:] \textbf{Assignment 1}
+
+\end{description}
+\end{schedule}
+% Week 3
+\begin{schedule}{Week 3: Feb 2 - Feb 8}
+\begin{description}
+\item[Topics:] Graphs with SPSS \\ Inferential Statistics with SPSS
+
+\item[Readings:] SPSS Applied Statistics -- \textit{Chapters 1.4, 2.2, 2.4, 4.1 -- 4.3, 5, 7}
+
+\item[Lectures:] Graphs with SPSS \\ Creating Good Graphics \\ Correlation SPSS \\ t-tests SPSS \\ ANOVA SPSS 
+
+\item[Homework:] \textbf{Assignment 2} 
+
+\end{description}
+\end{schedule}
+% Week 4
+\begin{schedule}{Week 4: Feb 9 - Feb 15}
+\begin{description}
+\item[Topics:] Inferential Statistics with SPSS \\ SPSS Syntax
+
+\item[Readings:] SPSS Applied Statisics -- \textit{Chapters 4.4 -- 4.6, 3}
+
+\item[Lectures:] ANOVA 2 SPSS \\ ANOVA Contrasts SPSS \\ Regression SPSS \\  Assumptions SPSS \\ Nonparametric SPSS
+
+\item[Homework:] \textbf{Assignments 3, 4, \& 5}
+
+\end{description}
+\end{schedule}
+% Week 5
+\begin{schedule}{Week 5: Feb 16 - Feb 22}
+\begin{description}
+\item[Topics:] Introduction to SAS \\ Data Manipulation/Cleaning with SAS
+
+\item[Readings:] SAS Programming -- \textit{Chapters 1 -- 2} \\
+                 Base SAS Programming -- \textit{Chapters 2, 3, 7}
+
+\item[Lectures:] Introduction to SAS \\ Reading in Data SAS \\ Missing Data SAS \\ Commenting Syntax SAS \\ Variable Creation SAS -- Numeric Variables
+
+\item[Homework:] \textbf{Assignments 1 -- 5 due by February 22nd at 11:59 pm}
+
+\end{description}
+\end{schedule}
+% Week 6
+\begin{schedule}{Week 6: Feb 23 - Mar 1}
+\begin{description}
+\item[Topics:] Variable Creation SAS  \\ Descriptive Statistics with SAS
+
+\item[Readings:] SAS Programming -- \textit{Chapters 6 \& 4} \\
+                 Base SAS Programming -- \textit{Chapters 8 -- 12, 15, 16, 18}
+
+\item[Lectures:] Variable Creation SAS -- Character Variables \\ Value Labels SAS \\ Data Management SAS \\ Descriptive Statistics SAS \\ Data Aggregation SAS \\  Merging Data SAS
+
+\item[Homework:] \textbf{Assignment 6}
+
+\end{description}
+\end{schedule}
+% Week 7
+\begin{schedule}{Week 7: Mar 2 - Mar 8}
+\begin{description}
+\item[Topics:] Data Restructuring SAS \\ Graphs with SAS \\ Inferential Statistics with SAS
+
+\item[Readings:] SAS Programming -- \textit{Chapter 5} \\
+                 SAS Graph Examples Link \\
+                 SAS Manual Stat -- \textit{Chapter 2.1.2, 7}
+
+\item[Lectures:] Data Restructuring SAS \\ Graphs with SAS \\ Graphs 2 with SAS \\ Correlations SAS \\ t-test SAS
+
+\item[Homework:] \textbf{Assignment 7}
+
+\end{description}
+\end{schedule}
+% Week 8
+\begin{schedule}{Week 8: Mar 9 - Mar 15}
+\begin{description}
+\item[Topics:] Inferential Statistics with SAS
+
+\item[Readings:] SAS Manual Stat -- \textit{Chapter 9 -- 14}
+
+\item[Lectures:] ANOVA with SAS \\ ANOVA 2 with SAS \\ ANOVA Contrasts SAS \\ Regression with SAS \\ Nonparametric with SAS
+
+\item[Homework:] \textbf{Assignments 8, 9, \& 10} 
+
+\end{description}
+\end{schedule}
+% Spring Break
+\begin{schedule}{Spring Break: No Class}
+
+\end{schedule}
+% Week 9
+\begin{schedule}{Week 9: Mar 23 - Mar 29}
+\begin{description}
+\item[Topics:] Introduction to R \\ Data Manipulation/Cleaning with R
+
+\item[Readings:] Short R Intro \\ Verzani Simple R -- \textit{Chapter 1 -- 3} \\ R intro -- \textit{Chapters 1, 2, 7}
+
+\item[Lectures:] Getting Started with R \\ Introduction to R \\ Reading Data with R \\ Packages in R \\ Descriptive Statistics with R \\ Data Management with R
+
+\item[Homework:] \textbf{Assignments 6 -- 10 due by March 29th at 11:59 pm}
+
+\end{description}
+\end{schedule}
+% Week 10
+\begin{schedule}{Week 10: Mar 30 - Apr 5}
+\begin{description}
+\item[Topics:] Variable Creation with R \\ Descriptive Statistics with R
+
+\item[Readings:] Short R Intro \\ Verzani Simple R -- \textit{Chapters 1 -- 3} \\ R intro -- \textit{Chapters 1, 2, 7}
+
+\item[Lectures:] Missing Data with R \\ Variable Creation with R \\ Regular Expression with R  \\ Data Aggregation with R \\ Data Merging with R \\ Mutate with R \\ Data Restructuring with R
+
+\item[Homework:] \textbf{Assignment 11}
+
+\end{description}
+\end{schedule}
+% Week 11
+\begin{schedule}{Week 11: Apr 6 - Apr 12}
+\begin{description}
+\item[Topics:] Graphs with R \\Inferential Statistics with R
+
+\item[Readings:] ggplot2 \\ Verzani Simple R -- \textit{Chapters 9 -- 11} \\Intro Stat R -- \textit{Chapters 10 -- 13}
+
+\item[Lectures:] Graphics with R \\ Formatting Graphics with R \\ Correlations with R \\ T-Tests with R
+
+\item[Homework:] \textbf{Assignment 12}
+
+\end{description}
+\end{schedule}
+% Week 12
+\begin{schedule}{Week 12: Apr 13 - Apr 19}
+\begin{description}
+\item[Topics:] Inferential Statistics with R
+
+\item[Readings:] Verzani Simple R -- \textit{Chapters 12 -- 15} \\Intro Stat R -- \textit{Chapter 14}
+
+\item[Lectures:] ANOVA with R \\ ANOVA Graphics with R \\ Contrasts with R \\ Regression with R \\ Nonparametric Statistics with R
+
+\item[Homework:] \textbf{Assignments 13, 14, \& 15}
+
+\end{description}
+\end{schedule}
+% Week 13
+\begin{schedule}{Week 13: Apr 20 - Apr 26}
+\begin{description}
+\item[Topics:] Monte Carlo Simulation with R and SAS
+
+\item[Readings:] 
+
+\item[Lectures:] Introduction to Monte Carlo Simulation \\ Random Number Generation with R \\ Monte Carlo with R \\ Random Number Generation with SAS \\ Monte Carlo with SAS \\ Program Functions with SAS 
+
+\item[Homework:] \textbf{Assignments 11 -- 15 due by April 26th at 11:59 pm}
+
+\end{description}
+\end{schedule}
+% Week 14
+\begin{schedule}{Week 14: Apr 27 - May 3}
+\begin{description}
+\item[Topics:] Markdown; Reproducible Research
+
+\item[Readings:] 
+
+\item[Lectures:] Markdown syntax \\ knitr \\ Embed R Code \\ Pandoc
+
+\item[Homework:] \textbf{Assignment 16 due by May 3rd at 11:59 pm}
+
+\end{description}
+\end{schedule}
+% Week 15
+\begin{schedule}{Week 15: May 4 - May 10}
+\begin{description}
+\item[Topics:] Version Control
+
+\item[Readings:] 
+
+\item[Lectures:] Why Version Control? \\ Introduction to git \\ git basics
+
+\item[Homework:] \textbf{Project due by May 10th at 11:59 pm}
+
+\end{description}
+\end{schedule}
+
+\end{document}

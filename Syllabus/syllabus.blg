@@ -1,0 +1,17 @@
+[0] Config.pm:320> INFO - This is Biber 1.9
+[0] Config.pm:323> INFO - Logfile is 'syllabus.blg'
+[50] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
+[51] Biber.pm:333> INFO - Reading 'syllabus.bcf'
+[158] Biber.pm:632> INFO - Using all citekeys in bib section 0
+[246] Biber.pm:3051> INFO - Processing section 0
+[324] Biber.pm:3189> INFO - Looking for bibtex format file 'book.bib' for section 0
+[331] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[332] bibtex.pm:864> INFO - Found BibTeX data source 'book.bib'
+[345] Utils.pm:144> WARN - The field 'author' in entry 'course' cannot be null, deleting it
+[399] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[400] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[400] Biber.pm:2928> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[401] Biber.pm:2932> INFO - No sort tailoring available for locale 'en-US'
+[406] bbl.pm:517> INFO - Writing 'syllabus.bbl' with encoding 'UTF-8'
+[407] bbl.pm:606> INFO - Output to syllabus.bbl
+[412] Biber.pm:106> INFO - WARNINGS: 1

@@ -1,0 +1,823 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"fontSize"
+			],
+			[
+				"itemparstry",
+				"itemparstryT"
+			],
+			[
+				"booklet",
+				"booklet"
+			],
+			[
+				"Ty",
+				"TryoutItems"
+			],
+			[
+				"Try",
+				"TryoutItems"
+			],
+			[
+				"spr13",
+				"spr13tryout"
+			],
+			[
+				"A",
+				"A"
+			],
+			[
+				"pars",
+				"pars"
+			],
+			[
+				"time",
+				"time"
+			],
+			[
+				"rescal",
+				"rescalepars"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"scale_lin",
+				"scale_linetype_discrete"
+			],
+			[
+				"scale_line",
+				"scale_linetype_discrete"
+			],
+			[
+				"relBias",
+				"relBiasRes"
+			],
+			[
+				"miktex",
+				"miktex"
+			],
+			[
+				"Jou",
+				"JournalArticlesInProgress"
+			],
+			[
+				"ele",
+				"element_text"
+			],
+			[
+				"eb0",
+				"eb0"
+			],
+			[
+				"eb1",
+				"eb1"
+			],
+			[
+				"wr",
+				"writprelim"
+			],
+			[
+				"texlive",
+				"texlive"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Syllabus/syllabus.tex",
+			"settings":
+			{
+				"buffer_size": 13763,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Syllabus/book.bib",
+			"settings":
+			{
+				"buffer_size": 243,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/bleb/Copy/Courses/ESRM5393/syllabus/syllabusSec2.tex",
+			"settings":
+			{
+				"buffer_size": 18856,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 279.0,
+		"last_filter": "git add",
+		"selected_items":
+		[
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"quick",
+				"Git: Quick Commit"
+			],
+			[
+				"quick ",
+				"Git: Quick Commit"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"comm",
+				"Git: Quick Commit"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"table",
+				"Table Editor: Enable for current syntax"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"subl",
+				"SublimeREPL: Shell"
+			],
+			[
+				"sublim",
+				"SublimeREPL: Shell"
+			],
+			[
+				"sublimerepl: shell",
+				"SublimeREPL: Shell"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"ssla",
+				"Set Syntax: LaTeX"
+			]
+		],
+		"width": 804.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/bleb/OneDrive - University of Iowa/Courses/Uiowa/IntroStat",
+		"/C/Users/bleb/OneDrive - University of Iowa/Courses/Uiowa/IntroStat/Syllabus"
+	],
+	"file_history":
+	[
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/LeBeau-Submission.tex",
+		"/C/Users/bleb/AppData/Local/Temp/Rar$DIa0.543/gSCSguide.tex",
+		"/Z/prior_sim/R/split_data.r",
+		"/Z/prior_sim/R/model.r",
+		"/Z/prior_sim/split_data.r.Rout",
+		"/Z/prior_sim/split_data.sh",
+		"/C/Users/bleb/Downloads/10.1111%2Femip.12072.bib",
+		"/X/special projects/Working Group 2/Calibration Next Generation/AERA_NCME_2015/cparam/Paper/bibliography.bib",
+		"/X/special projects/Working Group 2/Calibration Next Generation/AERA_NCME_2015/prior_sim/R/model.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/AERA_NCME_2015/prior_sim/R/prelim_results.r",
+		"/C/Users/bleb/OneDrive - University of Iowa/Courses/Uiowa/IntroStat/Syllabus/schedule.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/JEBS/litReview-biblatex.bib",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/JEBS/title.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/Extended/R/results.r",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/JEBS/study2_csda.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/LMM3to2level/.git/HEAD",
+		"/C/Users/bleb/Downloads/10.1111%2Femip.12072.txt",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/IRTcompare/title.tex",
+		"/C/Users/bleb/AppData/Local/Temp/Rar$DIa0.670/elsarticle-template.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa/JournalArticlesInProgress/Diss/Study2/JEBS/elsarticle.cls",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/MetaPaper/CoverLetter.txt",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/log_t1e.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/etaCombInt.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/summRERBs2.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/summFERBs2.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/params.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/converge.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/ranefapplied.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/fixefapplied.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/teststatapplied.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/R/Results_Test_2.r",
+		"/Z/Diss2/R/fit_logistic_t1e.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Development spreadsheets for TCCs/PGM/Language_level14.html",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Development spreadsheets for TCCs/PGM/Language_level10.html",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/Courses/Uiowa/Comp/Syntax/mc/intromd.html",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Pres/plots.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Development spreadsheets for TCCs/Reading/Results/Reading_level9.html",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Development spreadsheets for TCCs/PGM/Reading_level10.html",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Pres/pres.html",
+		"/C/Users/bleb/Copy/Applications/Iowa/Interview2Pres/pres.html",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Pres/pres.Rmd",
+		"/C/Users/bleb/Dropbox/Dissertation/SimulationCode/anova.R",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/log_t1e_full.tex",
+		"/Z/Diss2/Table/log_t1e.tex",
+		"/Z/Diss2/fit_logistic_t1e.r.Rout",
+		"/Z/Diss2/fit_logistic.sh",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/etaComb_t1e.tex",
+		"/Z/Diss2/R/fit_logistic_power.r",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/log_power.tex",
+		"/Z/Diss2/Table/log_power.tex",
+		"/Z/Diss2/fit_logistic_power.r.Rout",
+		"/Z/Diss2/fit_logistic.r.Rout",
+		"/Z/Diss2/fit_logistic_power.sh",
+		"/Z/Diss2/R/fit_logistic.r",
+		"/C/Users/bleb/AppData/Roaming/Sublime Text 3/Packages/User/Git.sublime-settings",
+		"/C/Users/bleb/AppData/Roaming/Sublime Text 3/Packages/Git/Git.sublime-settings",
+		"/Z/Diss2/Table/log_test.tex",
+		"/Z/Diss2/Table/log_test_2.tex",
+		"/Z/Diss2/fit_logistic.o9635037",
+		"/Z/Diss2/fit_logistic.e9635037",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/R/Results_Test.r",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/JEBS/litReview-biblatex.bib",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/ExtrapolatingMC/Papers/Design/master.bib",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Extended/summRERBs2.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Extended/summFERBs2.tex",
+		"/X/special projects/Working Group 2/Calibration Next Generation/CalibratedItems/CalibratedItemCodebook.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/TechReport/techReport.tex",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Extended/R/results.r",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/JournalArticlesInProgress/Diss/Study2/Extended/R/Results_Test.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/gr7_F14R.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/Fall2014_FormFReadGrade7.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/gr6_F14R.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/Fall2014_FormFReadGrade6.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/gr5_F14R.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/Fall2014_FormFReadGrade5.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/gr4_F14R.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/Fall2014_FormFReadGrade4.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/gr3_F14R.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/readCalib/Fall2014_FormFReadGrade3.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr3_F14M.PH1",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr3_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr8_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr4_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr5_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr6_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/gr7_F14M.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade8.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade7.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade6.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade4.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade5.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/gr7_F14WE.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/gr8_F14WE.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/mathCalib/Fall2014_FormFMathGrade3.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/missouri/klcalib/out/B/BL_SCI10calib.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/gr8_13WE.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/gr7_13WE.blm",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/Fall2014_FormFweGrade8.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/OUT/B/weCalib/Fall2014_FormFweGrade7.txt",
+		"/C/Users/bleb/AppData/Local/Temp/Rar$DIa0.217/codesnippet.tex",
+		"/C/Users/bleb/AppData/Local/Temp/Rar$DIa0.734/article.tex",
+		"/Z/Diss2/R/simulateData.r",
+		"/Z/lmm3to2/long_fet1e.r.Rout",
+		"/C/Users/bleb/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/89AJG34W/syntax 12.R",
+		"/Z/Diss2/simulateData.r.Rout",
+		"/Z/Diss2/simulateData_2.r.Rout",
+		"/Z/Diss2/simdata_2.sh",
+		"/Z/Diss2/simdata.sh",
+		"/Z/Diss2/R/simulateData_2.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts/PGM/B/createBilog.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/DATA/Fall2014_Gr38.txt",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/PGM/B/createGradeDataFallF_we.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/PGM/B/createGradeDataFallF_read.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts/PGM/B/createBilogFormF.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts/PGM/B/formatData.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts3/PGM/B/createGradeDataFallF_math.r",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/Courses/Uiowa/Comp/Syntax/R/week2.r",
+		"/C/Users/bleb/OneDrive - University of Iowa 1/Courses/Uiowa/Comp/Syntax/R/week1.r",
+		"/X/special projects/Working Group 2/Calibration Next Generation/Tryouts/OUT/B/weCalib/FormF/gr3_13WE.PH2",
+		"/D/DATA/single variable with line breaks not shown in notepad/summoner_names.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/players.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/champion_ids.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/mmr.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/data.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/winner.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/region.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/queue_type.txt",
+		"/D/DATA/single variable with line breaks not shown in notepad/length.txt"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"5",
+			"4",
+			"3",
+			"ID",
+			"i.e.",
+			"sivo",
+			"MA2",
+			"MA1",
+			"AR1",
+			"(1)(1)",
+			"(1,1)(1,1)",
+			"AR",
+			"MA",
+			"ARMA",
+			"ID",
+			"ARMA",
+			"Level 2",
+			"chi",
+			"lap",
+			"norm",
+			"list(ar = .45) &",
+			" 0 &",
+			"ARMA &",
+			".000",
+			"fitcorstrcorARMA(p = 0, q = 1)",
+			"rand.distlap",
+			"rand.distchi",
+			"gensercorMA",
+			"sig.act",
+			"factor(n)100",
+			"gensercorAR",
+			"fitcorstrcorARMA(p = 1, q = 0)",
+			"sig.diff",
+			"fitcorstrcorARMA(p = 1, q = 1)",
+			"sig.time",
+			"Termsig.time.act",
+			"factor(n)50",
+			"gensercorARMA",
+			"factor(p)12",
+			"gensercorAR",
+			"gensercorARMA",
+			"gensercorMA",
+			"fitcorstrcorARMA(p = 1, q = 0)",
+			".act",
+			"Termsig.time",
+			"fitcorstrcorARMA(p = 1, q = 1)",
+			"fitcorstrcorARMA(p = 0, q = 1)",
+			"t1e",
+			"chi",
+			"norm",
+			"lap",
+			"AR ",
+			" ARMA &",
+			" list(ma = .5) &",
+			"list(ar = .45) &",
+			" 0 &",
+			".000",
+			"rand.dist",
+			"fitcorstr",
+			"gensercor",
+			"fitcorstr",
+			"gensercor",
+			"100",
+			"83",
+			"72",
+			"69",
+			"65",
+			"100",
+			"83",
+			"72",
+			"69",
+			"65",
+			"76",
+			"198",
+			"226",
+			"read",
+			"math",
+			"tryM",
+			"math",
+			"tryM",
+			"math",
+			"9",
+			"TryoutItems",
+			"read",
+			"math",
+			"grade3",
+			"eft",
+			"Z:",
+			"tryT",
+			"Z:",
+			"336",
+			"391",
+			"377",
+			"375",
+			"353",
+			"224",
+			"142",
+			"R",
+			"M",
+			"659",
+			"654",
+			"649",
+			"644",
+			"639",
+			"634",
+			"229",
+			"391",
+			"48",
+			"45",
+			"43",
+			"35",
+			"637",
+			"ssip",
+			"sciip",
+			"readip",
+			"247",
+			"304",
+			"151",
+			"SS",
+			"ss",
+			"ssSS",
+			"ssitems",
+			"SC",
+			"SS",
+			"SC",
+			"ss",
+			"ssSS",
+			"ssitems"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"6",
+			"5",
+			"4",
+			"Ind",
+			"i.e.\\",
+			"MA(2)",
+			"MA(1)",
+			"AR(1)",
+			"(1)",
+			"(1,1)",
+			"AR(1)",
+			"MA(1)",
+			"ARMA(1,1)",
+			"Ind",
+			"ARMA(1,1)",
+			"Chi--Square(1)",
+			"Laplace",
+			"Normal",
+			"",
+			"Fit SC MA(1)",
+			"RE Dist Lap",
+			"RE Dist Chi",
+			"Gen SC MA(1)",
+			" Level 2",
+			"n 100",
+			"Gen SC AR(1)",
+			"Fit SC AR(1)",
+			" Level 1",
+			"Fit SC ARMA(1,1)",
+			" Time",
+			"Term Time-Level 2",
+			"n 50",
+			"Gen SC ARMA(1,1)",
+			"p 12",
+			"Gen SC AR(1)",
+			"Gen SC ARMA(1,1)",
+			"Gen SC MA(1)",
+			"AR(1)",
+			":Level 2",
+			"Term Time",
+			"ARMA(1,1)",
+			"MA(1)",
+			"power",
+			"Chi--Square(1)",
+			"Normal",
+			"Laplace",
+			"AR(1) ",
+			"",
+			"RE Dist",
+			"Fit SC",
+			"Gen SC",
+			"Fit SC",
+			"Gen SC",
+			"57",
+			"97",
+			"94",
+			"98",
+			"109",
+			"100",
+			"83",
+			"72",
+			"69",
+			"65",
+			"79",
+			"76",
+			"we",
+			"read",
+			"tryWE",
+			"we",
+			"tryR",
+			"read",
+			"14",
+			"13",
+			"12",
+			"11",
+			"10",
+			"ftitems2",
+			"we",
+			"read",
+			"item",
+			"grade8",
+			"grade7",
+			"grade6",
+			"grade5",
+			"grade4",
+			"fft",
+			"X:",
+			"try",
+			"X:",
+			"145",
+			"171",
+			"162",
+			"192",
+			"103",
+			"119",
+			"35",
+			"M",
+			"WE",
+			"R",
+			"234",
+			"247",
+			"240",
+			"257",
+			"155",
+			"109",
+			"",
+			"206",
+			"229",
+			"226",
+			"224",
+			"142",
+			"644",
+			"weip",
+			"ssip",
+			"sciip",
+			"260",
+			"247",
+			"304",
+			"WE",
+			"we",
+			"weSS",
+			"weitems",
+			"R",
+			"read",
+			"rSS",
+			"ritems",
+			"ssover",
+			"50"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Syllabus/syllabus.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13763,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12725,
+								12725
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "latex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Syllabus/book.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "bibtex",
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/bleb/Copy/Courses/ESRM5393/syllabus/syllabusSec2.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18856,
+								18856
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "latex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11611.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 44.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 37.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "introstat.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 187.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}

@@ -1,0 +1,110 @@
+% PSQF 4143: Section 2
+% Brandon LeBeau
+
+# Summarizing Data
+- Data in its raw form is often too complex to summarize and understand quickly.
+- As such, summarizing the data with descriptive statistics (section 3) or with tables and graphs (this section) can be very helpful.
+
+# Motivating Example
+```{r summarize}
+# Function to wrap printing.
+wrap_print <- function(table, num_row = NULL, num_col = 2) {
+  if(is.null(num_row)) {
+    num_row <- nrow(table)/2
+  }
+  ngroups <- nrow(table)/num_row
+  
+  tmp <- lapply(1:ngroups, function(xx) 
+    table[((xx-1)*num_row+1):((xx-1)*num_row + num_row), ])
+  tmp <- do.call("cbind", tmp)
+  return(tmp)
+}
+
+library(ggplot2)
+library(dplyr)
+title_movie <- c('Mean Girls', 'Notebook, The', 'Troy',
+                 'Incredibles, The', 
+                 'Harry Potter and the Prisoner of Azkaban',
+                 'Napoleon Dynamite', 
+                 'Eternal Sunshine of the Spotless Mind',
+                 'Crash', '13 Going On 30', 
+                 'Girl Next Door, The', 
+                 'Dodgeball: A True Underdog Story',
+                 'Anchorman: The Legend of Ron Burgundy',
+                 'Million Dollar Baby',
+                 'Shaun of the Dead', 'White Chicks',
+                 'Spider-Man 2', 'Saw', 'Dawn of the Dead',
+                 'Van Helsing', 'Cinderella Story, A', 
+                 'King Arthur', 'Phantom of the Opera, The',
+                 '50 First Dates', 'Aviator, The', 
+                 'Kill Bill: Vol. 2', 'Punisher, The',
+                 'Village, The', 'Collateral',
+                 'Butterfly Effect, The', 'Hellboy')
+tmp <- movies %>%
+  filter(title %in% title_movie & year == 2004) %>%
+  select(title, length)
+wrap_print(tmp, num_row = 15)
+```
+
+# Ungrouped Frequency Table
+
+
+# Ungrouped Frequency Table Creation Steps
+- To create an ungrouped frequency table:
+    1. List all numbers from the minimum to maximum
+    2. Count the number that fall within each number
+    3. Numbers can have 0 frequency
+    
+- Strengths:
+    - Able to see all the numbers in the distribution
+    - Can quickly glance at the range
+    - Can quickly see which number is most frequent.
+- Weaknesses:
+    - Tables can be large depending on range
+    - Lose some information, namely who had which value
+    
+# Grouped Frequency Table
+
+
+# Grouped Frequency Table Creation Steps
+- To create a grouped frequency table:
+    1. First need to find the class interval size
+       $$ i = Real Upper Limit - Real Lower Limit $$
+    2. List out all the class intervals
+    3. Count the number that fall within each interval
+    
+- Strengths:
+    - Can quickly see where most values fall
+    - 
+- Weaknesses:
+    - No longer know exact values
+    - The choice of class interval size can influence the table
+
+# Additional Notes for Grouped Frequency Tables
+- The class intervals should be mutually exclusive
+- For quantitative values, no gaps between class intervals
+- All class intervals should be the same size
+- On average, 10 to 20 class intervals are most appropriate
+- Common class interval sizes include: 1, 2, 3, 5, 10, 15, 20, 25, ...
+- The lower limit should equal the class size times a constant integer (i.e. 5 * 10 = 50)
+
+# Relative Frequency Distributions
+- These are frequency distributions with proportion or percentage of each class interval
+- Useful for comparisons of two or more groups especially when the number in each group differ
+
+# Relative Frequency by Groups
+```{r freqgroups}
+tmp <- movies %>%
+  filter(year == 2004 & mpaa %in% c('PG', 'R')) %>%
+  select(length, mpaa)
+breaks <- seq(10, 180, by = 15)
+tmp <- split(tmp, tmp$mpaa)
+tmp <- lapply(1:length(tmp), function(xx)
+  cut(tmp[[xx]]$length, breaks, right = FALSE))
+tmp2 <- data.frame(length = c(tmp[[3]], tmp[[5]]), 
+                   mpaa = rep(c('PG', 'R'), 
+                              times = c(length(tmp[[3]]),
+                                        length(tmp[[5]]))))
+tmp_tab <- table(tmp2$length, tmp2$mpaa)
+```
+
