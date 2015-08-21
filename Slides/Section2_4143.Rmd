@@ -143,6 +143,7 @@ table(movies$mpaa)
 
 # Graphs
 - Graphs are a great alternative to many of the tables we discussed above as they tend to be easier to quickly interpret and understand.
+- One benefit of graphs is the ability to explore the shape of distributions.
 - However, it is also easier to create misleading graphics.
 - Graphs for quantiative variables:
     - Histograms
@@ -237,11 +238,30 @@ pie(pie_tab, labels = lbls)
 ```
 
 # Shapes of Distributions
-
-
-
-
-
+- Distributions can be categorized based on their symmetry (skewness) and kurtosis.
+- Symmetry/Skewness is the amount a distribution leans one way or the other.
+    - A symmetric distribution is one where each half of the distribution are mirror images of one another.
+    - An asymmetric (skewed) distribution is one where they are not mirror images.
+    - A positively (right) skewed distribution is one where the bulk of data lie in the lower portion with a long upper tail.
+    - A negatively (left) skewed distribution is one where the bulk of data lie in the upper portion with a long lower tail.
+- Kurtosis refers to the peakedness of the distribution. Relatedly, this also refers to the portion of the distribution that resides in the tails.
+    - Mesokurtic refers to an intermediate distribution with average tails and peakedness.
+    - Platykurtic refers to a distribution that is flatter with more observations in the tail.
+    - Leptokurtic refers to a distribution that is steeper with fewer observations in the tail.
     
+# Examples of common shapes
+![Distribution Shapes]()
+
+# Poor graphics
+- Care needs to be made when constructing good graphics.
+- It is easy for graphs to mislead/mask the purpose. 
+- The goal should be to easily convey the message.
+
+[Poor Charts](http://flowingdata.com/2013/07/15/open-thread-what-is-wrong-with-these-charts/)
+
+# Interesting Graphic Examples
+[Languages other than English Spoken at home](http://www.washingtonpost.com/wp-srv/special/national/us-language-map/)
+
+[The Racial Dot Map](http://www.coopercenter.org/demographics/Racial-Dot-Map)
 
 
