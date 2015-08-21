@@ -40,14 +40,20 @@ title_movie <- c('Mean Girls', 'Notebook, The', 'Troy',
                  'Kill Bill: Vol. 2', 'Punisher, The',
                  'Village, The', 'Collateral',
                  'Butterfly Effect, The', 'Hellboy')
-tmp <- movies %>%
+freq_tab <- movies %>%
   filter(title %in% title_movie & year == 2004) %>%
   select(title, length)
-wrap_print(tmp, num_row = 15)
+wrap_print(freq_tab, num_row = 15)
 ```
 
 # Ungrouped Frequency Table
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # Ungrouped Frequency Table Creation Steps
 - To create an ungrouped frequency table:
@@ -64,7 +70,13 @@ wrap_print(tmp, num_row = 15)
     - Lose some information, namely who had which value
     
 # Grouped Frequency Table
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # Grouped Frequency Table Creation Steps
 - To create a grouped frequency table:
@@ -94,11 +106,11 @@ wrap_print(tmp, num_row = 15)
 
 # Relative Frequency by Groups
 ```{r freqgroups}
-tmp <- movies %>%
+tmp_movies <- movies %>%
   filter(year == 2004 & mpaa %in% c('PG', 'R')) %>%
   select(length, mpaa)
 breaks <- seq(10, 180, by = 15)
-tmp <- split(tmp, tmp$mpaa)
+tmp <- split(tmp_movies, tmp_movies$mpaa)
 tmp <- lapply(1:length(tmp), function(xx)
   cut(tmp[[xx]]$length, breaks, right = FALSE))
 tmp2 <- data.frame(length = c(tmp[[3]], tmp[[5]]), 
@@ -107,4 +119,129 @@ tmp2 <- data.frame(length = c(tmp[[3]], tmp[[5]]),
                                         length(tmp[[5]]))))
 tmp_tab <- table(tmp2$length, tmp2$mpaa)
 ```
+
+# Cumulative Frequency Distributions
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Cumulative Frequency Creation
+1. Start with a basic frequency distribution, grouped or ungrouped.
+2. Starting with the smallest value, keep a running tally of the number encountered.
+    - This can be done by taking the frequency for the current category plus all prior categories
+3. Optional - add columns for cumulative proportion or cumulative percentage.
+
+# Frequency Distribution for Qualitative Variables
+```{r qual}
+table(movies$mpaa)
+```
+
+# Graphs
+- Graphs are a great alternative to many of the tables we discussed above as they tend to be easier to quickly interpret and understand.
+- However, it is also easier to create misleading graphics.
+- Graphs for quantiative variables:
+    - Histograms
+    - Frequency Polygons
+    - Cumulative Polygon (Ogive)
+    - Stem and Leaf
+- Graphs for qualitative variables:
+    - Bar Graphs
+    - Pie Charts
+- Note: there are many other graphs that can be used too that we are not discussing.
+
+# Histograms
+- A histogram is a visual representation of a frequency table for quantitative variables.
+- No gaps between bars as the x-axis is continuous.
+
+```{r hist}
+h <- ggplot(freq_tab, aes(x = length)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 10, color = "grey30") + 
+  scale_x_continuous(breaks = seq(70, 180, 10))
+```
+
+# Frequency Polygons
+- A frequency polygon is also a visual representation of a frequency table for quantitative variables.
+- This plot is great for more than two groups.
+
+```{r freqpoly}
+fp <- ggplot(freq_tab, aes(x = length)) + theme_bw(base_size = 16)
+fp + geom_freqpoly(binwidth = 10) + 
+  scale_x_continuous(breaks = seq(70, 180, 10))
+```
+
+
+# Frequency Polygons by Group
+```{r freqpolygroup}
+tmp_tab_df <- data.frame(tmp_tab)
+names(tmp_tab_df) <- c('mp', 'mpaa', 'Freq')
+tmp_tab_df$mp <- as.numeric(as.character(tmp_tab_df$mp))
+tmp_tab_df <- rbind(tmp_tab_df, c(4, 'PG', 0), c(4, 'R', 0))
+tmp_tab_df$mp <- as.numeric(tmp_tab_df$mp)
+tmp_tab_df$Freq <- as.numeric(tmp_tab_df$Freq)
+tmp_tab_df <- arrange(tmp_tab_df, mpaa, mp)
+tmp_tab_df$mid <- rep(c(17, 32, 47, 62, 77, 92, 107, 122, 137, 152, 167), 2)
+fp <- ggplot(tmp_tab_df, aes(x = mid, y = Freq, color = mpaa)) + theme_bw(base_size = 16)
+fp + geom_freqpoly(stat = 'identity') + geom_point() + 
+  scale_x_continuous(breaks = seq(2, 182, 15))
+```
+
+# Cumulative Polygon (Ogive)
+- The cumulative polygon or ogive, is a graphical representation of the cumulative frequency.
+- This plot is unique in that it is always increasing.
+
+```{r ogive}
+breaks <- seq(70, 180, 10)
+length_cut <- cut(freq_tab$length, breaks, right = FALSE)
+length_tab <- table(length_cut)
+cumfreq <- c(0, cumsum(length_tab))
+length_df <- data.frame(freq = c(0, length_tab), cf = cumfreq, brks = seq(70, 180, 10))
+cf <- ggplot(length_df, aes(x = brks, y = cf)) + theme_bw(base_size = 16)
+cf + geom_point() + geom_line() + 
+  scale_x_continuous("Length", breaks = breaks) + 
+  ylab("Cumulative Freq")
+```
+
+# Stem and Leaf
+- Stem and leaf displays are similar to histograms, but specific points can be identified.
+- Outside of introductory statistics books, I do not see these used in practice.
+- The leaf is the last number, the stem is the remaining portion of the number.
+
+```{r stem}
+stem(freq_tab$length)
+```
+
+# Bar Graphs
+- Bar graphs are a way to visually show a frequency table for qualitative variables.
+- Can also be used to show other variables on the y-axis for qualitative variables.
+- Has gaps to show the differences in groups.
+- Order should be meaningful, either alphabetical for nominal variables or in the correct order for ordinal variables.
+
+```{r bar}
+b <- ggplot(filter(movies, mpaa != ''), aes(x = mpaa)) + theme_bw(base_size = 16)
+b + geom_bar()
+```
+
+# Pie Charts
+- Pie charts are useful to show the percentage of the whole for each group.
+- The sum of the pieces of the pie must add up to 100% for this chart to be meaningful.
+
+```{r pie}
+pie_tab <- table(filter(movies, mpaa != '')$mpaa)[2:5]
+lbls <- paste(names(pie_tab), "\n", pie_tab, sep = "")
+pie(pie_tab, labels = lbls)
+```
+
+# Shapes of Distributions
+
+
+
+
+
+    
+
 
