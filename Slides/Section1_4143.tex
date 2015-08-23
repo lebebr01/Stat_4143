@@ -1,0 +1,602 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Brandon LeBeau},
+            pdftitle={PSQF 4143: Section 1},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{PSQF 4143: Section 1}
+\author{Brandon LeBeau}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction to Statistics}\label{introduction-to-statistics}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  What is statistics?
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Statistics is the science of gaining information from numerical data
+  \end{itemize}
+\item
+  The root of statistics comes from numerical data
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Produce data
+  \item
+    Organize data
+  \item
+    Draw conclusions from data
+  \end{itemize}
+\end{itemize}
+
+\section{Descriptive Statistics}\label{descriptive-statistics}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Descriptive statistics aim to summarize or explore the data
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Tell a story of data analysis
+  \end{itemize}
+\item
+  These statistics can take the form of graphics, tables, or single
+  numerical summaries
+\item
+  Examples of this include:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Make summary statements about the data, on average\ldots{}
+  \item
+    Explore the distribution of the data, where do the bulk of the data
+    fall?
+  \item
+    Explore similarities or differences between groups
+  \end{itemize}
+\end{itemize}
+
+\section{Inferential Statistics}\label{inferential-statistics}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Inferential statistics aim to quantify uncertainty in the data and use
+  probability to understand how likely a hypothesis is.
+\item
+  Many inferential techniques aim to answer questions that explore the
+  relationship between two or more variables.
+\item
+  Inferential statistics are useful because it is common in an
+  experiment to not have data on everything.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Example: Imagine testing for the presence of bacteria at a beach.
+  \item
+    Example: Imagine exploring the relationship between amount of sleep
+    the night before a test and the performance on a test.
+  \end{itemize}
+\end{itemize}
+
+\section{Data Uncertainty}\label{data-uncertainty}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Data vary
+\item
+  As a result, conclusions on uncertain data are also uncertain.
+\item
+  Statistics is a tool to help us quantify the uncertainty and use that
+  to make meaningful conclusions.
+\item
+  Statistics helps us determine if a result is spurious (uncertain) or
+  meaningful.
+\end{itemize}
+
+\section{Scaffolding for Research}\label{scaffolding-for-research}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Think back to the scientific method from science classes in high
+  school.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Research Question
+  \item
+    Statistical Question
+  \item
+    Data Collection
+  \item
+    Data Analysis
+  \item
+    Statistical Conclusion
+  \item
+    Research Conclusion
+  \end{enumerate}
+\end{itemize}
+
+\section{Questions for Statistics}\label{questions-for-statistics}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  The following are useful questions to always have in mind when
+  considering a statistical technique:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    What assumptions underlie the technique?
+  \item
+    When and where is the technique valid?
+  \item
+    What are the advantages and disadvantages of the technique relative
+    to others?
+  \item
+    What interpretations can be made based on the technique?
+  \item
+    What are the common problems associated with the technique?
+  \end{itemize}
+\end{itemize}
+
+\section{Variables vs Constants}\label{variables-vs-constants}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Variables:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    vary
+  \item
+    are commonly represented by symbols, x, y, z
+  \item
+    need to be measured. Measurement of a variable is the process of
+    assigning numbers or labels to characteristics of people, objects,
+    or events according to a set of rules.
+  \end{itemize}
+\item
+  Constants:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    do not vary
+  \item
+    are commonly represented by symbols, a, b, c
+  \end{itemize}
+\end{itemize}
+
+\section{Types of variables}\label{types-of-variables}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Qualitative variables:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    represent categories
+  \item
+    are not numbers
+  \item
+    but can be represented with numeric symbols
+  \item
+    can be ordered or unordered
+  \end{itemize}
+\item
+  Quantitative variables:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    reflect numeric quantities
+  \item
+    can be discrete or continuous
+  \end{itemize}
+\end{itemize}
+
+\section{Levels of Measurement}\label{levels-of-measurement}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Nominal Measurement:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    represent mutually exclusive categories
+  \item
+    are commonly represented with labels
+  \item
+    can be represented with numeric labels
+  \item
+    is not meaningful to manipulate mathematically
+  \item
+    carries no meaningful order
+  \end{itemize}
+\item
+  Ordinal Measurement:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    carries all information from nominal measurement
+  \item
+    represent mutually exclusive categories that are ordered
+  \end{itemize}
+\item
+  Interval Measurement:
+\item
+  carries all information from nominal and ordinal measurement
+\item
+  represent equal distance between equivalent gaps
+\item
+  0 is not meaningful
+\item
+  can now perform linear transformations meaningfully
+\item
+  Ratio Measurement:
+\item
+  carries all information from nominal, ordinal, and interval
+  measurement
+\item
+  but now 0 measn the absence of the phenomenon
+\item
+  can only be transformed by multiplying
+\end{itemize}
+
+\section{Measurement in the Social
+Sciences}\label{measurement-in-the-social-sciences}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  When measuring variables with an instrument or questionnaire, there is
+  commonly a lack of equal intervals or an absolute zero.
+\item
+  Examples: creativity, problem solving, attitude toward statistics,
+  achievement
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    The distances between adjacent scores based on an instrument are
+    likely not equal.
+  \item
+    For an achievement test, if an individual can not answer any
+    questions, that does not mean they have a total absence of
+    ability/achievement.
+  \end{itemize}
+\end{itemize}
+
+\section{Measurement of Ordered
+Variables}\label{measurement-of-ordered-variables}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  The purpose of measurement is to differentiate among individuals or
+  objects on a variable.
+\item
+  To do this, rules must be established to assign values to a specific
+  variable.
+\item
+  When the rules for a measurement process are not widely accepted, we
+  must adopt a two-step measurement process.
+\end{itemize}
+
+\section{Two Step Measurement
+Process}\label{two-step-measurement-process}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Develop a \emph{conceptual} definition.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    This is abstract or a theoretical definition
+  \end{itemize}
+\item
+  Develop an \emph{operational} definition
+\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  More concrete
+\item
+  Based on the conceptual definition
+\item
+  Commonly defines rules to allow for the measurement of the phenomenon.
+\end{itemize}
+
+\section{Two Step Measurement Process
+Example}\label{two-step-measurement-process-example}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Consider the variable motivation
+\item
+  Conceptual Definition
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    The general desire or willingness of someone to do something
+  \end{itemize}
+\item
+  Operational Definition
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Give a list of 50 statements of tasks.
+  \item
+    Then ask each individual to indicate the extent they enjoy doing
+    each task - from strongly do not enjoy to strongly enjoy.
+  \end{itemize}
+\end{itemize}
+
+\section{Reliability}\label{reliability}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  A measurement process is reliable if \emph{repeated measurements} on
+  the \emph{same individual} give the same (or similar) results.
+\item
+  Examples:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    If a second set of 50 similar tasks were given to the same
+    individuals, would individuals order the tasks similarly?
+  \item
+    If the same set of 50 tasks were given to the same individuals,
+    would the students be order the tasks similarly?
+  \end{itemize}
+\end{itemize}
+
+\section{Validity}\label{validity}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  A variable is a valid measure of a property if it is relevant or
+  appropriate as a representation of that property.
+\item
+  Is the ordering of individuals based on a particular operational
+  definition the same as (or similar to) the ordering based on a
+  different operational definition?
+\item
+  A common question to test validity is to ask ourselves whether the
+  measure reflects the construct of interest.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    More simply, are we measuring what we want or something else?
+  \end{itemize}
+\end{itemize}
+
+\section{Real Limits}\label{real-limits}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  The real limits of a score extend from one-half of the smallest unit
+  of measurement below the value of the score to one-half unit above
+\item
+  Examples:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Consider a distance of 85 inches, measured to the nearest inch (the
+    smallest unit of measurement is one inch).
+
+    \begin{itemize}
+    \itemsep1pt\parskip0pt\parsep0pt
+    \item
+      The real limits of 85 extend from 84.5 to 85.5.
+    \item
+      As such, a score of 85 inches actually represents all values
+      between 84.5 and 85.5.
+    \end{itemize}
+  \item
+    Suppose we measure length to the nearest tenth of an inch
+
+    \begin{itemize}
+    \itemsep1pt\parskip0pt\parsep0pt
+    \item
+      A measurement of 2.3 inches - what are the real limits?
+    \item
+      2.25 to 2.35 inches.
+    \end{itemize}
+  \end{itemize}
+\item
+  Unfortunately there are exceptions.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Age is one example
+  \end{itemize}
+\item
+  No score can ever fall right on a real limit, because we calculate
+  real limits by taking half of the smallest unit of measurement.
+\end{itemize}
+
+\section{Real Limits 2}\label{real-limits-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Example:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Consider grade point averages in the interval from 2.60 to 2.79.
+
+    \begin{itemize}
+    \itemsep1pt\parskip0pt\parsep0pt
+    \item
+      The smallest unit of measurement is one-hundredth.
+    \item
+      The lower and upper real limits of the interval are 2.595 and
+      2.795 respectively.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Population vs Sample}\label{population-vs-sample}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Population:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    The complete set of observations about which a researcher wishes to
+    draw a conclusion.
+  \item
+    A descriptive index of a population is referred to as a
+    \emph{parameter}.
+  \item
+    Population Parameter
+  \end{itemize}
+\item
+  Sample:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Part of the population about which a researcher wishes to draw a
+    conclusion.
+  \item
+    A descriptive index of a sample is referred to as a
+    \emph{statistic}.
+  \item
+    Sample Statistic
+  \end{itemize}
+\end{itemize}
+
+\section{Random Sample}\label{random-sample}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  A random sample is a sample obtained such that each individual has an
+  equal chance of being selected at any stage of the sampling process.
+\item
+  Also, each possible sample of the same size has an equal probability
+  of being selected from the population.
+\item
+  A population is defined by the interest of the investigator.
+\end{itemize}
+
+\section{Inferential Statistics}\label{inferential-statistics-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  With inferential statistics, we are interested in estimating
+  population parameters from sample statistics.
+\item
+  An essential assumption in inferential statistics is that samples are
+  drawn randomly from a particular population.
+\item
+  If several random samples of the same size are drawn from the same
+  population, the samples will most likely differ, and therefore their
+  characteristics (statistics) will vary from sample to sample.
+\item
+  The variation is due to chance variation associataed with random
+  sampling.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    This is commonly called sampling error.
+  \end{itemize}
+\item
+  The larger the random sample from the population, the less the
+  variation between samples.
+\item
+  In general larger random samples will provide a more precise estimate
+  of what is true about a population.
+\end{itemize}
+
+\end{document}
