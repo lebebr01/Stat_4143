@@ -1,6 +1,11 @@
 % PSQF 4143: Section 2
 % Brandon LeBeau
 
+```{r opts, echo = FALSE}
+opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
+```
+
+
 # Summarizing Data
 - Data in its raw form is often too complex to summarize and understand quickly.
 - As such, summarizing the data with descriptive statistics (section 3) or with tables and graphs (this section) can be very helpful.
@@ -91,6 +96,25 @@ wrap_print(freq_tab, num_row = 15)
 - Weaknesses:
     - No longer know exact values
     - The choice of class interval size can influence the table
+    
+# Effect of Class Interval Size
+```{r freqclass}
+freq_tab2 <- movies %>%
+  filter(year == 2004) %>%
+  select(title, length)
+
+breaks <- seq(0, 200, by = 5)
+data.frame(table(cut(freq_tab2$length, breaks, right = FALSE)))
+
+breaks <- seq(0, 200, by = 10)
+data.frame(table(cut(freq_tab2$length, breaks, right = FALSE)))
+
+breaks <- seq(0, 200, by = 20)
+data.frame(table(cut(freq_tab2$length, breaks, right = FALSE)))
+
+breaks <- seq(0, 200, by = 50)
+data.frame(table(cut(freq_tab2$length, breaks, right = FALSE)))
+```
 
 # Additional Notes for Grouped Frequency Tables
 - The class intervals should be mutually exclusive
@@ -100,9 +124,27 @@ wrap_print(freq_tab, num_row = 15)
 - Common class interval sizes include: 1, 2, 3, 5, 10, 15, 20, 25, ...
 - The lower limit should equal the class size times a constant integer (i.e. 5 * 10 = 50)
 
+# Unequal Frequency Distributions
+- One area where unequal frequency distributions can be useful is with variables such as income.
+- Income tends to have more individuals at the low end and fewer at the high end.
+- As such, it can be helpful to have larger class intervals at the upper end of the income scale.
+- Unequal intervals can be used for tables, but not for graphs.
+
+# Unequal Frequency Distribution Example
+![Unequal Income](Unequal_Income.png)
+
 # Relative Frequency Distributions
 - These are frequency distributions with proportion or percentage of each class interval
 - Useful for comparisons of two or more groups especially when the number in each group differ
+
+# Relative Frequency Distribution Example
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 # Relative Frequency by Groups
 ```{r freqgroups}
@@ -165,35 +207,88 @@ h + geom_histogram(binwidth = 10, color = "grey30") +
   scale_x_continuous(breaks = seq(70, 180, 10))
 ```
 
-# Frequency Polygons
-- A frequency polygon is also a visual representation of a frequency table for quantitative variables.
-- This plot is great for more than two groups.
+# Shapes of Distributions
+- Distributions can be categorized based on their symmetry (skewness) and kurtosis.
+- Symmetry/Skewness is the amount a distribution leans one way or the other.
+    - A symmetric distribution is one where each half of the distribution are mirror images of one another.
+    - An asymmetric (skewed) distribution is one where they are not mirror images.
+    - A positively (right) skewed distribution is one where the bulk of data lie in the lower portion with a long upper tail.
+    - A negatively (left) skewed distribution is one where the bulk of data lie in the upper portion with a long lower tail.
+- Kurtosis refers to the peakedness of the distribution. Relatedly, this also refers to the portion of the distribution that resides in the tails.
+    - Mesokurtic refers to an intermediate distribution with average tails and peakedness.
+    - Platykurtic refers to a distribution that is flatter with more observations in the tail.
+    - Leptokurtic refers to a distribution that is steeper with fewer observations in the tail.
+    
+# Describing Distributions
+- Location (Central Tendency)
+    - Where is the middle score?
+    - Where are the scores concentrated?
+- Variability
+    - Dispersion
+    - Spread
+    - Range
+    
+# Examples of common shapes
+![Distribution Shapes](Dist_shape.png)
 
-```{r freqpoly}
-fp <- ggplot(freq_tab, aes(x = length)) + theme_bw(base_size = 16)
-fp + geom_freqpoly(binwidth = 10) + 
+# Shapes with Histograms
+![Skew Shape](skew_dist.png)
+![Kurt Shape](kurt_dist.png)
+
+# Factors Affecting Distribution Shape
+1. Sampling
+    - The larger the sample size, the closer it will approximate the population.
+2. Relative Scale
+    - The height of the histogram should be 3/4 of the width.
+3. Frequency Scale
+    - Always continuous and start at 0.
+4. Interval size / number of intervals
+
+# Effect of Sampling
+```{r histsamp}
+h <- ggplot(sample_n(freq_tab2, 500), aes(x = length)) + 
+  theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 15, color = "grey30") + 
+  scale_x_continuous(breaks = seq(0, 240, 15))
+
+h <- ggplot(sample_n(freq_tab2, 100), aes(x = length)) + 
+  theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 15, color = "grey30") + 
+  scale_x_continuous(breaks = seq(0, 240, 15))
+
+h <- ggplot(sample_n(freq_tab2, 10), aes(x = length)) + 
+  theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 15, color = "grey30") + 
+  scale_x_continuous(breaks = seq(0, 240, 15))
+```
+
+# Effect of Relative Scale
+![Relative Scale](Relative_Scale.png)
+
+# Effect of Frequency Not Starting at Zero
+![Not Zero](Freq_NotZero.png)
+![Zero](Freq_NotZero2.png)
+
+# Effect of Binwidth on Histograms
+```{r histbin}
+h <- ggplot(freq_tab, aes(x = length)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 5, color = "grey30") + 
+  scale_x_continuous(breaks = seq(70, 180, 5))
+
+h + geom_histogram(binwidth = 10, color = "grey30") + 
   scale_x_continuous(breaks = seq(70, 180, 10))
+
+h + geom_histogram(binwidth = 20, color = "grey30") + 
+  scale_x_continuous(breaks = seq(70, 180, 20))
+
+h + geom_histogram(binwidth = 40, color = "grey30") + 
+  scale_x_continuous(breaks = seq(70, 180, 40))
 ```
 
-
-# Frequency Polygons by Group
-```{r freqpolygroup}
-tmp_tab_df <- data.frame(tmp_tab)
-names(tmp_tab_df) <- c('mp', 'mpaa', 'Freq')
-tmp_tab_df$mp <- as.numeric(as.character(tmp_tab_df$mp))
-tmp_tab_df <- rbind(tmp_tab_df, c(4, 'PG', 0), c(4, 'R', 0))
-tmp_tab_df$mp <- as.numeric(tmp_tab_df$mp)
-tmp_tab_df$Freq <- as.numeric(tmp_tab_df$Freq)
-tmp_tab_df <- arrange(tmp_tab_df, mpaa, mp)
-tmp_tab_df$mid <- rep(c(17, 32, 47, 62, 77, 92, 107, 122, 137, 152, 167), 2)
-fp <- ggplot(tmp_tab_df, aes(x = mid, y = Freq, color = mpaa)) + theme_bw(base_size = 16)
-fp + geom_freqpoly(stat = 'identity') + geom_point() + 
-  scale_x_continuous(breaks = seq(2, 182, 15))
-```
 
 # Cumulative Polygon (Ogive)
 - The cumulative polygon or ogive, is a graphical representation of the cumulative frequency.
-- This plot is unique in that it is always increasing.
+- This plot is unique in that it never decreases.
 
 ```{r ogive}
 breaks <- seq(70, 180, 10)
@@ -207,14 +302,23 @@ cf + geom_point() + geom_line() +
   ylab("Cumulative Freq")
 ```
 
-# Stem and Leaf
-- Stem and leaf displays are similar to histograms, but specific points can be identified.
-- Outside of introductory statistics books, I do not see these used in practice.
-- The leaf is the last number, the stem is the remaining portion of the number.
-
-```{r stem}
-stem(freq_tab$length)
+# Ogive - Cumulative Percentage
+```{r ogivepercent}
+cf <- ggplot(length_df, aes(x = brks, y = I(cf/max(cf)*100))) + 
+  theme_bw(base_size = 16)
+cf + geom_point() + geom_line() + 
+  scale_x_continuous("Length", breaks = breaks) + 
+  scale_y_continuous("Cumulative Per", breaks = seq(0, 100, 10))
 ```
+
+# Percentile Ranks and Percentiles
+- Percentile Ranks:
+    - The percentage of scores at or below a given point.
+    - Denoted by $P_{R}(X)$, read as the percentile rank of score $X$.
+- Percentiles:
+    - The point on the score scale below which a specified percentage of scores fall.
+    - Denoted by $P_{%}%
+
 
 # Bar Graphs
 - Bar graphs are a way to visually show a frequency table for qualitative variables.
@@ -237,21 +341,6 @@ lbls <- paste(names(pie_tab), "\n", pie_tab, sep = "")
 pie(pie_tab, labels = lbls)
 ```
 
-# Shapes of Distributions
-- Distributions can be categorized based on their symmetry (skewness) and kurtosis.
-- Symmetry/Skewness is the amount a distribution leans one way or the other.
-    - A symmetric distribution is one where each half of the distribution are mirror images of one another.
-    - An asymmetric (skewed) distribution is one where they are not mirror images.
-    - A positively (right) skewed distribution is one where the bulk of data lie in the lower portion with a long upper tail.
-    - A negatively (left) skewed distribution is one where the bulk of data lie in the upper portion with a long lower tail.
-- Kurtosis refers to the peakedness of the distribution. Relatedly, this also refers to the portion of the distribution that resides in the tails.
-    - Mesokurtic refers to an intermediate distribution with average tails and peakedness.
-    - Platykurtic refers to a distribution that is flatter with more observations in the tail.
-    - Leptokurtic refers to a distribution that is steeper with fewer observations in the tail.
-    
-# Examples of common shapes
-![Distribution Shapes]()
-
 # Poor graphics
 - Care needs to be made when constructing good graphics.
 - It is easy for graphs to mislead/mask the purpose. 
@@ -263,5 +352,6 @@ pie(pie_tab, labels = lbls)
 [Languages other than English Spoken at home](http://www.washingtonpost.com/wp-srv/special/national/us-language-map/)
 
 [The Racial Dot Map](http://www.coopercenter.org/demographics/Racial-Dot-Map)
+
 
 
