@@ -318,6 +318,52 @@ cf + geom_point() + geom_line() +
 - Percentiles:
     - The point on the score scale below which a specified percentage of scores fall.
     - Denoted by $P_{%}%
+- A percentile is the inverse of a percentile rank.
+- The percentile rank of a given point on the score scale is the percentage of scores falling below this point in the ordered series of scores.
+    - The value of the point iteself is the percentile corresponding to this percentile rank.
+    - Example: if $P_{R}(X) = 60$, then $P_{60} = X$.
+- Never say, 'My score was **in** the top quartile'.
+    - A quartile (or percentile or decile) is a point on the score scale, not an interval.
+    - Instead say, 'My score was at the top quartile'.
+    
+# Special Percentile Points
+- Deciles:
+    - $D_{1} = P_{10}$ - First decile
+    - $D_{2} = P_{20}$ - Second decile
+    - $D_{5} = Q_{2} = P_{50} = Mdn$ - Median
+    - $Q_{1} = P_{25}$ - First Quartile
+    - $Q_{3} = P_{75}$ - Third Quartile
+    
+# Estimate Percentile Ranks/Percentiles
+```{r ogivepercent2}
+cf <- ggplot(length_df, aes(x = brks, y = I(cf/max(cf)*100))) + 
+  theme_bw(base_size = 16)
+cf + geom_point() + geom_line() + 
+  scale_x_continuous("Length", breaks = breaks) + 
+  scale_y_continuous("Cumulative Per", breaks = seq(0, 100, 10))
+```
+
+- $P_{R}(122) = $
+- $P_{R}(160) = $
+- $P_{50} = $
+- $P_{80} = $
+
+# Decile Differences
+![Normal Distribution](Decile_Normal.png)
+![Skewed Distribution](Decile_Skew.png)
+![Bimodal Distribution](Decile_Bimodal.png)
+
+# Quartiles and Shape
+- Symmetrical: 
+    - $Q_{3} - Q_{2} = Q_{2} - Q_{1}$
+- Positive Skew:
+    - $Q_{3} - Q_{2} > Q_{2} - Q_{1}$
+- Negative Skew:
+    - $Q_{3} - Q_{1} < Q_{2} - Q_{1}$
+    
+
+# Ogive Shape
+![Ogive Shape](Ogive_Shape.png)
 
 
 # Bar Graphs
