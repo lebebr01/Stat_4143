@@ -160,6 +160,7 @@ tmp2 <- data.frame(length = c(tmp[[3]], tmp[[5]]),
                               times = c(length(tmp[[3]]),
                                         length(tmp[[5]]))))
 tmp_tab <- table(tmp2$length, tmp2$mpaa)
+tmp_tab
 ```
 
 # Cumulative Frequency Distributions
@@ -311,6 +312,9 @@ cf + geom_point() + geom_line() +
   scale_y_continuous("Cumulative Per", breaks = seq(0, 100, 10))
 ```
 
+# Real Life Ogive Example
+![Ogive Examp](Ogive_Examp.png)
+
 # Percentile Ranks and Percentiles
 - Percentile Ranks:
     - The percentage of scores at or below a given point.
@@ -365,6 +369,26 @@ cf + geom_point() + geom_line() +
 # Ogive Shape
 ![Ogive Shape](Ogive_Shape.png)
 
+
+# Calculating Percentiles and Percentile Ranks
+- Percentiles:
+    - $ P_{%} = X_{ll} + i (\frac{n(\frac{P_{R}}{100}) - \sum f_{b}}{f_{i}}) $
+- Percentile Ranks
+    - $ P_{R}(X) = \frac{100}{n}(\sum f_{b} + \frac{f_{i}(P_{%} - X_{ll})}{i})$
+where:
+    - X = Score of Interest
+    - n = Total Sample size
+    - $\sum f_{b}$ = Number of scores below interval containing X
+    - i = interval size = $X_{ul} - X_{ll}$
+    - $X_{ll}$ = Lower limit of interval containing X
+    - $X_{ul}$ = Upper limit of interval containing X
+    
+# Calculating Examples
+- Using the table below, find $P_{R}(112)$, $P_{R}(158)$, $P_{25}$, $P_{50}$, $P_{75}$
+
+```{r percentileexampl}
+select(length_df, freq, cf)
+```
 
 # Bar Graphs
 - Bar graphs are a way to visually show a frequency table for qualitative variables.
