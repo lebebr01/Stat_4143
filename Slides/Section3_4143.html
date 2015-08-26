@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 3</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 3</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+  <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="statistics-vs-parameters" class="slide section level1">
+<h1>Statistics vs Parameters</h1>
+<ul class="incremental">
+<li><em>Statistics</em> - A number that describes the sample; hopefully a representative number for the population
+<ul class="incremental">
+<li>Notation: An English letter (i.e. <span class="math">\(X\)</span>, <span class="math">\(\bar{X}\)</span>)</li>
+</ul></li>
+<li><em>Parameter</em> - A number to describe the population (i.e. the true value)
+<ul class="incremental">
+<li>Notation: A Greek letter (i.e. <span class="math">\(\mu\)</span>, <span class="math">\(\sigma\)</span>)</li>
+</ul></li>
+</ul>
+</div>
+<div id="notation" class="slide section level1">
+<h1>Notation</h1>
+<ul class="incremental">
+<li>An observed data point is represented with a capital letter, commonly <span class="math">\(X\)</span>. This would represent the value for a single individual.
+<ul class="incremental">
+<li>Example: X = 25</li>
+</ul></li>
+<li>Little <span class="math">\(x\)</span> is used for a deviation score.</li>
+<li>The number of subjects in the population is denoted with a capital <span class="math">\(N\)</span>. The number in the sample is denoted with a small <span class="math">\(n\)</span>.</li>
+<li>If there are multiple observations or groups a subcript is used.
+<ul class="incremental">
+<li>Example: A sample of 3 observations (n = 3): <span class="math">\(X_{1} = 12\)</span>, <span class="math">\(X_{2} = 23\)</span>, <span class="math">\(X_{3} = 8\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="notation-2" class="slide section level1">
+<h1>Notation 2</h1>
+<ul class="incremental">
+<li>The greek captial letter, <span class="math">\(\Sigma\)</span>, is used to indicate summation.
+<ul class="incremental">
+<li>More formally: <span class="math">\(\displaystyle \sum^{n}_{i=1} X_{i} = X_{1} + X_{2} + ... + X_{n}\)</span></li>
+<li>This means sum the value of <span class="math">\(X\)</span> from 1 to <span class="math">\(n\)</span>.</li>
+</ul></li>
+<li>Example: <span class="math">\(X_{1} = 12\)</span>, <span class="math">\(X_{2} = 23\)</span>, <span class="math">\(X_{3} = 8\)</span>. <span class="math">\[ \displaystyle \sum_{i=1}^{n} X_{i} = 12 + 23 + 8 = 43  \]</span></li>
+</ul>
+</div>
+<div id="single-number-descriptive-statistics" class="slide section level1">
+<h1>Single number Descriptive Statistics</h1>
+<ul class="incremental">
+<li><em>Central Tendency</em> - a set of descriptive statistics that describes a data set in a single number; also known as measures of central tendency as they describe where the center of the distribution lies
+<ul class="incremental">
+<li>Mode</li>
+<li>Median</li>
+<li>Mean (Average)</li>
+</ul></li>
+</ul>
+</div>
+<div id="measure-of-central-tendency" class="slide section level1">
+<h1>Measure of Central Tendency</h1>
+<ul class="incremental">
+<li>Mode:
+<ul class="incremental">
+<li>Indicates the most frequent value/category in the distribution.</li>
+</ul></li>
+<li>Calculating the mode:
+<ul class="incremental">
+<li>Discrete Data: Value with the greatest frequency.</li>
+<li>Categorized Continuous Data (i.e. Frequency Table): Midpoint of the interval with the greatest frequency.</li>
+<li>Continuous Data: The highest point of the frequency distribution.</li>
+</ul></li>
+</ul>
+</div>
+<div id="mode-calculations" class="slide section level1">
+<h1>Mode Calculations</h1>
+<div class="figure">
+<img src="PracticeCentralTend.png" alt="Practice Central Tendency" />
+<p class="caption">Practice Central Tendency</p>
+</div>
+</div>
+<div id="measure-of-central-tendency-2" class="slide section level1">
+<h1>Measure of Central Tendency 2</h1>
+<ul class="incremental">
+<li>Median:
+<ul class="incremental">
+<li>Is the value where half of the data fall above and half fall below.</li>
+</ul></li>
+<li>Calculating the median:
+<ul class="incremental">
+<li>Nominal Data: Cannot be done meaningfully</li>
+<li>Discrete Data:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Order values from highest to lowest, find the middle value.</li>
+<li>Alternatively: find the value: <span class="math">\[ L = \frac{n+1}{2} \]</span>
+<ul class="incremental">
+<li>If L is a whole number, the median is the Lth value</li>
+<li>If L is a decimal, the median is the average between the two values around L (i.e. the value rounded up and down from L)</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+<div id="measure-of-central-tendency-2-1" class="slide section level1">
+<h1>Measure of Central Tendency 2</h1>
+<ul class="incremental">
+<li>Calculating the median:
+<ul class="incremental">
+<li>Continuous Data:
+<ul class="incremental">
+<li>determine where in the interval the median falls as a fraction, then go that fraction from the interval's lower limit to its upper limit</li>
+<li><span class="math">\[ Median = L + \frac{ \frac{n}{2} - f_{below}}{f_{at}} * w \]</span> Where <span class="math">\(L\)</span> is the lower limit of the of the interval containing the median <span class="math">\(n\)</span> is total frequency <span class="math">\(f_{below}\)</span> is the frequency below the interval <span class="math">\(f_{at}\)</span> is the frequency at the interval <span class="math">\(w\)</span> is the bin width</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="median-calculations" class="slide section level1">
+<h1>Median Calculations</h1>
+<p>2<br />3<br />4<br />4<br />5<br />7</p>
+</div>
+<div id="median-calculations-2" class="slide section level1">
+<h1>Median Calculations 2</h1>
+<p>10<br />11<br />11<br />11<br />11<br />12<br />13<br />19</p>
+</div>
+<div id="median-calculations-3" class="slide section level1">
+<h1>Median Calculations 3</h1>
+<p>26<br />27<br />28<br />28<br />32</p>
+</div>
+<div id="median-calculations-4" class="slide section level1">
+<h1>Median Calculations 4</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Interval</th>
+<th align="left">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">$0-$10000</td>
+<td align="left">12%</td>
+</tr>
+<tr class="even">
+<td align="left">$10000-$20000</td>
+<td align="left">32%</td>
+</tr>
+<tr class="odd">
+<td align="left">$20000-$30000</td>
+<td align="left">27%</td>
+</tr>
+<tr class="even">
+<td align="left">$30000-$40000</td>
+<td align="left">15%</td>
+</tr>
+<tr class="odd">
+<td align="left">$40000-$50000</td>
+<td align="left">8%</td>
+</tr>
+<tr class="even">
+<td align="left">$50000 and up</td>
+<td align="left">6%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="median-calculations-5" class="slide section level1">
+<h1>Median Calculations 5</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Interval</th>
+<th align="left">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0 - 9</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">10 - 14</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">15 - 19</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left">20 - 24</td>
+<td align="left">15</td>
+</tr>
+<tr class="odd">
+<td align="left">25 - 29</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">30 - 34</td>
+<td align="left">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="measures-of-central-tendency-3" class="slide section level1">
+<h1>Measures of Central Tendency 3</h1>
+<ul class="incremental">
+<li>Mean:
+<ul class="incremental">
+<li>Is the average of the data, also known as the &quot;balance point&quot; or the place where the distribution would balance on a fulcrum.</li>
+<li>The mean is used for interval or ratio data and the value is interpretted in the same metric as the raw data.</li>
+</ul></li>
+<li>Notation:
+<ul class="incremental">
+<li>Sample: <span class="math">\(\bar{X}\)</span> - called &quot;X-bar&quot;</li>
+<li>Population: <span class="math">\(\mu\)</span> - Greek letter &quot;mu&quot;</li>
+</ul></li>
+</ul>
+</div>
+<div id="measures-of-central-tendency-3-1" class="slide section level1">
+<h1>Measures of Central Tendency 3</h1>
+<ul class="incremental">
+<li>Calculating the Mean
+<ul class="incremental">
+<li>Sample: <span class="math">\[\bar{X} = \frac{\sum X}{n} = \frac{X_{1} + X_{2} + ...}{n} \]</span></li>
+<li>Population: <span class="math">\[\mu = \frac{\sum X}{N} = \frac{X_{1} + X_{2} + ...}{N} \]</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="mean-calculations-1" class="slide section level1">
+<h1>Mean Calculations 1</h1>
+<p>2<br />3<br />4<br />4<br />5<br />7</p>
+</div>
+<div id="mean-comic" class="slide section level1">
+<h1>Mean Comic</h1>
+<div class="figure">
+<img src="farside.png" alt="Comic" />
+<p class="caption">Comic</p>
+</div>
+</div>
+<div id="measures-of-central-tendency-3-2" class="slide section level1">
+<h1>Measures of Central Tendency 3</h1>
+<ul class="incremental">
+<li>Calculating the Mean
+<ul class="incremental">
+<li>Categorized Data (Frequency Table): <span class="math">\[ \bar{X} = \frac{\sum f * X_{midpoint}}{\sum f} \]</span> where <span class="math">\(f\)</span> and <span class="math">\(X_{midpoint}\)</span> are the frequency and midpoint of each bin/class.</li>
+</ul></li>
+</ul>
+</div>
+<div id="mean-calculations-2" class="slide section level1">
+<h1>Mean Calculations 2</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Interval</th>
+<th align="left">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0 - 9</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">10 - 14</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">15 - 19</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left">20 - 24</td>
+<td align="left">15</td>
+</tr>
+<tr class="odd">
+<td align="left">25 - 29</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">30 - 34</td>
+<td align="left">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean-calculations-3" class="slide section level1">
+<h1>Mean Calculations 3</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Interval</th>
+<th align="left">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">$0-$10000</td>
+<td align="left">12%</td>
+</tr>
+<tr class="even">
+<td align="left">$10000-$20000</td>
+<td align="left">32%</td>
+</tr>
+<tr class="odd">
+<td align="left">$20000-$30000</td>
+<td align="left">27%</td>
+</tr>
+<tr class="even">
+<td align="left">$30000-$40000</td>
+<td align="left">15%</td>
+</tr>
+<tr class="odd">
+<td align="left">$40000-$50000</td>
+<td align="left">8%</td>
+</tr>
+<tr class="even">
+<td align="left">$50000 and up</td>
+<td align="left">6%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean-is-mathematically-tractable" class="slide section level1">
+<h1>Mean is Mathematically Tractable</h1>
+<ul class="incremental">
+<li>This is fancy math lingo meaning that the mean is able to be manipulated algebraicly.</li>
+<li>Proof:</li>
+</ul>
+<p><span class="math">\[\frac{\sum X}{n} = \bar{X}\]</span> <span class="math">\[n \frac{\sum X}{n} = n \bar{X}\]</span> <span class="math">\[\sum X = n \bar{X}\]</span></p>
+</div>
+<div id="weighted-mean" class="slide section level1">
+<h1>Weighted Mean</h1>
+<ul class="incremental">
+<li>Used when groups are different sizes.</li>
+</ul>
+<p><span class="math">\[ \bar{X} = \frac{n_{a}\bar{X}_{a} + n_{b}\bar{X}_{b} + n_{c}\bar{X}_{c}}{n_{a} + n_{b} + n_{c}} \]</span></p>
+<ul class="incremental">
+<li>More generally:</li>
+</ul>
+<p><span class="math">\[ \bar{X} = \frac{\sum n_{j} \bar{X}_{j}}{\sum n_{j}} \]</span></p>
+</div>
+<div id="weighted-mean-example" class="slide section level1">
+<h1>Weighted Mean Example</h1>
+<p>Boys: 5, 8, 3, 7, 7 <br /> Girls: 10, 12, 16, 8, 4, 8</p>
+</div>
+<div id="weighted-mean-example-2" class="slide section level1">
+<h1>Weighted Mean Example 2</h1>
+<p>District 1: n = 3347; Mean = 78.4<br />District 2: n = 200; Mean = 52.8<br />District 3: n = 334; Mean = 55.2</p>
+</div>
+<div id="puzzler---simpsons-paradox" class="slide section level1">
+<h1>Puzzler - Simpson's Paradox</h1>
+<ul class="incremental">
+<li>The boys at Elm have a higher mean than the boys at Oak.</li>
+<li>The girls at Elm have a higher mean than the girls at Oak.</li>
+<li>The combined mean at Elm is lower than the combined mean at Oak.</li>
+</ul>
+</div>
+<div id="choosing-a-statistic" class="slide section level1">
+<h1>Choosing a Statistic</h1>
+<ul class="incremental">
+<li>What statistic would you choose if the distribution was normally distributed? Why?</li>
+<li>What if the distribution was skewed?</li>
+</ul>
+</div>
+<div id="what-to-use-for-skewed-distributions" class="slide section level1">
+<h1>What to use for skewed distributions?</h1>
+<p>Suppose we have the following distribution:</p>
+<div class="figure">
+<img src="figure/chisq-1.png" alt="plot of chunk chisq" />
+<p class="caption">plot of chunk chisq</p>
+</div>
+<div class="figure">
+<img src="figure/chisqmode-1.png" alt="plot of chunk chisqmode" />
+<p class="caption">plot of chunk chisqmode</p>
+</div>
+<div class="figure">
+<img src="figure/chisqmed-1.png" alt="plot of chunk chisqmed" />
+<p class="caption">plot of chunk chisqmed</p>
+</div>
+<div class="figure">
+<img src="figure/chisqmean-1.png" alt="plot of chunk chisqmean" />
+<p class="caption">plot of chunk chisqmean</p>
+</div>
+</div>
+<div id="strengthsweaknesses-of-the-mode" class="slide section level1">
+<h1>Strengths/Weaknesses of the Mode</h1>
+<ul class="incremental">
+<li>Strengths:
+<ul class="incremental">
+<li>The mode is simple, easy to compute, and can be used with qualitative variables.</li>
+</ul></li>
+<li>Weaknesses:
+<ul class="incremental">
+<li>However, it can change easily or be undefined for multimodal data.
+<ul class="incremental">
+<li>This is often called sampling stability.</li>
+</ul></li>
+<li>Not mathematically tractable.</li>
+</ul></li>
+</ul>
+</div>
+<div id="strengthsweaknesses-of-the-median" class="slide section level1">
+<h1>Strengths/Weaknesses of the Median</h1>
+<ul class="incremental">
+<li>Strengths:
+<ul class="incremental">
+<li>The median is the most typical number in the distribution.
+<ul class="incremental">
+<li>The median minimizes <span class="math"> \( |X - Mdn| \leq |X - c|\) </span> where c is any other value.</li>
+<li>As such, the median is commonly used with income or prices.</li>
+</ul></li>
+<li>The median is not affected by outliers
+<ul class="incremental">
+<li>This is due to the median is not based on the value of the scores, but rather the ranking of scores.</li>
+<li>The median would only be affected if the ranking of scores would change.</li>
+</ul></li>
+<li>Easy to compute and computed for open-ended groups.</li>
+<li>Is the 50th percentile</li>
+</ul></li>
+<li>Weaknesses:
+<ul class="incremental">
+<li>Poor sampling stability compared to the mean (better than the mode).</li>
+<li>Not as mathematically tractable compared to the mean.</li>
+<li>Does not use all data in the calculation.</li>
+<li>Can not be calculated for qualitative data</li>
+</ul></li>
+</ul>
+</div>
+<div id="strengthsweaknesses-of-the-mean" class="slide section level1">
+<h1>Strengths/Weaknesses of the Mean</h1>
+<ul class="incremental">
+<li>Strengths:
+<ul class="incremental">
+<li>Mathematically tractable
+<ul class="incremental">
+<li>Sum of deviation scores equals 0 (<span class="math">\(\sum(X - \bar{X}) = 0\)</span>)</li>
+<li>Minimizes the sum of squared deviations scores (<span class="math">\(\sum(X - \bar{X})^2\)</span>)</li>
+</ul></li>
+<li>The mathematic properties make the mean the balance point of the distribution.</li>
+<li>Takes into account value of all numbers in the distribution.</li>
+<li>Used in many advanced statistical techniques.</li>
+</ul></li>
+<li>Weaknesses:
+<ul class="incremental">
+<li>Sensitive to outliers</li>
+<li>Unable to calculate for open-ended groups.</li>
+<li>Can not be calculated for qualitative data</li>
+</ul></li>
+</ul>
+</div>
+</body>
+</html>
