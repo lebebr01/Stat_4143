@@ -1,0 +1,104 @@
+% ESRM 5393: Variability
+% Brandon LeBeau
+
+# Properties of the mean
+- Deviations sum to 0: Deviations are defined as $X-\bar{X}$.
+- Sum of squared deviations is least for the mean (least squares property)
+- Graphically, mean is a balancing point.
+- In skewed distributions, mean is in the direction of the skew.
+
+```{r chisq, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+set.seed(200)
+temp <- data.frame(dat = rchisq(100, 5))
+library(ggplot2)
+
+d <- ggplot(temp, aes(x = dat)) + theme_bw(base_size = 24) + geom_density()
+d + xlab("Scores")+ geom_vline(xintercept = 4.5, lwd = 1.5) + geom_vline(xintercept = median(temp$dat), color = "blue", lty = 2, lwd = 1.5) + geom_vline(xintercept = mean(temp$dat), color = "red", lty = 3, lwd = 1.5)+ 
+  annotate("text", x = 12, y = .14, label = "Mode - 4.5", color = "black", size = 9) +
+  annotate("text", x = 12, y = .125, label = "Median - 4.97", color = "blue", size = 9) +
+  annotate("text", x = 12, y = .11, label = "Mean - 5.76", color = "red", size = 9)
+```
+
+# Properties Example
+
+X  
+3  
+4  
+3  
+8  
+12  
+5  
+6  
+4  
+4  
+
+# Variation
+- Variability - how spread out scores are in a distribution
+- Central Question of Research: Why are there differences on outcomes?
+
+- Range: 
+    - Upper limit of highest score (H) minus low limit of lowest score (L)
+    - If scores are continuous and rounded to the nearest point: $Range = H - L + 1$
+    - If scores are discrete: $Range = H - L$
+    - Using range as a verb: "ACT scores ranged from 17 to 24 for the group"
+
+- Is the range of the sample equal to the range of the population?
+- Is the mean of a sample equal to the mean of the population?
+
+# Expected Value
+- Expected value of a statistic is the mean over all possible samples; a long run average.
+    - $E(sample mean) ______  population mean (\mu)$
+    - $E(sample range) _______ population range$
+- Range is very crude as it only takes into account two scores in our distribution.
+
+# Standard Deviation
+- Start with a deviation score: $X - \mu$
+- The mean of the deviation scores is always zero:  $$ \frac{\sum(X - \mu)}{N} = 0 $$
+- The mean of the absolute value of the of the dev. scores is the **Mean Absolute Deviation**: $$ \frac{\sum |X - \mu|}{N} $$
+
+
+# Example
+
+X  
+2  
+4  
+4  
+5  
+5  
+7  
+8  
+
+# Standard Deviation 2
+- The mean of the square of the deviation scores is the **Variance**:  $$ \sigma^2 = \frac{\sum (X - \mu)^2}{N} $$
+- Sum of Squares (SS) = $\sum(X-\mu)^2$
+- Mean Squares (MS) = variance or $\sigma^2$
+- The square root of the variance is the **Standard Deviation**:  $$ \sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum (X - \mu)^2}{N}} $$
+- All formulas on this slide are for populations, not samples!
+
+# Example 2
+
+Y  
+7  
+1  
+10  
+7  
+16  
+19  
+10  
+
+
+
+# Standard Deviation 3
+- Problem: 
+    - If we use the formula for the population on the sample, the variance for the sample is slightly too small - samples are closer to the sample mean than to the population mean.  Recall that sum of squared deviations was smallest for the sample mean.
+- Solution:
+    - Instead of dividing by $n$, divide by $n-1$.
+    
+# Standard Deviations for Samples
+- Variance: $$ s^2 = \frac{\sum (X - \bar{X})^2}{n - 1} $$
+- Standard Deviation: $$ s = \sqrt{s^2} = \sqrt{\frac{\sum (X - \bar{X})^2}{n - 1}} $$
+
+
+# Standard Deviations for Samples 2
+- By using $n - 1$ instead of $n$, the expected value of the sample variance is the population variance.  More formally: $$ E(s^2) = \sigma^2 $$
+- In words, the long run average from every possible sample from the population would now equal the population variance.
