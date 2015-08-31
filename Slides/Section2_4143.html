@@ -240,17 +240,18 @@ Brandon LeBeau
 <div id="relative-frequency-by-groups" class="slide section level1">
 <h1>Relative Frequency by Groups</h1>
 <pre><code>##     
-##       PG   R
-##   1    0   1
-##   2    0   1
-##   3    1   0
-##   5    3  10
-##   6   23 111
-##   7    7  40
-##   8    5  21
-##   9    3   8
-##   10   0   2
-##   11   0   1</code></pre>
+##                PG   R
+##   [10, 25)      0   1
+##   [25, 40)      0   1
+##   [40, 55)      0   0
+##   [55, 70)      1   0
+##   [70, 85)      3  10
+##   [85, 100)    23 111
+##   [100, 115)    7  40
+##   [115, 130)    5  21
+##   [130, 145)    3   8
+##   [145, 160)    0   2
+##   [160, 175)    0   1</code></pre>
 </div>
 <div id="cumulative-frequency-distributions" class="slide section level1">
 <h1>Cumulative Frequency Distributions</h1>
@@ -498,11 +499,11 @@ Brandon LeBeau
 <ul class="incremental">
 <li>Percentiles:
 <ul class="incremental">
-<li>\( P_{\%} = X_{ll} + i () \)</li>
+<li><span class="math">\[ P_{\%} = X_{ll} + i \left(\frac{n (\frac{P_{R}}{100}) - \sum f_{b}}{f_{i}}\right) \] </span></li>
 </ul></li>
 <li>Percentile Ranks
 <ul class="incremental">
-<li>\( P_{R}(X) = (f_{b} + )\) </li> 
+<li><span class="math">\[ P_{R}(X) = \left(\sum f_{b} + \frac{f_{i}(P_{\%} - X_{ll})}{i}\right)\] </span></li> 
 where:
 <li>X = Score of Interest</li>
 <li>n = Total Sample size</li>
