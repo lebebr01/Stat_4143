@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 4</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 4</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+    <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="properties-of-the-mean" class="slide section level1">
+<h1>Properties of the mean</h1>
+<ul class="incremental">
+<li>Deviations sum to 0: Deviations are defined as <span class="math">\(X-\bar{X}\)</span>.</li>
+<li>Sum of squared deviations is least for the mean (least squares property)</li>
+<li>Graphically, mean is a balancing point.</li>
+<li>In skewed distributions, mean is in the direction of the skew.</li>
+</ul>
+<div class="figure">
+<img src="figure/chisq-1.png" alt="plot of chunk chisq" />
+<p class="caption">plot of chunk chisq</p>
+</div>
+</div>
+<div id="variation-example" class="slide section level1">
+<h1>Variation Example</h1>
+<div class="figure">
+<img src="Dispersion.png" alt="Variation" />
+<p class="caption">Variation</p>
+</div>
+</div>
+<div id="variation" class="slide section level1">
+<h1>Variation</h1>
+<ul class="incremental">
+<li>Variability - how spread out scores are in a distribution</li>
+<li><p>Central Question of Research: Why are there differences on outcomes?</p></li>
+<li>Range:
+<ul class="incremental">
+<li>Upper limit of highest score (H) minus low limit of lowest score (L)</li>
+<li>If scores are continuous and rounded to the nearest point: <span class="math">\(Range = H - L + 1\)</span></li>
+<li>If scores are discrete: <span class="math">\(Range = H - L\)</span></li>
+<li>Using range as a verb: &quot;ACT scores ranged from 17 to 24 for the group&quot;</li>
+</ul></li>
+<li>Interquartile Range:
+<ul class="incremental">
+<li><span class="math">\(IQR = Q_{3} - Q_{1}\)</span></li>
+</ul></li>
+<li>Is the range of the sample equal to the range of the population?</li>
+<li><p>Is the mean of a sample equal to the mean of the population?</p></li>
+</ul>
+</div>
+<div id="expected-value" class="slide section level1">
+<h1>Expected Value</h1>
+<ul class="incremental">
+<li>Expected value of a statistic is the mean over all possible samples; a long run average.
+<ul class="incremental">
+<li><span class="math">\(E(sample mean) _______ population mean (\mu)\)</span></li>
+<li><span class="math">\(E(sample range) _______ population range\)</span></li>
+</ul></li>
+<li>Range is very crude as it only takes into account two scores in our distribution.</li>
+</ul>
+</div>
+<div id="semi-interquartile-range" class="slide section level1">
+<h1>Semi-Interquartile Range</h1>
+<p><span class="math">\[ Q = \frac{Q_{3} - Q_{1}}{2} \]</span> <span class="math">\[ Q = \frac{(Q_{3} - Mdn) + (Mdn - Q_{1})}{2} \]</span></p>
+<ul class="incremental">
+<li>Q is the average of the distances from the median to <span class="math">\(Q_{1}\)</span> and <span class="math">\(Q_{3}\)</span>.</li>
+</ul>
+</div>
+<div id="semi-iqr-example" class="slide section level1">
+<h1>Semi IQR Example</h1>
+<div class="figure">
+<img src="SemiIQR.png" alt="Semi IQR" />
+<p class="caption">Semi IQR</p>
+</div>
+<ul class="incremental">
+<li>For non-symmetrical distributions, the semi IQR is interpreted as <em>roughly</em> half of the scores deviate by more than 5 units from the median and <em>roughly</em> half of the scores deviate by less than 5 units.</li>
+<li>For symmetrical distributions change <em>roughly</em> above to <em>exactly</em>.</li>
+</ul>
+</div>
+<div id="variability-measures-with-the-median" class="slide section level1">
+<h1>Variability Measures with the Median</h1>
+<ul class="incremental">
+<li>Average deviation from the median: <span class="math">\[ \frac{\sum (X_{i} - Mdn)}{n} \]</span>
+<ul class="incremental">
+<li>Positive differences will tend to offset negative differences.</li>
+<li>Half of the scores are above, half are below.</li>
+</ul></li>
+<li>Average absolute deviation from the median: <span class="math">\[ \frac{\sum |X_{i} - Mdn|}{n} \]</span>
+<ul class="incremental">
+<li>Uses all scores in the distribution</li>
+<li>Influenced by extreme scores</li>
+<li>Not too bad as an index of variability</li>
+<li>One problem is that absolute values are difficult mathematically</li>
+</ul></li>
+</ul>
+</div>
+<div id="variability-measures-with-the-mean" class="slide section level1">
+<h1>Variability Measures with the Mean</h1>
+<ul class="incremental">
+<li>Average deviation from the mean: <span class="math">\[ \frac{\sum (X_{i} - \bar{X})}{n} \]</span>
+<ul class="incremental">
+<li>No Good, why?</li>
+</ul></li>
+<li>Average absolute deviation from the mean: <span class="math">\[ \frac{\sum |X_{i} - \bar{X}|}{n} \]</span>
+<ul class="incremental">
+<li>Not too bad as an index of variability</li>
+<li>One problem is that absolute values are difficult mathematically</li>
+<li>For more advanced statistical techniques, this will become a problem.</li>
+</ul></li>
+<li>Average squared deviations from the mean: <span class="math">\[ \frac{\sum (X_{i} - \bar{X})^2}{n} \]</span>
+<ul class="incremental">
+<li>This is formally called the variance</li>
+<li>This is a very important statistical measure and the most used measure of variability.</li>
+</ul></li>
+</ul>
+</div>
+<div id="variance" class="slide section level1">
+<h1>Variance</h1>
+<ul class="incremental">
+<li>Sample Variance:<br /><span class="math">\[ s^2 = \frac{\sum (X - \bar{X})^2}{n} \]</span></li>
+<li>Population Variance:<br /><span class="math">\[ \sigma^2 = \frac{\sum (X - \mu)^2}{N} \]</span>
+<ul class="incremental">
+<li>Sum of Squares (SS) = <span class="math">\(\sum(X-\mu)^2\)</span></li>
+<li>Mean Squares (MS) = variance or <span class="math">\(\sigma^2\)</span></li>
+</ul></li>
+<li>Interpreted as the average <strong>squared</strong> distance from the mean.</li>
+<li>Too bad the variance is interpreted in terms of squared units.</li>
+</ul>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<p>X<br />3 4 5 6 7</p>
+</div>
+<div id="standard-deviation" class="slide section level1">
+<h1>Standard Deviation</h1>
+<ul class="incremental">
+<li>To convert away from squared units, simply take the square root of the variance.</li>
+<li>Sample SD: <span class="math">\[ s^2 = \sqrt{s^2} = \sqrt{\frac{\sum (X - \bar{X})^2}{n}} \]</span></li>
+<li>Population SD: <span class="math">\[ \sigma^2 = \sqrt{\sigma^2} = \sqrt{\frac{\sum (X - \mu)^2}{n}} \]</span></li>
+<li>The SD is interpreted as the average deviation score from the mean.</li>
+</ul>
+</div>
+<div id="standard-deviation-properties" class="slide section level1">
+<h1>Standard Deviation Properties</h1>
+<p><img src="sd_norm.png" alt="1sd" /> <img src="sd_norm2.png" alt="2sd" /></p>
+</div>
+<div id="computational-formulas" class="slide section level1">
+<h1>Computational Formulas</h1>
+<ul class="incremental">
+<li>Variance: <span class="math">\[ s^2 = \frac{\sum X_{i}^{2}}{n} - \left(\frac{\sum X_{i}}{n}\right)^2 = \frac{\sum X_{i}^{2}}{n} - \bar{X}^2 \]</span></li>
+<li>SD: <span class="math">\[ s = \sqrt{\frac{\sum X_{i}^{2}}{n} - \left(\frac{\sum X_{i}}{n}\right)^2} = \sqrt{\frac{\sum X_{i}^{2}}{n} - \bar{X}^2} \]</span></li>
+</ul>
+</div>
+<div id="calculate-sd-for-grouped-freq.-dist." class="slide section level1">
+<h1>Calculate SD for Grouped Freq. Dist.</h1>
+<p><span class="math">\[ s = \sqrt{\frac{\sum f_{j}X_{j}^{2}}{n} - \left(\frac{\sum f_{j}X_{j}}{n}\right)^2} = \sqrt{\frac{\sum f_{j}X_{j}^{2}}{n} - \bar{X}^2} \]</span> 
+<ul>
+<li><span class="math">\(f_{j}\)</span> is the frequency of interval <span class="math">\(j\)</span>. </li>
+<li><span class="math">\(X_{j}\)</span> is the midpoint of interval <span class="math">\(j\)</span>.</li>
+</ul>
+</p>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X</th>
+<th align="right"><span class="math">\(f_{j}\)</span></th>
+<th align="right"><span class="math">\(X_{j}\)</span></th>
+<th align="right"><span class="math">\(f_{j}*X_{j}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1 - 4</td>
+<td align="right">3</td>
+<td align="right">2.5</td>
+<td align="right">7.5</td>
+</tr>
+<tr class="even">
+<td align="right">5 - 8</td>
+<td align="right">4</td>
+<td align="right">6.5</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="right">9 - 12</td>
+<td align="right">8</td>
+<td align="right">10.5</td>
+<td align="right">84</td>
+</tr>
+<tr class="even">
+<td align="right">13 - 16</td>
+<td align="right">15</td>
+<td align="right">14.5</td>
+<td align="right">217.5</td>
+</tr>
+<tr class="odd">
+<td align="right">17 - 20</td>
+<td align="right">28</td>
+<td align="right">18.5</td>
+<td align="right">518</td>
+</tr>
+<tr class="even">
+<td align="right">21 - 24</td>
+<td align="right">12</td>
+<td align="right">22.5</td>
+<td align="right">270</td>
+</tr>
+<tr class="odd">
+<td align="right">25 - 28</td>
+<td align="right">14</td>
+<td align="right">26.5</td>
+<td align="right">371</td>
+</tr>
+<tr class="even">
+<td align="right">29 - 32</td>
+<td align="right">10</td>
+<td align="right">30.5</td>
+<td align="right">305</td>
+</tr>
+<tr class="odd">
+<td align="right">33 - 36</td>
+<td align="right">6</td>
+<td align="right">34.5</td>
+<td align="right">207</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="relationship-between-q-and-s" class="slide section level1">
+<h1>Relationship between Q and s</h1>
+<div class="figure">
+<img src="QvsS.png" alt="Q vs S" />
+<p class="caption">Q vs S</p>
+</div>
+</div>
+<div id="q-s-with-skewed-distributions" class="slide section level1">
+<h1>Q &amp; s with skewed distributions</h1>
+<div class="figure">
+<img src="skew_sd.png" alt="Q vs S" />
+<p class="caption">Q vs S</p>
+</div>
+</div>
+<div id="football-coaches-salary" class="slide section level1">
+<h1>Income Example</h1>
+<div class="figure">
+<img src="figure/salary-1.png" alt="plot of chunk salary" />
+<p class="caption">plot of chunk salary</p>
+</div>
+</div>
+<div id="properties-of-variability-measures" class="slide section level1">
+<h1>Properties of Variability Measures</h1>
+<ul class="incremental">
+<li>Standard Deviation (Variance):
+<ul class="incremental">
+<li>A distance measure</li>
+<li>Preferred measure for symmetric quantitative variables</li>
+<li>Commonly reported with the mean</li>
+<li>Best sample stability</li>
+<li>Widely used in advanced statistical procedures - mathematically tractable</li>
+<li>Every score affects value</li>
+<li>Fairly sensitive to extreme scores</li>
+<li>Not appropriate for qualitative variables</li>
+</ul></li>
+<li>Semi-interquartile Range:
+<ul class="incremental">
+<li>A distance measure</li>
+<li>Commonly reported with the median</li>
+<li>Sensitive to the number and not to the value of scores above or below Q3 and Q1 respectively</li>
+<li>Appropriate for open-ended distributions</li>
+<li>More sample fluctuation than SD</li>
+<li>Rarely used in advanced statistical procedures - less mathematically tractable</li>
+</ul></li>
+<li>Range:
+<ul class="incremental">
+<li>A distance measure</li>
+<li>Simplest measure for quantitative variables</li>
+<li>Highly influenced by sample fluctuations</li>
+<li>Dependent on sample size</li>
+<li>rarely used in advanced statistical procedures - less mathematically tractable</li>
+</ul></li>
+</ul>
+</div>
+<div id="measures-of-variability-uses" class="slide section level1">
+<h1>Measures of Variability Uses</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Describe Distributions</li>
+<li>Compare Distributions</li>
+<li>Study the accuracy of certain measuring procedures
+<ul class="incremental">
+<li>Consistency of raters rating figure skaters.</li>
+<li>Estimate the population mean IQ of children aged 3 to 15.</li>
+</ul></li>
+</ol>
+</div>
+<div id="describing-distributions" class="slide section level1">
+<h1>Describing Distributions</h1>
+<ul class="incremental">
+<li>Used in conjunction with a measure of central tendency, variability helps us understand a distribution of scores.
+<ul class="incremental">
+<li>Examples:
+<ul class="incremental">
+<li>Consider a unimodal symmetrical distribution:</li>
+<li><span class="math">\(Mdn = 50\)</span>, <span class="math">\(Q = 10\)</span>.</li>
+<li><span class="math">\(Mean = 38\)</span>, <span class="math">\(SD = 6\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="comparing-distributions" class="slide section level1">
+<h1>Comparing Distributions</h1>
+<ul class="incremental">
+<li>If two distributions have the same score scale, then a direct comparison of variability is possible.</li>
+<li>Cannot compare when scales are different:
+<ul class="incremental">
+<li>Example:
+<ul class="incremental">
+<li>SAT: ranges from 200 to 800, <span class="math">\(SD_{SAT} = 100\)</span></li>
+<li>ACT: ranges from 1 to 36, <span class="math">\(SD_{ACT} = 5\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="accuracy-of-measuring-procedures" class="slide section level1">
+<h1>Accuracy of Measuring Procedures</h1>
+<ul class="incremental">
+<li>Roughly 60 million children in the US. aged 3 to 15.</li>
+<li>Not practical to measure the IQ of every child</li>
+<li>Settle for taking a sample of 1000 children and measure the IQ of each</li>
+<li>Use the sample mean as an estimate of the population mean</li>
+<li>How good is the estimate?
+<ul class="incremental">
+<li>More complicated because the population mean is unknown</li>
+</ul></li>
+</ul>
+</div>
+<div id="population" class="slide section level1">
+<h1>Population</h1>
+<div class="figure">
+<img src="popSDsize.png" alt="Popsamp" />
+<p class="caption">Popsamp</p>
+</div>
+</div>
+<div id="standard-deviation-3" class="slide section level1">
+<h1>Standard Deviation 3</h1>
+<ul class="incremental">
+<li>Problem:
+<ul class="incremental">
+<li>If we use the formula for the population on the sample, the variance for the sample is slightly too small - samples are closer to the sample mean than to the population mean. Recall that sum of squared deviations was smallest for the sample mean.</li>
+</ul></li>
+<li>Solution:
+<ul class="incremental">
+<li>Instead of dividing by <span class="math">\(n\)</span>, divide by <span class="math">\(n-1\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="standard-deviations-for-samples" class="slide section level1">
+<h1>Standard Deviations for Samples</h1>
+<ul class="incremental">
+<li>Variance: <span class="math">\[ s^2 = \frac{\sum (X - \bar{X})^2}{n - 1} \]</span></li>
+<li>Standard Deviation: <span class="math">\[ s = \sqrt{s^2} = \sqrt{\frac{\sum (X - \bar{X})^2}{n - 1}} \]</span></li>
+</ul>
+</div>
+<div id="standard-deviations-for-samples-2" class="slide section level1">
+<h1>Standard Deviations for Samples 2</h1>
+<ul class="incremental">
+<li>By using <span class="math">\(n - 1\)</span> instead of <span class="math">\(n\)</span>, the expected value of the sample variance is the population variance. More formally: <span class="math">\[ E(s^2) = \sigma^2 \]</span></li>
+<li>In words, the long run average from every possible sample from the population would now equal the population variance.</li>
+</ul>
+</div>
+<div id="index-of-dispersion" class="slide section level1">
+<h1>Index of Dispersion</h1>
+<p><span class="math">\[ D = \frac{c\left( n^2 - \sum n_{j}^{2} \right)}{n^2 (c - 1)} \]</span></p>
+<ul class="incremental">
+<li>c is the number of categories</li>
+<li>n is the total number of observations</li>
+<li><span class="math">\(n_{j}\)</span> is the number of observations in category <span class="math">\(j\)</span></li>
+</ul>
+</div>
+<div id="index-of-dispersion-example" class="slide section level1">
+<h1>Index of Dispersion Example</h1>
+<div class="figure">
+<img src="indexdispersion.png" alt="Dispersion" />
+<p class="caption">Dispersion</p>
+</div>
+</div>
+<div id="skewness" class="slide section level1">
+<h1>Skewness</h1>
+<p><span class="math">\[Sk = \frac{\sum \left(X_{i} - \bar{X}\right)^3}{n s^3_{X}} \]</span> 
+<ul>
+<li><span class="math">\(Sk = 0\)</span>, symmetrical </li>
+<li><span class="math">\(Sk &gt; 0\)</span>, positively skewed </li>
+<li><span class="math">\(Sk &lt; 0\)</span>, negatively skewed</li>
+</ul>
+</p>
+</div>
+<div id="kurtosis" class="slide section level1">
+<h1>Kurtosis</h1>
+<p><span class="math">\[Kur = \frac{\sum \left(X_{i} - \bar{X}\right)^4}{n s^4_{X}} - 3 \]</span> 
+<ul>
+<li><span class="math">\(Kur = 0\)</span>, mesokurtic</li> 
+<li><span class="math">\(Kur &gt; 0\)</span>, leptokurtic</li> 
+<li><span class="math">\(Kur &lt; 0\)</span>, platykurtic</li>
+</ul>
+</p>
+</div>
+<div id="distribution-differences" class="slide section level1">
+<h1>Distribution Differences</h1>
+<div class="figure">
+<img src="distributiondiff.png" alt="Dist Diff" />
+<p class="caption">Dist Diff</p>
+</div>
+</div>
+<div id="boxplot" class="slide section level1">
+<h1>Boxplot</h1>
+<ul class="incremental">
+<li>These are sometimes called a box and whisker plot</li>
+</ul>
+<div class="figure">
+<img src="figure/boxplot-1.png" alt="plot of chunk boxplot" />
+<p class="caption">plot of chunk boxplot</p>
+</div>
+</div>
+<div id="boxplots-by-group" class="slide section level1">
+<h1>Boxplots by group</h1>
+
+<div class="figure">
+<img src="figure/boxgroup-1.png" alt="plot of chunk boxgroup" />
+<p class="caption">plot of chunk boxgroup</p>
+</div>
+</div>
+</body>
+</html>

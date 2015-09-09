@@ -1,4 +1,4 @@
-% PSQF 4143: Section 4
+% ESRM 5393: Variability
 % Brandon LeBeau
 
 # Properties of the mean
@@ -7,17 +7,7 @@
 - Graphically, mean is a balancing point.
 - In skewed distributions, mean is in the direction of the skew.
 
-```{r chisq, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-set.seed(200)
-temp <- data.frame(dat = rchisq(100, 5))
-library(ggplot2)
-
-d <- ggplot(temp, aes(x = dat)) + theme_bw(base_size = 24) + geom_density()
-d + xlab("Scores")+ geom_vline(xintercept = 4.5, lwd = 1.5) + geom_vline(xintercept = median(temp$dat), color = "blue", lty = 2, lwd = 1.5) + geom_vline(xintercept = mean(temp$dat), color = "red", lty = 3, lwd = 1.5)+ 
-  annotate("text", x = 12, y = .14, label = "Mode - 4.5", color = "black", size = 9) +
-  annotate("text", x = 12, y = .125, label = "Median - 4.97", color = "blue", size = 9) +
-  annotate("text", x = 12, y = .11, label = "Mean - 5.76", color = "red", size = 9)
-```
+![plot of chunk chisq](figure/chisq-1.png) 
 
 # Variation Example
 ![Variation](Dispersion.png)
@@ -144,7 +134,8 @@ $$ s = \sqrt{\frac{\sum f_{j}X_{j}^{2}}{n} - \left(\frac{\sum f_{j}X_{j}}{n}\rig
 ![Q vs S](skew_sd.png)
 
 # Football Coaches Salary
-```{r salary}
+
+```r
 library(SemiPar)
 data(age.income)
 age.income$income <- exp(age.income$log.income)
@@ -152,6 +143,8 @@ h <- ggplot(age.income, aes(x = income)) + theme_bw(base_size = 16)
 h + geom_histogram(color = "grey", binwidth = 150000) + 
   scale_x_continuous(breaks = seq(0, 3500000, 600000))
 ```
+
+![plot of chunk salary](figure/salary-1.png) 
 
 # Properties of Variability Measures
 - Standard Deviation (Variance):
@@ -252,7 +245,8 @@ $$Kur = \frac{\sum \left(X_{i} - \bar{X}\right)^4}{n s^4_{X}} - 3 $$
 # Boxplot
 - These are sometimes called a box and whisker plot
 
-```{r boxplot}
+
+```r
 library(ggplot2)
 library(plyr)
 library(dplyr)
@@ -265,11 +259,24 @@ b + geom_boxplot() + theme_bw(base_size = 16) +
   scale_y_continuous(breaks = seq(0, 600, 50))
 ```
 
+![plot of chunk boxplot](figure/boxplot-1.png) 
+
 # Boxplots by group
-```{r boxgroup}
+
+```r
 b <- ggplot(movies, aes(x = year, y = budget, group = round_any(year, 10, floor)))
 b + geom_boxplot() + theme_bw(base_size = 16)
 ```
+
+```
+## Warning: Removed 53573 rows containing non-finite values (stat_boxplot).
+```
+
+```
+## Warning: position_dodge requires constant width: output may be incorrect
+```
+
+![plot of chunk boxgroup](figure/boxgroup-1.png) 
 
 # Comparing Distributions
 ![Comparing Distributions](distcompare.png)
