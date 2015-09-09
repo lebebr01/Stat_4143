@@ -1,0 +1,77 @@
+% PSQF 4143: Section 2 Supplemental
+% Brandon LeBeau
+
+```{r opts, echo = FALSE}
+opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
+```
+# Frequency Polygons
+- Similar to a histogram, but the frequency are plotted above the midpoint of each interval.
+- The midpoint is the middle of the interval taking into account the real limits.
+     - $mid = X_{ll} + \frac{(X_{ul} - X_{ll})}{2}$
+
+```{r summarize}
+# Function to wrap printing.
+wrap_print <- function(table, num_row = NULL, num_col = 2) {
+  if(is.null(num_row)) {
+    num_row <- nrow(table)/2
+  }
+  ngroups <- nrow(table)/num_row
+  
+  tmp <- lapply(1:ngroups, function(xx) 
+    table[((xx-1)*num_row+1):((xx-1)*num_row + num_row), ])
+  tmp <- do.call("cbind", tmp)
+  return(tmp)
+}
+
+library(ggplot2)
+library(dplyr)
+title_movie <- c('Mean Girls', 'Notebook, The', 'Troy',
+                 'Incredibles, The', 
+                 'Harry Potter and the Prisoner of Azkaban',
+                 'Napoleon Dynamite', 
+                 'Eternal Sunshine of the Spotless Mind',
+                 'Crash', '13 Going On 30', 
+                 'Girl Next Door, The', 
+                 'Dodgeball: A True Underdog Story',
+                 'Anchorman: The Legend of Ron Burgundy',
+                 'Million Dollar Baby',
+                 'Shaun of the Dead', 'White Chicks',
+                 'Spider-Man 2', 'Saw', 'Dawn of the Dead',
+                 'Van Helsing', 'Cinderella Story, A', 
+                 'King Arthur', 'Phantom of the Opera, The',
+                 '50 First Dates', 'Aviator, The', 
+                 'Kill Bill: Vol. 2', 'Punisher, The',
+                 'Village, The', 'Collateral',
+                 'Butterfly Effect, The', 'Hellboy')
+freq_tab <- movies %>%
+  filter(title %in% title_movie & year == 2004) %>%
+  select(title, length)
+breaks <- seq(80, 180, by = 10)
+tab <- data.frame(table(cut(freq_tab$length, breaks, right = FALSE)), 
+           midpoint = c(84.5, 94.5, 104.5, 114.5, 124.5, 134.5, 144.5, 154.5, 164.5, 174.5))
+tab
+```
+
+```{r freqpoly}
+h <- ggplot(freq_tab, aes(x = length)) + theme_bw(base_size = 16)
+h + geom_freqpoly(color = "red", binwidth = 10, size = 1) + 
+  scale_x_continuous(breaks = seq(70, 180, 10))
+
+h + geom_histogram(binwidth = 10, color = "grey30") + 
+  scale_x_continuous(breaks = seq(70, 180, 10)) + 
+  geom_freqpoly(color = "red", binwidth = 10, size = 1)
+
+qplot(price, data = diamonds, geom = "freqpoly", binwidth = 1000,
+  colour = color)
+```
+
+# Stem and Leaf
+- The leaf is the last digit of the number
+- The stem is everything except for the last digit.
+
+```{r stem}
+stem(freq_tab$length)
+```
+
+
+
