@@ -1,9 +1,7 @@
 % PSQF 4143: Section 5
 % Brandon LeBeau
 
-```{r opts, echo = FALSE}
-opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
-```
+
 
 # Tester
 - For the score distribution below, which of the following score changes yields the greatest change in percentile rank?
@@ -40,14 +38,7 @@ opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=
      - X: 3, 5, 7, 9, 11
      - Y: 35, 45, 55, 65, 75
      
-```{r ltplot}
-x <- c(3, 5, 7, 9, 11)
-y <- x*5 + 20
-dat <- data.frame(x, y)
-library(ggplot2)
-p <- ggplot(dat, aes(x = x, y = y)) + theme_bw(base_size = 16)
-p + geom_point(size = 5) + stat_smooth(method = "lm", se = FALSE)
-```
+![plot of chunk ltplot](figure/ltplot-1.png) 
 
 # Linear Transformations (cont.)
 - In general we can multiply by any value and add any value:
@@ -62,13 +53,7 @@ $$Y = X + a$$
 $$b = 1$$
 - a must be a real number
 
-```{r addconstant}
-dat <- data.frame(x = rnorm(1000, mean = 0, sd = 1))
-dat$y <- dat$x + 5
-d <- ggplot(dat, aes(x = x)) + theme_bw(base_size = 16)
-d + geom_density(size = 1) + 
-  geom_density(data = dat, aes(x = y), size = 1, color = "red", linetype = 2)
-```
+![plot of chunk addconstant](figure/addconstant-1.png) 
 
 # Add a constant: Data Example
 
@@ -99,13 +84,7 @@ $$Y = bX$$
 $$a = 0$$
 - b must be a real number
 
-```{r multiplyconstant}
-dat <- data.frame(x = rnorm(1000, mean = 4, sd = 1))
-dat$y <- dat$x * 5
-d <- ggplot(dat, aes(x = x)) + theme_bw(base_size = 16)
-d + geom_density(size = 1) + 
-  geom_density(data = dat, aes(x = y), size = 1, color = "red", linetype = 2)
-```
+![plot of chunk multiplyconstant](figure/multiplyconstant-1.png) 
 
 # Multiply a constant: Data Example
 
@@ -135,15 +114,7 @@ d + geom_density(size = 1) +
 $$Y = bX + a$$
 - a and b must be real numbers
 
-```{r multaddconstant}
-dat <- data.frame(x = rnorm(1000, mean = 4, sd = 1))
-dat$y <- dat$x * 5
-dat$z <- dat$y + 5
-d <- ggplot(dat, aes(x = x)) + theme_bw(base_size = 16)
-d + geom_density(size = 1) + 
-  geom_density(data = dat, aes(x = y), size = 1, color = "grey40", linetype = 2) + 
-  geom_density(data = dat, aes(x = z), size = 1, color = "red", linetype = 3)
-```
+![plot of chunk multaddconstant](figure/multaddconstant-1.png) 
 
 # Multiply a constant, add constant: Data Example
 

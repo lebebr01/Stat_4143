@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 5</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 5</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+      <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="tester" class="slide section level1">
+<h1>Tester</h1>
+<ul class="incremental">
+<li>For the score distribution below, which of the following score changes yields the greatest change in percentile rank?
+<ul class="incremental">
+<li>70 to 80</li>
+<li>80 to 90</li>
+<li>90 to 100</li>
+<li>The change is equal</li>
+<li>Cannot determine</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="pr_ques.png" alt="Dist" />
+<p class="caption">Dist</p>
+</div>
+</div>
+<div id="motivating-example" class="slide section level1">
+<h1>Motivating Example</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">Univ 1</th>
+<th align="center">Univ 2</th>
+<th align="center">Univ 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Score</td>
+<td align="center">60</td>
+<td align="center">60</td>
+<td align="center">60</td>
+</tr>
+<tr class="even">
+<td align="left">Mean</td>
+<td align="center">70</td>
+<td align="center">50</td>
+<td align="center">55</td>
+</tr>
+<tr class="odd">
+<td align="left">SD</td>
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Which score is more extreme?</li>
+<li>We can transform into <em>Standard Scores</em>.</li>
+</ul>
+</div>
+<div id="linear-transformations" class="slide section level1">
+<h1>Linear Transformations</h1>
+<ul class="incremental">
+<li>A linear transformation is an algebraic rule for changing scores in a distribution where the distance between scores are preserved.
+<ul class="incremental">
+<li>This means the shape of the distribution is unchanged.</li>
+</ul></li>
+<li>Example:
+<ul class="incremental">
+<li>Suppose we want to change scores by multiplying each score by 5 and adding 20</li>
+<li>Let X be the original score</li>
+<li>Then <span class="math">\(Y = X*5 + 20\)</span></li>
+<li>Y is then said to be a linear transformation of X</li>
+</ul></li>
+</ul>
+</div>
+<div id="linear-transformation-example" class="slide section level1">
+<h1>Linear Transformation Example</h1>
+<ul class="incremental">
+<li>Suppose we have the following scores:
+<ul class="incremental">
+<li>X: 3, 5, 7, 9, 11</li>
+<li>Y: 35, 45, 55, 65, 75</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="figure/ltplot-1.png" alt="plot of chunk ltplot" />
+<p class="caption">plot of chunk ltplot</p>
+</div>
+</div>
+<div id="linear-transformations-cont." class="slide section level1">
+<h1>Linear Transformations (cont.)</h1>
+<ul class="incremental">
+<li>In general we can multiply by any value and add any value:
+<ul class="incremental">
+<li><span class="math">\(Y = bX + a\)</span></li>
+<li>Where Y is transformed scores</li>
+<li>X is the original scores</li>
+<li>b is the multiplicative constant</li>
+<li>a is the additive constant</li>
+</ul></li>
+</ul>
+</div>
+<div id="add-a-constant-to-every-score" class="slide section level1">
+<h1>Add a constant to every score</h1>
+<p><span class="math">\[Y = X + a\]</span> <span class="math">\[b = 1\]</span> - a must be a real number</p>
+<div class="figure">
+<img src="figure/addconstant-1.png" alt="plot of chunk addconstant" />
+<p class="caption">plot of chunk addconstant</p>
+</div>
+</div>
+<div id="add-a-constant-data-example" class="slide section level1">
+<h1>Add a constant: Data Example</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">X</th>
+<th align="center"><span class="math">\(Y = X + 2\)</span></th>
+<th align="center"><span class="math">\(Y = X - 4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">4</td>
+<td align="center">6</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">5</td>
+<td align="center">7</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">6</td>
+<td align="center">8</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">7</td>
+<td align="center">9</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">8</td>
+<td align="center">10</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="left">Sum X</td>
+<td align="center">30</td>
+<td align="center">40</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum <span class="math">\(X^2\)</span></td>
+<td align="center">190</td>
+<td align="center">330</td>
+<td align="center">30</td>
+</tr>
+<tr class="even">
+<td align="left">mean</td>
+<td align="center">6</td>
+<td align="center">8</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="left">var</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="left">std dev</td>
+<td align="center">1.4</td>
+<td align="center">1.4</td>
+<td align="center">1.4</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Rule 1:
+<ul class="incremental">
+<li>If <span class="math">\(Y = X + a\)</span></li>
+<li>Then <span class="math">\(\bar{Y} = \bar{X} + a\)</span></li>
+</ul></li>
+<li>Rule 2:
+<ul class="incremental">
+<li>If <span class="math">\(Y = X + a\)</span></li>
+<li>Then <span class="math">\(s_{y}^2 = s_{x}^2\)</span></li>
+<li>and <span class="math">\(s_{y} = s_{x}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="multiply-every-score-by-a-constant" class="slide section level1">
+<h1>Multiply every score by a constant</h1>
+<p><span class="math">\[Y = bX\]</span> <span class="math">\[a = 0\]</span> - b must be a real number</p>
+<div class="figure">
+<img src="figure/multiplyconstant-1.png" alt="plot of chunk multiplyconstant" />
+<p class="caption">plot of chunk multiplyconstant</p>
+</div>
+</div>
+<div id="multiply-a-constant-data-example" class="slide section level1">
+<h1>Multiply a constant: Data Example</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">X</th>
+<th align="center"><span class="math">\(Y = 2X\)</span></th>
+<th align="center"><span class="math">\(Y = -4X\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">4</td>
+<td align="center">8</td>
+<td align="center">-16</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">5</td>
+<td align="center">10</td>
+<td align="center">-20</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">6</td>
+<td align="center">12</td>
+<td align="center">-24</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">7</td>
+<td align="center">14</td>
+<td align="center">-28</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">8</td>
+<td align="center">16</td>
+<td align="center">-32</td>
+</tr>
+<tr class="even">
+<td align="left">Sum X</td>
+<td align="center">30</td>
+<td align="center">60</td>
+<td align="center">-120</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum <span class="math">\(X^2\)</span></td>
+<td align="center">190</td>
+<td align="center">760</td>
+<td align="center">3040</td>
+</tr>
+<tr class="even">
+<td align="left">mean</td>
+<td align="center">6</td>
+<td align="center">12</td>
+<td align="center">-24</td>
+</tr>
+<tr class="odd">
+<td align="left">var</td>
+<td align="center">2</td>
+<td align="center">8</td>
+<td align="center">32</td>
+</tr>
+<tr class="even">
+<td align="left">std dev</td>
+<td align="center">1.4</td>
+<td align="center">2.8</td>
+<td align="center">5.6</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Rule 1:
+<ul class="incremental">
+<li>If <span class="math">\(Y = bX\)</span></li>
+<li>Then <span class="math">\(\bar{Y} = \bar{X} * b\)</span></li>
+</ul></li>
+<li>Rule 2:
+<ul class="incremental">
+<li>If <span class="math">\(Y = X + a\)</span></li>
+<li>Then <span class="math">\(s_{y}^2 = b^2s_{x}^2\)</span></li>
+<li>and <span class="math">\(s_{y} = |b|s_{x}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="multiply-by-a-constant-then-add-a-constant" class="slide section level1">
+<h1>Multiply by a constant, then add a constant</h1>
+<p><span class="math">\[Y = bX + a\]</span> - a and b must be real numbers</p>
+<div class="figure">
+<img src="figure/multaddconstant-1.png" alt="plot of chunk multaddconstant" />
+<p class="caption">plot of chunk multaddconstant</p>
+</div>
+</div>
+<div id="multiply-a-constant-add-constant-data-example" class="slide section level1">
+<h1>Multiply a constant, add constant: Data Example</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">X</th>
+<th align="center"><span class="math">\(Y = 2X - 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">4</td>
+<td align="center">6</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">5</td>
+<td align="center">8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">6</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">7</td>
+<td align="center">12</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">8</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="left">Sum X</td>
+<td align="center">30</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum <span class="math">\(X^2\)</span></td>
+<td align="center">190</td>
+<td align="center">540</td>
+</tr>
+<tr class="even">
+<td align="left">mean</td>
+<td align="center">6</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="left">var</td>
+<td align="center">2</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="left">std dev</td>
+<td align="center">1.4</td>
+<td align="center">2.8</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Rule 1:
+<ul class="incremental">
+<li>If <span class="math">\(Y = bX + a\)</span></li>
+<li>Then <span class="math">\(\bar{Y} = \bar{X} * b + a\)</span></li>
+<li>and <span class="math">\(s_{y}^2 = b^2s_{x}^2\)</span></li>
+<li>and <span class="math">\(s_{y} = |b|s_{x}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>Suppose the mean score on an attitude survey was 23 and the SD was 7. The score distribution was transformed by <span class="math">\(Y = 3X + 11\)</span>.
+<ul class="incremental">
+<li>What is the mean of the transformed scores?</li>
+<li>What is the SD of the transformed scores?</li>
+</ul></li>
+</ul>
+</div>
+<div id="special-linear-transformation" class="slide section level1">
+<h1>Special Linear Transformation</h1>
+<ul class="incremental">
+<li>One transformation has been used a lot and has a special name called <em>Standard Scores</em>, <em>Normal Scores</em>, or more commonly <em>z-scores</em>.</li>
+</ul>
+<p><span class="math">\[Y = \frac{1}{s_{x}}X + \frac{-\bar{X}}{s_{x}}\]</span></p>
+<ul class="incremental">
+<li><p>where <span class="math">\(b = \frac{1}{s_{s}}\)</span> and <span class="math">\(a = \frac{-\bar{X}}{s_{x}}\)</span></p></li>
+<li><p>This can be reformulated as:</p></li>
+</ul>
+<p><span class="math">\[Z = \frac{(X - \bar{X})}{s_{x}}\]</span></p>
+</div>
+<div id="z-score-examples" class="slide section level1">
+<h1>z-score examples</h1>
+<ul class="incremental">
+<li>What z-score corresponds to a raw score of 60 in a distribution having a mean of 70 and a standard deviation of 20?</li>
+<li>In a distribution with a mean of 23 and a standard deviation of 4, what raw score corresponds to a z-score of -2.25?</li>
+</ul>
+</div>
+<div id="z-score-properties" class="slide section level1">
+<h1>z-score properties</h1>
+<p><span class="math">\[\bar{z} = 0\]</span> <span class="math">\[s_{z} = 1\]</span> <span class="math">\[s_{z}^2 = 1\]</span></p>
+<ul class="incremental">
+<li><p>z-scores are great for comparing distributions that have different means and standard deviations.</p></li>
+<li><p>To backtransform z-scores: <span class="math">\[X = s_{x} * z + \bar{X}\]</span></p></li>
+</ul>
+</div>
+<div id="transform-z-score-example" class="slide section level1">
+<h1>Transform z-score example</h1>
+<ul class="incremental">
+<li><p>In a distribution with a mean of 71 and a SD of 18, a raw score of 85 was found. What is the equivalent score in a distribution with a mean of 50 and a standard deviation of 10?</p></li>
+<li><p>More formally: <span class="math">\[ X_{n} = \left(\frac{s_{n}}{s_{o}} \right) X_{o} + \bar{X}_{n} - \left(\frac{s_{n}}{s_{o}} \right) \bar{X}_{o} \]</span></p></li>
+</ul>
+</div>
+<div id="other-common-scales" class="slide section level1">
+<h1>Other common scales</h1>
+<ul class="incremental">
+<li>z-scores are also useful to place scores on a desired scale.</li>
+<li>There are many common scales that have been used over time.
+<ul class="incremental">
+<li>T-scores: mean of 50, sd of 10</li>
+<li>Stanines: mean of 5, sd of 2</li>
+<li>Normal Curve Equivalents (NCE): mean of 50, sd of 21</li>
+<li>SAT: mean of 500, sd of 100, rounded to nearest 10</li>
+<li>ACT: mean of 21, sd of 5, rounded to nearest whole number</li>
+<li>GRE: mean of 150, sd of 8.75</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="standardscores.png" alt="Score Scales" />
+<p class="caption">Score Scales</p>
+</div>
+</div>
+<div id="combining-scores-from-different-scales" class="slide section level1">
+<h1>Combining scores from different scales</h1>
+<ul class="incremental">
+<li>Suppose two students are competing for a college scholarship, and we need to decide which student has a better academic record.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">ACT</th>
+<th align="center">HSGPA</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="center">25</td>
+<td align="center">3.7</td>
+<td align="center">28.7</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="center">31</td>
+<td align="center">3.3</td>
+<td align="center">34.3</td>
+</tr>
+<tr class="odd">
+<td align="left">Mean</td>
+<td align="center">28</td>
+<td align="center">3.5</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">SD</td>
+<td align="center">3</td>
+<td align="center">0.2</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="normalizing-transformations" class="slide section level1">
+<h1>Normalizing Transformations</h1>
+<ul class="incremental">
+<li>Linear transformations preserve the shape of the distribution.</li>
+<li>This is one of their strengths and why they are used extensively.</li>
+<li>However, as we progress to inferential statistics, our methods assume a normal distribution or bell curve.</li>
+<li>As such, what to do with skewed distributions?</li>
+<li>There are nonlinear transformations that can take a skewed distribution and transform it to behave more normal.
+<ul class="incremental">
+<li>These transformations change the shape and thus the distance between scores.</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="normalizingtransformation.png" alt="Normalizing Transformation" />
+<p class="caption">Normalizing Transformation</p>
+</div>
+</div>
+</body>
+</html>
