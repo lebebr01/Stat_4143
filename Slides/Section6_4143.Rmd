@@ -1,0 +1,149 @@
+% PSQF 4143: Section 6
+% Brandon LeBeau
+
+
+```{r opts, echo = FALSE}
+opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
+```
+
+# Descriptive vs Inferential Statistics
+- Descriptive:
+    - Useful if we are interested in a single group or comparison
+    - Major interest is only with the subjects on hand
+- Inferential:
+    - Useful whenever we are interested in a larger group of subjects than just those on hand
+    - Gallup poll is the most common example
+    
+# Inferential Loop
+1. Ask a question
+2. Draw a sample from the population
+3. Analyze Data
+4. Make inference
+
+- What happens if we draw a second sample?
+    - Would we have the same result?
+
+# Reasons for Sampling
+- Not all of the population is accessible
+    - Too expensive
+    - Physically or practically impossible to survey the entire population
+- Data collection procedure consumes the elements of the population
+    - wine tasting, missle testing, rocket launches
+    
+# Sampling example
+![](sample_examp.png)
+
+- Would the mean score of all 300,000 be 18 if they all took the prep course?
+- Would the mean score of all 300,000 be 15 if they did not take the prep course?
+    - Both samples contain error.
+    - Therefore, it is not sufficient to consider just the observed difference.
+    - Rather, we need a probability statement to quantify the error.
+- How to do that?
+    - We might assume that there is no difference between the two groups.
+    - Based on this assumption, we then determine the probability that the difference between the means is equal to 3.
+    - If this probability is small, then maybe our assumption was wrong.
+- Probability is the basis of inferential statistics.
+
+# Three Characteristics of an Experiment
+1. Repeatable
+2. Uncertainty of outcome
+3. Able to specify all possible outcomes
+
+- Example:
+    - Rolling a six-sided die
+        1. You can roll the die over and over again
+        2. On any given roll, you don't know ahead of time which number will come up.
+        3. The outcome on any given roll will be 1 or 2 or 3 or 4 or 5 or 6.
+        
+# Definitions
+- An **event** is an observable outcome
+- A **generating event** is any repeatable process that results in only one outcome at a time
+    - Examples: Flipping a coin, rolling a die, drawing a card
+- The **probability (Pr)** of an event is the relative frequency with which that event would be observed over an infinite number of repetitions of the generating event, when each repetition is conducted in a like manner.
+
+# Probability of an Event
+- Example: Flipping a coin
+$$Pr(heads) = \frac{\mbox{number of heads observed}}{\mbox{total number of flips}}$$
+$$ = \frac{f(heads) }{N}$$
+when observations are recorded for an infinite number of flips
+
+- As a proportion, $0 \leq Pr \leq 1$
+- A probability is a proportion characterizing an infinitely long series of occurrences
+    - It does not tell us precisely what would happen over any short run
+- We could flip a coin several thousand times to obtain an **estimate** of the true proportion of heads
+    - This kind of estimate is called an *empirical probability*
+
+# More Definitions
+- A **sample space (S)** is a set of all possible outcomes of an experiment (generating event)
+- Each individual outcome in a sample space is called a **sample point* $(s_{j})$
+- Given a sample space, S, consisting of n sample points, $s_{j}$
+    - Let $Pr(s_{j}) \geq 0$ be paired with each sample point
+    - Then $\sum Pr(s_{j}) = 1$
+    
+# Example
+- Example: Rolling a fair, six-sided die
+$$S = {1, 2, 3, 4, 5, 6}$$
+$$Pr(1) = Pr(2) = Pr(3) = Pr(4) = Pr(5) = Pr(6) = 1/6$$
+$$Pr(s_{1}) = Pr(s_{2}) = Pr(s_{3}) = Pr(s_{4}) = Pr(s_{5}) = Pr(s_{6}) = 1/6$$
+$$\sum Pr(s_{j}) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = 1$$
+
+- Equally Likely Model:
+    - Given a sample space S with n sample points: $S = {s_{1}, s_{2}, \ldots, s_{n}}$
+    - If $Pr(s_{n}) = 1/n$ for each sample point
+    - Then the outcomes are equally likely
+    
+# Probability
+- Given a population of possible outcomes (that is, a sample space), each of which is equally likely, the **probability of event A** on a single trial is equal to the number of possible outcomes yielding A divided by the total number of possible outcomes
+
+$$Pr(A) = \frac{\mbox{# of ways A can occur}}{\mbox{total # of possible outcomes}}$$
+
+
+# Probability 2
+- Let the set of sample points in the sample space of an experiment be $s_{j}(j = 1, 2, 3, \ldots, n)$ and let the respective probability values assigned to these events be represented by $Pr(s_{j})$
+- Then the set of pairs ${[sj , Pr(s_{j})]; j = 1, 2, 3, \ldots, n}$ is the probability distribution of the experiment
+
+- Example: Rolling a fair, six-sided die
+
+| $s_{j}$ | $Pr(s_{j})$ |
+|:-------:|:-----------:|
+| 1       | 1/6         |
+| 2       | 1/6         |
+| 3       | 1/6         |
+| 4       | 1/6         |
+| 5       | 1/6         |
+| 6       | 1/6         |
+
+```{r probdie}
+library(ggplot2)
+prob <- data.frame(num = rep(seq(1, 6, 1), 2),
+                   prob = rep(c(1/6, 0), each = 6))
+p <- ggplot(prob, aes(x = num, y = prob)) + theme_bw(base_size = 16)
+p + geom_point() + scale_y_continuous(limits = c(0, .2)) + 
+  scale_x_continuous(breaks = seq(1, 6, 1)) + geom_line(aes(group = num), linetype = 2)
+```
+
+# Two Ways to Calculate Probability
+1. Actually conduct the experiment a large number of times
+    - This is called an empirical or Monte Carlo method
+2. Use a theoretical probability model (for example, the equally likely model)
+    - With this method, you do not have to conduct even a single trial of the experiment
+    
+# Coin Once
+![Flip Coin Once](coin_once.png)
+
+# Addition Theorem (OR Rule)
+- The probability of occurrence of any one of several particular events is the sum of their individual probabilities, provided the events are mutually exclusive (that is, the occurrence of one precludes others)
+- To find the chance that at least one of two things will happen, check to see if they are mutually exclusive; if they are, add their probabilities
+- $Pr(A or B) = Pr(A) + Pr(B)$, provided A and B are mutually exclusive
+
+# Coin Twice
+![Flip Coin Twice](coin_twice.png)
+
+# Multiplication Theorem (AND Rule)
+- Given two events, A and B, the probability of obtaining both A and B jointly (or successively) is the product of their separate probabilities
+    - if A and B are independent (that is, the outcome of one event has no influence on, and is in no way related to, the outcome of the other)
+    - then $Pr(A and B) = Pr(A) * Pr(B)$
+
+- if A and B are not independent
+    - then Pr(A and B) = $Pr(A) × Pr(B|A)= Pr(B) * Pr(A|B)$
+
