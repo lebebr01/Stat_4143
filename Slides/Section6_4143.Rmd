@@ -145,5 +145,174 @@ p + geom_point() + scale_y_continuous(limits = c(0, .2)) +
     - then $Pr(A and B) = Pr(A) * Pr(B)$
 
 - if A and B are not independent
-    - then Pr(A and B) = $Pr(A) × Pr(B|A)= Pr(B) * Pr(A|B)$
+    - then $Pr(A and B) = Pr(A) × Pr(B|A)$
+    - or $Pr(A and B)= Pr(B) * Pr(A|B)$
+    
+# Coin Thrice
+![Flip Coin Thrice](coin_three.png)
+
+# Binomial Experiment
+- Characteristics:
+    1. Universe of N object of two kinds, A or $\bar{A}$ (not A)
+    2. Randomly select an object from this universe, note its type, and replace it
+         - Sampling with replacement
+    3. The probability of an A-type object in the universe it $\phi$ (that is, $Pr(A) = \phi$ and $Pr(\bar{A}) = 1 - \phi$).
+    4. Pr(A) must remain constant over n repetitions of the selection process.
+    5. The outcome of interest is a random variable
+- Binomial Exansion
+    - Given a binomial experiment, the probability value associated with each possible outcome can be found using the binomial expansion
+    $$ (P + Q)^N$$
+    - P is the probability of the outcome (event) of interst
+    - Q is the probability of the other outcome (event); that is, $Q = 1 - P$
+    - N is the number of trials
+    
+# Binomial Expansion Example
+- Flip a fair coin twice:
+    - $P = 0.5$
+    - $Q = 0.5$
+    - $N = 2$
+$$(P + Q)^N = (P + Q)^2 = P^2 + 2PQ + Q^2 $$
+$$ = (0.5)^2 + 2(0.5)(0.5) + (0.5)^2 $$
+$$ = 0.25 + 0.5 + 0.25 = 1$$
+
+# Probability Distribution
+```{r prob2heads}
+p <- data.frame(x = c(0, 1, 2),
+                prob = dbinom(c(0, 1, 2), 2, 0.5))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 6, 1), limits = c(-0.5, 6)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5)
+```
+
+# Binomial Expansion Example 2
+- Flip a fair coin thrice:
+    - $P = 0.5$
+    - $Q = 0.5$
+    - $N = 3$
+$$(P + Q)^N = (P + Q)^3 = P^3 + 3P^2Q + 3PQ^2 + Q^3 $$
+$$ = (0.5)^3 + 3(0.5)^2(0.5) + 3(0.5)(0.5)^2 + (0.5)^3 $$
+$$ = 0.125 + 0.375 + 0.375 + 0.125 = 1$$
+
+# Probability Distribution 2
+```{r prob3heads}
+p <- data.frame(x = c(0, 1, 2, 3),
+                prob = dbinom(c(0, 1, 2, 3), 3, 0.5))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 6, 1), limits = c(-0.5, 6)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5)
+```
+
+# Binomial Expansion
+- Beyond this the math becomes more difficult
+- Fortunately there are tables for this.
+- The binomial table can be found in the course pack.
+- Example: Flip a coin five times
+
+# Probability Distribution 3
+```{r prob5heads}
+p <- data.frame(x = c(0, 1, 2, 3, 4, 5),
+                prob = dbinom(c(0, 1, 2, 3, 4, 5), 5, 0.5))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 6, 1), limits = c(-0.5, 6)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5)
+```
+
+# Characteristics of the Binomial Distribution
+- Mean: $N * P$
+- Variance: $N * P * (1 - P)$
+- N is the number of trials
+- P is the Pr(success) on a given trial
+
+- Example: Number of heads in four flips of a fair coin
+    - $N = 4$
+    - $P = 0.5$
+    - Mean = 2
+    - Variance = 1
+    
+# Probability Distribution Example
+```{r prob4heads}
+p <- data.frame(x = c(0, 1, 2, 3, 4),
+                prob = dbinom(c(0, 1, 2, 3, 4), 4, 0.5))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 6, 1), limits = c(-0.5, 6)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5)
+```
+
+# Normal Approximation to Binomial Distribution
+```{r normapprox}
+p <- data.frame(x = c(0, 1, 2, 3, 4, 5),
+                prob = dbinom(c(0, 1, 2, 3, 4, 5), 5, 0.5))
+n <- data.frame(x = seq(0, 5, .05),
+                prob = dnorm(seq(0, 5, .05), mean = 2.5, sd = sqrt(1.25)))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 6, 1), limits = c(-0.5, 6)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5) + 
+  geom_line(data = n, aes(x = x, y = prob), size = 1)
+
+p <- data.frame(x = seq(0, 12, 1),
+                prob = round(dbinom(seq(0, 12, 1), 12, 0.5), 3)) 
+n <- data.frame(x = seq(0, 12, .1),
+                prob = dnorm(seq(0, 12, .1), mean = 6, sd = sqrt(3)))
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 12, 1), limits = c(-0.5, 12)) + 
+  geom_text(aes(label = prob), color = "white", vjust = 1.5) + 
+  geom_line(data = n, aes(x = x, y = prob), size = 1)
+```
+
+# Another Binomial Example
+![Binom Example 0.7](binom_improve.png)
+
+# Example 3
+What is the chance that someone could get at least half of the questions correct on a 10-question multiple-choice test (4 options per question) if he/she was randomly guessing on each question?
+
+# Taste Test
+- Somebody claims to be able to taste the difference between Coke and Pepsi
+- To test this claim, we will conduct an experiment
+    1. Blindfold the individual
+    2. Let the individual taste a sample of Coke and a sample of Pepsi in random order, then ask her to identify which is which
+    3. Repeat Step 2 nine more times (10 replications altogether)
+- The number of correct identifications in 10 trials is the outcome of the experiment
+
+# Taste Test Results
+- Suppose she correctly identifies Coke 7 times in 10 trials.
+- Hypothesis:
+    - The taster cannot tell the difference	(she is just guessing, on each trial she has a 50/50 chance of correctly	identifying which is which)
+- If the taster cannot tell the difference, what is the chance that she will guess correctly at least 7 times in 10 trials?
+
+# Taste Test Probability Distribution
+```{r taste}
+p <- data.frame(x = seq(0, 10, 1),
+                prob = round(dbinom(seq(0, 10, 1), 10, 0.5), 4)) 
+h <- ggplot(p, aes(x = x, y = prob)) + theme_bw(base_size = 16)
+h + geom_histogram(binwidth = 1, stat = "identity") + 
+  scale_x_continuous("Number of Heads", breaks = seq(0, 10, 1), limits = c(-0.5, 10)) + 
+  scale_y_continuous(limit = c(-0.0025, 0.275)) + 
+  geom_text(aes(label = prob), color = "black", vjust = -1)
+```
+
+# Taste Test Results
+- If the taster cannot tell the difference, then there is a (roughly) 17% chance that she would get at least 7 correct in 10 trials
+- Something that happens 17 times out of 100 (17% of the time) is not all that unusual (or unlikely)
+    - Depends on your definition of unusual (unlikely)
+- In other words, if the taster cannot tell the difference, it is not all that unlikely that she would be able to get at least 7 correct on ten trials by randomly guessing
+- On the basis of this evidence, I do not have sufficient reason to reject the hypothesis that the taster can’t tell the difference
+- I do not have sufficient evidence to conclude that the taster can tell the difference
+- The taster has failed to prove that she can tell the difference
+
+# Taste Test: When can someone tell?
+- How many times would the taster have to get the correct answer in 10 trials, in order to conclude that she can tell the difference?
+    - I would say, “At least 8 out of 10”
+    - Because Pr(at least 8 correct in 10 trials) = 0.055
+    - If the taster can’t tell the difference, then it would be unlikely (less than a 10% chance) that she would be able to get at least 8 correct by guessing
+    - 10% can be thought of as a lenient definition of unlikely
+- Others may argue:
+    - You might say, “At least 9 out of 10,” because you consider something to be unlikely if the chance of it happening is less than 5%
+    - Someone else might say, “10 out of 10,” because he/she considers something to be unlikely if the chance of it happening is less than 1%
+    - 1% can be thought of as a stringent definition of unlikely
 
