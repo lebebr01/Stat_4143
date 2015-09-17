@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 6</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 6</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+  <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="descriptive-vs-inferential-statistics" class="slide section level1">
+<h1>Descriptive vs Inferential Statistics</h1>
+<ul class="incremental">
+<li>Descriptive:
+<ul class="incremental">
+<li>Useful if we are interested in a single group or comparison</li>
+<li>Major interest is only with the subjects on hand</li>
+</ul></li>
+<li>Inferential:
+<ul class="incremental">
+<li>Useful whenever we are interested in a larger group of subjects than just those on hand</li>
+<li>Gallup poll is the most common example</li>
+</ul></li>
+</ul>
+</div>
+<div id="inferential-loop" class="slide section level1">
+<h1>Inferential Loop</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Ask a question</li>
+<li>Draw a sample from the population</li>
+<li>Analyze Data</li>
+<li>Make inference</li>
+</ol>
+<ul class="incremental">
+<li>What happens if we draw a second sample?
+<ul class="incremental">
+<li>Would we have the same result?</li>
+</ul></li>
+</ul>
+</div>
+<div id="reasons-for-sampling" class="slide section level1">
+<h1>Reasons for Sampling</h1>
+<ul class="incremental">
+<li>Not all of the population is accessible
+<ul class="incremental">
+<li>Too expensive</li>
+<li>Physically or practically impossible to survey the entire population</li>
+</ul></li>
+<li>Data collection procedure consumes the elements of the population
+<ul class="incremental">
+<li>wine tasting, missle testing, rocket launches</li>
+</ul></li>
+</ul>
+</div>
+<div id="sampling-example" class="slide section level1">
+<h1>Sampling example</h1>
+<div class="figure">
+<img src="sample_examp.png" />
+
+</div>
+<ul class="incremental">
+<li>Would the mean score of all 300,000 be 18 if they all took the prep course?</li>
+<li>Would the mean score of all 300,000 be 15 if they did not take the prep course?
+<ul class="incremental">
+<li>Both samples contain error.</li>
+<li>Therefore, it is not sufficient to consider just the observed difference.</li>
+<li>Rather, we need a probability statement to quantify the error.</li>
+</ul></li>
+<li>How to do that?
+<ul class="incremental">
+<li>We might assume that there is no difference between the two groups.</li>
+<li>Based on this assumption, we then determine the probability that the difference between the means is equal to 3.</li>
+<li>If this probability is small, then maybe our assumption was wrong.</li>
+</ul></li>
+<li>Probability is the basis of inferential statistics.</li>
+</ul>
+</div>
+<div id="three-characteristics-of-an-experiment" class="slide section level1">
+<h1>Three Characteristics of an Experiment</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Repeatable</li>
+<li>Uncertainty of outcome</li>
+<li>Able to specify all possible outcomes</li>
+</ol>
+<ul class="incremental">
+<li>Example:
+<ul class="incremental">
+<li>Rolling a six-sided die
+<ol class="incremental" style="list-style-type: decimal">
+<li>You can roll the die over and over again</li>
+<li>On any given roll, you don't know ahead of time which number will come up.</li>
+<li>The outcome on any given roll will be 1 or 2 or 3 or 4 or 5 or 6.</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+<div id="definitions" class="slide section level1">
+<h1>Definitions</h1>
+<ul class="incremental">
+<li>An <strong>event</strong> is an observable outcome</li>
+<li>A <strong>generating event</strong> is any repeatable process that results in only one outcome at a time
+<ul class="incremental">
+<li>Examples: Flipping a coin, rolling a die, drawing a card</li>
+</ul></li>
+<li>The <strong>probability (Pr)</strong> of an event is the relative frequency with which that event would be observed over an infinite number of repetitions of the generating event, when each repetition is conducted in a like manner.</li>
+</ul>
+</div>
+<div id="probability-of-an-event" class="slide section level1">
+<h1>Probability of an Event</h1>
+<ul class="incremental">
+<li><p>Example: Flipping a coin <span class="math">\[Pr(heads) = \frac{\mbox{number of heads observed}}{\mbox{total number of flips}}\]</span> <span class="math">\[ = \frac{f(heads) }{N}\]</span> when observations are recorded for an infinite number of flips</p></li>
+<li>As a proportion, <span class="math">\(0 \leq Pr \leq 1\)</span></li>
+<li>A probability is a proportion characterizing an infinitely long series of occurrences
+<ul class="incremental">
+<li>It does not tell us precisely what would happen over any short run</li>
+</ul></li>
+<li>We could flip a coin several thousand times to obtain an <strong>estimate</strong> of the true proportion of heads
+<ul class="incremental">
+<li>This kind of estimate is called an <em>empirical probability</em></li>
+</ul></li>
+</ul>
+</div>
+<div id="more-definitions" class="slide section level1">
+<h1>More Definitions</h1>
+<ul class="incremental">
+<li>A <strong>sample space (S)</strong> is a set of all possible outcomes of an experiment (generating event)</li>
+<li>Each individual outcome in a sample space is called a **sample point* <span class="math">\((s_{j})\)</span></li>
+<li>Given a sample space, S, consisting of n sample points, <span class="math">\(s_{j}\)</span>
+<ul class="incremental">
+<li>Let <span class="math">\(Pr(s_{j}) \geq 0\)</span> be paired with each sample point</li>
+<li>Then <span class="math">\(\sum Pr(s_{j}) = 1\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li><p>Example: Rolling a fair, six-sided die <span class="math">\[S = {1, 2, 3, 4, 5, 6}\]</span> <span class="math">\[Pr(1) = Pr(2) = Pr(3) = Pr(4) = Pr(5) = Pr(6) = 1/6\]</span> <span class="math">\[Pr(s_{1}) = Pr(s_{2}) = Pr(s_{3}) = Pr(s_{4}) = Pr(s_{5}) = Pr(s_{6}) = 1/6\]</span> <span class="math">\[\sum Pr(s_{j}) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = 1\]</span></p></li>
+<li>Equally Likely Model:
+<ul class="incremental">
+<li>Given a sample space S with n sample points: <span class="math">\(S = {s_{1}, s_{2}, \ldots, s_{n}}\)</span></li>
+<li>If <span class="math">\(Pr(s_{n}) = 1/n\)</span> for each sample point</li>
+<li>Then the outcomes are equally likely</li>
+</ul></li>
+</ul>
+</div>
+<div id="probability" class="slide section level1">
+<h1>Probability</h1>
+<ul class="incremental">
+<li>Given a population of possible outcomes (that is, a sample space), each of which is equally likely, the <strong>probability of event A</strong> on a single trial is equal to the number of possible outcomes yielding A divided by the total number of possible outcomes</li>
+</ul>
+<p><span class="math">\[Pr(A) = \frac{\mbox{# of ways A can occur}}{\mbox{total # of possible outcomes}}\]</span></p>
+</div>
+<div id="probability-2" class="slide section level1">
+<h1>Probability 2</h1>
+<ul class="incremental">
+<li>Let the set of sample points in the sample space of an experiment be <span class="math">\(s_{j}(j = 1, 2, 3, \ldots, n)\)</span> and let the respective probability values assigned to these events be represented by <span class="math">\(Pr(s_{j})\)</span></li>
+<li><p>Then the set of pairs <span class="math">\({[sj , Pr(s_{j})]; j = 1, 2, 3, \ldots, n}\)</span> is the probability distribution of the experiment</p></li>
+<li><p>Example: Rolling a fair, six-sided die</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math">\(s_{j}\)</span></th>
+<th align="center"><span class="math">\(Pr(s_{j})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1/6</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1/6</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">1/6</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1/6</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">1/6</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">1/6</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="figure/probdie-1.png" alt="plot of chunk probdie" />
+<p class="caption">plot of chunk probdie</p>
+</div>
+</div>
+<div id="two-ways-to-calculate-probability" class="slide section level1">
+<h1>Two Ways to Calculate Probability</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Actually conduct the experiment a large number of times
+<ul class="incremental">
+<li>This is called an empirical or Monte Carlo method</li>
+</ul></li>
+<li>Use a theoretical probability model (for example, the equally likely model)
+<ul class="incremental">
+<li>With this method, you do not have to conduct even a single trial of the experiment</li>
+</ul></li>
+</ol>
+</div>
+<div id="coin-once" class="slide section level1">
+<h1>Coin Once</h1>
+<div class="figure">
+<img src="coin_once.png" alt="Flip Coin Once" />
+<p class="caption">Flip Coin Once</p>
+</div>
+</div>
+<div id="addition-theorem-or-rule" class="slide section level1">
+<h1>Addition Theorem (OR Rule)</h1>
+<ul class="incremental">
+<li>The probability of occurrence of any one of several particular events is the sum of their individual probabilities, provided the events are mutually exclusive (that is, the occurrence of one precludes others)</li>
+<li>To find the chance that at least one of two things will happen, check to see if they are mutually exclusive; if they are, add their probabilities</li>
+<li><span class="math">\(Pr(A or B) = Pr(A) + Pr(B)\)</span>, provided A and B are mutually exclusive</li>
+</ul>
+</div>
+<div id="coin-twice" class="slide section level1">
+<h1>Coin Twice</h1>
+<div class="figure">
+<img src="coin_twice.png" alt="Flip Coin Twice" />
+<p class="caption">Flip Coin Twice</p>
+</div>
+</div>
+<div id="multiplication-theorem-and-rule" class="slide section level1">
+<h1>Multiplication Theorem (AND Rule)</h1>
+<ul class="incremental">
+<li>Given two events, A and B, the probability of obtaining both A and B jointly (or successively) is the product of their separate probabilities
+<ul class="incremental">
+<li>if A and B are independent (that is, the outcome of one event has no influence on, and is in no way related to, the outcome of the other)</li>
+<li>then <span class="math">\(Pr(A and B) = Pr(A) * Pr(B)\)</span></li>
+</ul></li>
+<li>if A and B are not independent
+<ul class="incremental">
+<li>then <span class="math">\(Pr(A and B) = Pr(A) × Pr(B|A)\)</span></li>
+<li>or <span class="math">\(Pr(A and B)= Pr(B) * Pr(A|B)\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="coin-thrice" class="slide section level1">
+<h1>Coin Thrice</h1>
+<div class="figure">
+<img src="coin_three.png" alt="Flip Coin Thrice" />
+<p class="caption">Flip Coin Thrice</p>
+</div>
+</div>
+<div id="binomial-experiment" class="slide section level1">
+<h1>Binomial Experiment</h1>
+<ul class="incremental">
+<li>Characteristics:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Universe of N object of two kinds, A or <span class="math">\(\bar{A}\)</span> (not A)</li>
+<li>Randomly select an object from this universe, note its type, and replace it
+<ul class="incremental">
+<li>Sampling with replacement</li>
+</ul></li>
+<li>The probability of an A-type object in the universe it <span class="math">\(\phi\)</span> (that is, <span class="math">\(Pr(A) = \phi\)</span> and <span class="math">\(Pr(\bar{A}) = 1 - \phi\)</span>).</li>
+<li>Pr(A) must remain constant over n repetitions of the selection process.</li>
+<li>The outcome of interest is a random variable</li>
+</ol></li>
+<li>Binomial Exansion
+<ul class="incremental">
+<li>Given a binomial experiment, the probability value associated with each possible outcome can be found using the binomial expansion <span class="math">\[ (P + Q)^N\]</span></li>
+<li>P is the probability of the outcome (event) of interst</li>
+<li>Q is the probability of the other outcome (event); that is, <span class="math">\(Q = 1 - P\)</span></li>
+<li>N is the number of trials</li>
+</ul></li>
+</ul>
+</div>
+<div id="binomial-expansion-example" class="slide section level1">
+<h1>Binomial Expansion Example</h1>
+<ul class="incremental">
+<li>Flip a fair coin twice:
+<ul class="incremental">
+<li><span class="math">\(P = 0.5\)</span></li>
+<li><span class="math">\(Q = 0.5\)</span></li>
+<li><span class="math">\(N = 2\)</span> <span class="math">\[(P + Q)^N = (P + Q)^2 = P^2 + 2PQ + Q^2 \]</span> <span class="math">\[ = (0.5)^2 + 2(0.5)(0.5) + (0.5)^2 \]</span> <span class="math">\[ = 0.25 + 0.5 + 0.25 = 1\]</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="probability-distribution" class="slide section level1">
+<h1>Probability Distribution</h1>
+<div class="figure">
+<img src="figure/prob2heads-1.png" alt="plot of chunk prob2heads" />
+<p class="caption">plot of chunk prob2heads</p>
+</div>
+</div>
+<div id="binomial-expansion-example-2" class="slide section level1">
+<h1>Binomial Expansion Example 2</h1>
+<ul class="incremental">
+<li>Flip a fair coin thrice:
+<ul class="incremental">
+<li><span class="math">\(P = 0.5\)</span></li>
+<li><span class="math">\(Q = 0.5\)</span></li>
+<li><span class="math">\(N = 3\)</span> <span class="math">\[(P + Q)^N = (P + Q)^3 = P^3 + 3P^2Q + 3PQ^2 + Q^3 \]</span> <span class="math">\[ = (0.5)^3 + 3(0.5)^2(0.5) + 3(0.5)(0.5)^2 + (0.5)^3 \]</span> <span class="math">\[ = 0.125 + 0.375 + 0.375 + 0.125 = 1\]</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="probability-distribution-2" class="slide section level1">
+<h1>Probability Distribution 2</h1>
+<div class="figure">
+<img src="figure/prob3heads-1.png" alt="plot of chunk prob3heads" />
+<p class="caption">plot of chunk prob3heads</p>
+</div>
+</div>
+<div id="binomial-expansion" class="slide section level1">
+<h1>Binomial Expansion</h1>
+<ul class="incremental">
+<li>Beyond this the math becomes more difficult</li>
+<li>Fortunately there are tables for this.</li>
+<li>The binomial table can be found in the course pack.</li>
+<li>Example: Flip a coin five times</li>
+</ul>
+</div>
+<div id="probability-distribution-3" class="slide section level1">
+<h1>Probability Distribution 3</h1>
+<div class="figure">
+<img src="figure/prob5heads-1.png" alt="plot of chunk prob5heads" />
+<p class="caption">plot of chunk prob5heads</p>
+</div>
+</div>
+<div id="characteristics-of-the-binomial-distribution" class="slide section level1">
+<h1>Characteristics of the Binomial Distribution</h1>
+<ul class="incremental">
+<li>Mean: <span class="math">\(N * P\)</span></li>
+<li>Variance: <span class="math">\(N * P * (1 - P)\)</span></li>
+<li>N is the number of trials</li>
+<li><p>P is the Pr(success) on a given trial</p></li>
+<li>Example: Number of heads in four flips of a fair coin
+<ul class="incremental">
+<li><span class="math">\(N = 4\)</span></li>
+<li><span class="math">\(P = 0.5\)</span></li>
+<li>Mean = 2</li>
+<li>Variance = 1</li>
+</ul></li>
+</ul>
+</div>
+<div id="probability-distribution-example" class="slide section level1">
+<h1>Probability Distribution Example</h1>
+<div class="figure">
+<img src="figure/prob4heads-1.png" alt="plot of chunk prob4heads" />
+<p class="caption">plot of chunk prob4heads</p>
+</div>
+</div>
+<div id="normal-approximation-to-binomial-distribution" class="slide section level1">
+<h1>Normal Approximation to Binomial Distribution</h1>
+<p><img src="figure/normapprox-1.png" alt="plot of chunk normapprox" /> <img src="figure/normapprox-2.png" alt="plot of chunk normapprox" /></p>
+</div>
+<div id="another-binomial-example" class="slide section level1">
+<h1>Another Binomial Example</h1>
+<div class="figure">
+<img src="binom_improve.png" alt="Binom Example 0.7" />
+<p class="caption">Binom Example 0.7</p>
+</div>
+</div>
+<div id="example-3" class="slide section level1">
+<h1>Example 3</h1>
+<p>What is the chance that someone could get at least half of the questions correct on a 10-question multiple-choice test (4 options per question) if he/she was randomly guessing on each question?</p>
+</div>
+<div id="taste-test" class="slide section level1">
+<h1>Taste Test</h1>
+<ul class="incremental">
+<li>Somebody claims to be able to taste the difference between Coke and Pepsi</li>
+<li>To test this claim, we will conduct an experiment
+<ol class="incremental" style="list-style-type: decimal">
+<li>Blindfold the individual</li>
+<li>Let the individual taste a sample of Coke and a sample of Pepsi in random order, then ask her to identify which is which</li>
+<li>Repeat Step 2 nine more times (10 replications altogether)</li>
+</ol></li>
+<li>The number of correct identifications in 10 trials is the outcome of the experiment</li>
+</ul>
+</div>
+<div id="taste-test-results" class="slide section level1">
+<h1>Taste Test Results</h1>
+<ul class="incremental">
+<li>Suppose she correctly identifies Coke 7 times in 10 trials.</li>
+<li>Hypothesis:
+<ul class="incremental">
+<li>The taster cannot tell the difference (she is just guessing, on each trial she has a 50/50 chance of correctly identifying which is which)</li>
+</ul></li>
+<li>If the taster cannot tell the difference, what is the chance that she will guess correctly at least 7 times in 10 trials?</li>
+</ul>
+</div>
+<div id="taste-test-probability-distribution" class="slide section level1">
+<h1>Taste Test Probability Distribution</h1>
+<div class="figure">
+<img src="figure/taste-1.png" alt="plot of chunk taste" />
+<p class="caption">plot of chunk taste</p>
+</div>
+</div>
+<div id="taste-test-results-1" class="slide section level1">
+<h1>Taste Test Results</h1>
+<ul class="incremental">
+<li>If the taster cannot tell the difference, then there is a (roughly) 17% chance that she would get at least 7 correct in 10 trials</li>
+<li>Something that happens 17 times out of 100 (17% of the time) is not all that unusual (or unlikely)
+<ul class="incremental">
+<li>Depends on your definition of unusual (unlikely)</li>
+</ul></li>
+<li>In other words, if the taster cannot tell the difference, it is not all that unlikely that she would be able to get at least 7 correct on ten trials by randomly guessing</li>
+<li>On the basis of this evidence, I do not have sufficient reason to reject the hypothesis that the taster can’t tell the difference</li>
+<li>I do not have sufficient evidence to conclude that the taster can tell the difference</li>
+<li>The taster has failed to prove that she can tell the difference</li>
+</ul>
+</div>
+<div id="taste-test-when-can-someone-tell" class="slide section level1">
+<h1>Taste Test: When can someone tell?</h1>
+<ul class="incremental">
+<li>How many times would the taster have to get the correct answer in 10 trials, in order to conclude that she can tell the difference?
+<ul class="incremental">
+<li>I would say, “At least 8 out of 10”</li>
+<li>Because Pr(at least 8 correct in 10 trials) = 0.055</li>
+<li>If the taster can’t tell the difference, then it would be unlikely (less than a 10% chance) that she would be able to get at least 8 correct by guessing</li>
+<li>10% can be thought of as a lenient definition of unlikely</li>
+</ul></li>
+<li>Others may argue:
+<ul class="incremental">
+<li>You might say, “At least 9 out of 10,” because you consider something to be unlikely if the chance of it happening is less than 5%</li>
+<li>Someone else might say, “10 out of 10,” because he/she considers something to be unlikely if the chance of it happening is less than 1%</li>
+<li>1% can be thought of as a stringent definition of unlikely</li>
+</ul></li>
+</ul>
+</div>
+</body>
+</html>
