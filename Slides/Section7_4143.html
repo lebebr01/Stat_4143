@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 7</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 7</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+   <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="the-normal-distribution" class="slide section level1">
+<h1>The Normal Distribution</h1>
+<div class="figure">
+<img src="figure/normal-1.png" alt="plot of chunk normal" />
+<p class="caption">plot of chunk normal</p>
+</div>
+</div>
+<div id="normal-distribution-history" class="slide section level1">
+<h1>Normal Distribution History</h1>
+<div class="figure">
+<img src="normdist_people.png" alt="History" />
+<p class="caption">History</p>
+</div>
+</div>
+<div id="probability-models" class="slide section level1">
+<h1>Probability Models</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Equally-likely Model</li>
+<li>Binomial Probability Model</li>
+<li>Normal Probability Distribution
+<ul class="incremental">
+<li>As a model for real variables (section 7)</li>
+<li>As a model for sampling distributions (section 8)</li>
+<li>As a model for other probability distributions</li>
+</ul></li>
+</ol>
+</div>
+<div id="properties-of-continuous-distributions" class="slide section level1">
+<h1>Properties of Continuous Distributions</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>The vertical axis does not represent probability</li>
+<li>Probabilities are represented by areas under the curve</li>
+<li>The total area under the curve is 1.</li>
+<li>Can't talk about the probabilitly of a single score - always have to talk about ranges</li>
+<li>Countinuous distributions that have means and standard deviations require calculus to computer</li>
+</ol>
+</div>
+<div id="the-normal-distribution---mathematical" class="slide section level1">
+<h1>The Normal Distribution - Mathematical</h1>
+<p><span class="math">\[ Y = \frac{1}{\sigma \sqrt{2 \pi}}* e^{-\frac{(X - \mu)^2}{2 \sigma^2}} \]</span></p>
+<p><img src="standardscores.png" /> <img src="normdist_different.png" /></p>
+</div>
+<div id="properties-of-the-normal-distribution" class="slide section level1">
+<h1>Properties of The Normal Distribution</h1>
+<ul class="incremental">
+<li>Symmetric about the center of the distribution.</li>
+<li>Mean, median, and mode are all equal.</li>
+<li>Range: <span class="math">\(-\infty \leq X \leq \infty\)</span></li>
+<li>The tails are asymptotic to the x-axis.
+<ul class="incremental">
+<li>i.e. The tails get very close to the x-axis, but never touch it.</li>
+</ul></li>
+<li>The distribution has 0 skewness and kurtosis.<br /></li>
+<li>Very few scores greater than <span class="math">\(\mu + 3\sigma\)</span></li>
+<li>The total area under any probability distribution regardless of the shape is 1.<br /></li>
+<li>We will use this fact in tandem with the mean and variation of a distribution to assign a probability of a specific value or mean.</li>
+</ul>
+</div>
+<div id="the-empirical-rule-1" class="slide section level1">
+<h1>The Empirical Rule 1</h1>
+<div class="figure">
+<img src="figure/normal2-1.png" alt="plot of chunk normal2" />
+<p class="caption">plot of chunk normal2</p>
+</div>
+</div>
+<div id="the-empirical-rule-2" class="slide section level1">
+<h1>The Empirical Rule 2</h1>
+<div class="figure">
+<img src="figure/normal3-1.png" alt="plot of chunk normal3" />
+<p class="caption">plot of chunk normal3</p>
+</div>
+</div>
+<div id="the-empirical-rule-summary" class="slide section level1">
+<h1>The Empirical Rule Summary</h1>
+<ul class="incremental">
+<li>About 68% of the data are within 1 standard deviation from the mean.</li>
+<li>About 95% of the data are within 2 standard deviations from the mean.</li>
+<li>About 99.7% of the data are within 3 standard deviations from the mean.</li>
+</ul>
+</div>
+<div id="empirical-rule-examples" class="slide section level1">
+<h1>Empirical Rule Examples</h1>
+<p>The average length of time a person stays at a job is 4.4 years with a standard deviation of 1.8 years.</p>
+<ul class="incremental">
+<li>What percentage of employees stay on the job more than 6.2 years?</li>
+<li>What percentage of employees stay on the job less than 0.8 years?</li>
+<li>What is the probability of an employee staying at a job for more than 9.8 years?</li>
+<li>What is the probability of an employee staying on the job between 2.6 and 6.2 years.</li>
+<li>What is the probability an employee stays more than 7 years on the job?</li>
+</ul>
+</div>
+<div id="standard-scores" class="slide section level1">
+<h1>Standard Scores</h1>
+<ul class="incremental">
+<li><p>A <em>z-score</em>, also called a standard score, is a way to represent a score in standard deviation units.</p></li>
+<li>To compute a z-score: <span class="math">\[ z = \frac{X - \mu}{\sigma} \]</span></li>
+<li><span class="math">\(X\)</span> is the raw score</li>
+<li><span class="math">\(\mu\)</span> is the population mean</li>
+<li><p><span class="math">\(\sigma\)</span> is the population standard deviation</p></li>
+<li><p>A distribution of z-scores is also called the standard normal distribution.</p></li>
+</ul>
+</div>
+<div id="standard-scores-examples" class="slide section level1">
+<h1>Standard Scores Examples</h1>
+<p>The average length of time a person stays at a job is 4.4 years with a standard deviation of 1.8 years.</p>
+<ul class="incremental">
+<li>Calculate the z-score and interpret it:
+<ul class="incremental">
+<li><span class="math">\(X = 2.2\)</span></li>
+<li><span class="math">\(X = 4.8\)</span></li>
+<li><span class="math">\(X = 8.2\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="using-a-z-table-to-find-probabilitypercentageproportion." class="slide section level1">
+<h1>Using a z-table to find probability/percentage/proportion.</h1>
+<ul class="incremental">
+<li>Answers the following types of questions:
+<ul class="incremental">
+<li>What proportion (probability/percentage) of the observations are less than/more than/between X years?</li>
+</ul></li>
+</ul>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Draw a normal curve, label the mean. Mark the value(s) of interest on the x-axis and shade the region of the curve corresponding to the region in question.</li>
+<li>Convert the value(s) to a z-score.</li>
+<li>Use the z-table to find the area below/above/between the calculated z-score(s).</li>
+</ol>
+</div>
+<div id="how-to-use-the-z-table" class="slide section level1">
+<h1>How to use the z-table</h1>
+<div class="figure">
+<img src="figure/ztab-1.png" alt="plot of chunk ztab" />
+<p class="caption">plot of chunk ztab</p>
+</div>
+</div>
+<div id="z-table-examples" class="slide section level1">
+<h1>Z-table examples</h1>
+<p>The average length of time a person stays at a job is 4.4 years with a standard deviation of 1.8 years.</p>
+<ul class="incremental">
+<li>What is the probability an employee stays more than 7 years on the job?</li>
+<li>What proportion of employees stay fewer than 4 years on the job?</li>
+<li>What percentage of employees stay more than 5 years on the job but fewer than 8 years?</li>
+</ul>
+</div>
+<div id="converting-z-scores-to-a-raw-score" class="slide section level1">
+<h1>Converting z-scores to a raw score</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Multiply z-score by standard deviation.</li>
+<li>Add the mean to the result from step 1.<br /><span class="math">\(X = z*s + \bar{X}\)</span></li>
+</ol>
+<p>Examples: - <span class="math">\(Z = 1.25\)</span> - <span class="math">\(Z = -.7\)</span> - <span class="math">\(Z = 2.12\)</span></p>
+</div>
+<div id="using-the-z-table-to-find-a-value" class="slide section level1">
+<h1>Using the z-table to find a value</h1>
+<p>What value of the variable is the cut point for the lower or upper percentile?</p>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Draw a normal curve, label the mean.</li>
+<li>Mark the region of interest (upper or lower tail)</li>
+<li>Use the z-table to find the z-score corresponding to the percentile region (area in the tail).</li>
+<li>Convert the z-score back into the original metric (<span class="math">\(X\)</span>)</li>
+</ol>
+</div>
+<div id="examples" class="slide section level1">
+<h1>Examples</h1>
+<p>The average length of time a person stays at a job is 4.4 years with a standard deviation of 1.8 years.</p>
+<ul class="incremental">
+<li>How many years must an employee work at one job to be in the top 8% of time at the job?</li>
+<li>How many years must an employee work at one job to be in the bottom 2% of time at the job?</li>
+</ul>
+</div>
+<div id="more-examples" class="slide section level1">
+<h1>More Examples</h1>
+<ul class="incremental">
+<li>In a normal distribution, what T-score is at the 15th percentile?</li>
+<li>What percentage of the population has an IQ of 120 or higher?</li>
+<li>What percent of scores are in the 6th stanine?</li>
+</ul>
+</div>
+<div id="more-practice" class="slide section level1">
+<h1>More Practice</h1>
+<p>The mean birth weight for infants is 7 pounds with a standard deviation of 1.1 pounds.</p>
+<p>Use the empirical rule to answer:<br />1. What proportion of infants weigh more than 8.1 pounds?<br />2. What proportion of infants weigh less than 4.8 pounds?<br />3. What proportion of infants are between 5.9 and 8.1 pounds?</p>
+<p>Use the z-table to answer the following:<br />1. What proportion of infants weigh less than 5 pounds?<br />2. What percentage of infants weigh more than 7.2 pounds?<br />3. What proportion of infants weigh between 4.9 pounds and 7.1 pounds?<br />4. How much would an infant weigh if they were in the top 12%?<br />5. How much would an infant weigh if they were in the bottom 4%?</p>
+</div>
+</body>
+</html>
