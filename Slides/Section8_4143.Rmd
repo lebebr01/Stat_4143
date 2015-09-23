@@ -1,0 +1,104 @@
+% PSQF 4143: Section 8
+% Brandon LeBeau
+
+
+```{r opts, echo = FALSE}
+opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
+```
+
+# Statistical Inference
+- Useful whenever our concern is with a larger group of subjects than just those on hand
+- Examples: 
+    - Gallup polls
+    - Political polls
+- Reasons for sampling
+    1. Not all of the population is accessible
+        - Too expensive to survey the entire population
+        - Physically or practically impossible to survey the entire population
+    2. The data collection procedure consumes the elements of the population
+        - Example: Wine Tasting
+        
+# Statistical Inference 2
+- The basic aim of statistical inference is to make a conclusion about a **population parameter** based on a **sample statistic** obtained from a sample of the population.
+
+| Characteristic | Parameter   | 
+|:---------------|------------:|
+| Mean           | $\mu$       |
+| Standard Dev.  | $\sigma$    |
+| Correlation    | $\rho$      |
+| Median         | $\epsilon$  |
+| Proportion     | $\pi$       |
+
+# Example
+![](itbs_infer.png)
+
+# Population Terminology
+- Experimentally Accessible Population (EAP)
+    - The population from which we sample
+    - The EAP is what is available to the researcher when she does her study
+- Target Population (TP)
+    - The population to which we generalize
+    
+# Population Terminology Example
+![](infer_population.png)
+
+# Population Example 1
+- Effects of Guidance on the Results of Standardized Tests.
+    - Purpose: 
+    > "to ascertain whether a group of students could be effectively motivated, through individual and group guidance activities, to achieve significantly higher results on the ITED than another group of students who were not afforded the same guidance services."
+    
+    - Subjects:
+    > "270 ninth grade students from a midwestern community of mixed social and	ethnic background. One-half the students	were randomly assigned to an experimental group and one-half to a control group"
+    
+    - Conclusions:
+    > "the results of the standardized achievement testing were related to the  motivational and teaching activities that were carried out prior to the testing"
+    > "improved test results are obtainable when students become personally involved in, motivated by, and interested in the testing program"
+    > "All schools are interested in improving their . . . standardized test [scores], but more important, they must be interested in the individual student and his development"
+    
+# Population Example 2
+- The determination of Social Ranks and Roles
+    - Purpose:
+    > "Are there individual differences in the quality of maternal care given kids and,	if there are, do these lead to differences in social roles?"
+    
+    - Variables:
+        - speed of birth
+	      - immediacy (latency) of maternal responses
+	      - intensity of maternal responsiveness
+	      - vigor of kid
+	      - nursing latency, frequency, and duration
+	      - weight and sex of kid
+	      - relative dominance during play
+	      - priority of access to mother
+	      - spatial relations vis-a-vis other kids
+	   - Subjects:
+	   > "a small group of inbred Toggenburg goats "
+	   
+	   - Conclusions:
+	   > "For goats, and other social species, it	makes  sense to diversify these	capabilities as much as possible -- the	reverse of the all-apples-in-one-basket strategy"
+	   
+# Population Examples Summary
+- In the strictest sense, the results of research studies are limited to generalizations directly to the EAP.
+- Any generalizations to the TP require logical considerations of the similarities and differences between the EAP and TP and how these difference may affect the results.
+    - This is one place where the art of science enters.
+    
+# Situations where EAP and TP may differ
+1. Learning Experiments (cognitive function)
+    - Example: when subjects are undergraduate university students
+2. Methods Studies in Education
+    - Example: Method to teach fifth-graders to spell
+        - Commonly uses intact classrooms
+    - Can also happen in medical research
+3. Polls
+    - Time factor
+4. Medical Studies with Animals
+    - Example: Saccharine causes cancer in rats, therefore it is banned from human consumption.
+    
+# Newspaper Example
+![](science_project.png)
+
+
+
+	
+
+
+
