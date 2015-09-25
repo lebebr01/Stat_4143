@@ -96,9 +96,124 @@ opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=
 # Newspaper Example
 ![](science_project.png)
 
+# Random Sampling
+- A **random sample** of a given population is a sample that is drawn so that each possible sample of that size has an equal probability of being selected from the population.
+    - Note: It is the method of selection, not the particular sample outcome that defines a random sample.
+    
+# Sampling Error
+- **Sampling Error** is the difference between the value of the population parameter ($\theta$) and that of the sample statistic ($T$)
+    - $E = T - \theta$
+        - $E$ is the sampling error
+        - $T$ is the value of the sample statistic
+        - $\theta$ is the value of the population parameter
+- The key to any situation in statistical inference is to know what sample values occur in repeated sampling, and with what probability.
+- In other words, we need to know the sampling distribution of the statistic.
+- We must be able to describe the sampling distribution of the statistic completely if we are to say what would happen when samples are drawn.
 
+# Bias
+- If a sample is not done randomly, then there is a biased sample.
+- It follows, if we have a biased sample, the sample statistic would not correspond to the population parameter and the sample statistic would be biased.
+- This results in **systematic error** in addition to random/sampling error.
+- Two major ways to have bias:
+    1. Sample selection - troublesome, no way to adjust
+    2. Characteristic of the statistic - this we can adjust for if known.
+    
+# Sampling Distribution for the Mean
+![](sample_dist.png)
 
+# Sampling Distribution Example
+- Suppose our population consists of 4 values: 2, 4, 6, 8
+![](sample_dist_population.png)
+- We wish to draw random samples of size 2 from this population with replacement.
+
+# Possible Samples
+![](sample_dist_outcomes.png)
+![](sample_dist_meanout.png)
+
+# Sampling Distribution of the Mean
+- For samples of size 2, drawn repeatedly with replacement from the population 2, 4, 6, 8.
+```{r sampdist}
+dat <- data.frame(mean = rep(c(2, 3, 4, 5, 6, 7, 8), 
+                             times = c(1, 2, 3, 4, 3, 2, 1)))
+library(ggplot2)
+h <- ggplot(dat, aes(x = mean)) + theme_bw()
+h + geom_histogram(binwidth = 1, color = "grey") + 
+  scale_x_continuous(breaks = seq(2.5, 8.5, 1), labels = seq(2, 8, 1))
+```
+![](sample_dist_population.png)
+
+# Sampling Distribution Process
+![](sample_dist_process.png)
+
+# Sampling Distribution of the Mean
+- The mean of any random sampling distribution of $\bar{X}$, called the **expected value of the sample mean**, is the same as the mean of the population of scores.
+$$\mu_{\bar{X}} = \mu_{X}$$
+- This is true regardless of the sample size ($n$), standard deviation ($\sigma_{X}$), and the shape of the population distribution.
+- Assumes sampling with replacement, or $n < 5%$ of $N$
+
+# Sampling Distribution of the Mean 2
+- The standard deviation of the sampling distribution of $\bar{X}$, called the **standard error of the mean**, depends on the standard deviation of the population, $\sigma_{X}$ and the sample size, $n$.
+$$ \sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}} $$
+- The standard error of the mean is based on samples of a specified size.
+- Assumes sampling with replacement, or $n < 5%$ of $N$
 	
+# Sampling Distribution Graphic
+![](sample_dist_general.png)
 
+# Sampling Distribution Example 2
+```{r sampdist2}
+dat <- data.frame(mean = rep(c(2, 3, 4, 5, 6, 7, 8), 
+                             times = c(1, 2, 3, 4, 3, 2, 1)))
+library(ggplot2)
+h <- ggplot(dat, aes(x = mean)) + theme_bw()
+h + geom_histogram(binwidth = 1, color = "grey") + 
+  scale_x_continuous(breaks = seq(2.5, 8.5, 1), labels = seq(2, 8, 1))
+```
+![](sample_dist_population.png)
+
+# Sampling Distribution Example 3
+![](sample_dist_example.png)
+![](sample_dist_example2.png)
+
+# Central Limit Theorem
+- The random sampling distribution of the mean **tends** toward a normal distribution **irrespective of the shape** of the population of observations sampled.
+- The approximation to the normal distribution improves as sample size increases.
+![](CLT_founders.png)
+
+# Central Limit Theorem Example
+![](CLT_example.png)
+
+# Central Limit Theorem Summary
+- If raw scores are normally distributed:
+    - Then the sampling distribution of the mean is normally distributed regardless of the sample size.
+- If raw scores are not normally distributed:
+    - Then the sample distribution of the mean is approximately normally distributed.
+    - The approximation is usually good enough as long as $n \geq 25$
+    - The larger the sample, the better the approximation.
+    
+# Examples
+- Given a normally distributed population with $\mu_{X} = 70$ and $\sigma_{X} = 20$; that is $X \sim N(70, 20)$
+- Assume that we take a random sample of size $n = 25$
+
+# Example 1
+- What is the probability of obtaining a random sample with a mean of 80 or higher?
+$$ Pr (\bar{X} \geq 80 | X \sim N(70, 20)) $$
+$$ Pr (\bar{X} \geq 80 | \bar{X} \sim N(70, 4)) $$
+
+# Example 2
+- What is the probability of obtaining a random sample with a mean that differs from the population mean by more than 10 points?
+$$ Pr (\bar{X} \geq 80 or \bar{X} \leq 60 | X \sim N(70, 20)) $$
+$$ Pr (\bar{X} \geq 80 or \bar{X} \leq 60 | \bar{X} \sim N(70, 4)) $$
+$$ Pr (|\bar{X} - \mu_{X}| \geq 10 | \bar{X} \sim N(70, 4)) $$
+
+# Example 3
+- What sample mean has a value such that the probability of obtaining one at least that high in random sampling is .05?
+- Find $\bar{X}_{o}$ such that:
+$$ Pr (\bar{X} \geq \bar{X}_{o} | \bar{X} \sim N(70, 4)) = 0.05 $$
+
+# Example 4
+- Within what limits would the central 95% of the sample means fall?
+- Find $\bar{X}_{1}$ and $\bar{X}_{2}$ such that:
+$$ Pr (\bar{X}_{1} \leq \bar{X} \leq \bar{X}_{2} | \bar{X} \sim N(70, 4)) = 0.95 $$
 
 
