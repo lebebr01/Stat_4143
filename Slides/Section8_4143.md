@@ -2,9 +2,7 @@
 % Brandon LeBeau
 
 
-```{r opts, echo = FALSE}
-opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
-```
+
 
 # Statistical Inference
 - Useful whenever our concern is with a larger group of subjects than just those on hand
@@ -132,14 +130,7 @@ opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=
 
 # Sampling Distribution of the Mean
 - For samples of size 2, drawn repeatedly with replacement from the population 2, 4, 6, 8.
-```{r sampdist}
-dat <- data.frame(mean = rep(c(2, 3, 4, 5, 6, 7, 8), 
-                             times = c(1, 2, 3, 4, 3, 2, 1)))
-library(ggplot2)
-h <- ggplot(dat, aes(x = mean)) + theme_bw()
-h + geom_histogram(binwidth = 1, color = "grey") + 
-  scale_x_continuous(breaks = seq(2.5, 8.5, 1), labels = seq(2, 8, 1))
-```
+![plot of chunk sampdist](figure/sampdist-1.png) 
 ![](sample_dist_population.png)
 
 # Sampling Distribution Process
@@ -161,14 +152,7 @@ $$ \sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}} $$
 ![](sample_dist_general.png)
 
 # Sampling Distribution Example 2
-```{r sampdist2}
-dat <- data.frame(mean = rep(c(2, 3, 4, 5, 6, 7, 8), 
-                             times = c(1, 2, 3, 4, 3, 2, 1)))
-library(ggplot2)
-h <- ggplot(dat, aes(x = mean)) + theme_bw()
-h + geom_histogram(binwidth = 1, color = "grey") + 
-  scale_x_continuous(breaks = seq(2.5, 8.5, 1), labels = seq(2, 8, 1))
-```
+![plot of chunk sampdist2](figure/sampdist2-1.png) 
 ![](sample_dist_population.png)
 
 # Sampling Distribution Example 3

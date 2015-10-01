@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 8</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 8</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+   <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="statistical-inference" class="slide section level1">
+<h1>Statistical Inference</h1>
+<ul class="incremental">
+<li>Useful whenever our concern is with a larger group of subjects than just those on hand</li>
+<li>Examples:
+<ul class="incremental">
+<li>Gallup polls</li>
+<li>Political polls</li>
+</ul></li>
+<li>Reasons for sampling
+<ol class="incremental" style="list-style-type: decimal">
+<li>Not all of the population is accessible
+<ul class="incremental">
+<li>Too expensive to survey the entire population</li>
+<li>Physically or practically impossible to survey the entire population</li>
+</ul></li>
+<li>The data collection procedure consumes the elements of the population
+<ul class="incremental">
+<li>Example: Wine Tasting</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="statistical-inference-2" class="slide section level1">
+<h1>Statistical Inference 2</h1>
+<ul class="incremental">
+<li>The basic aim of statistical inference is to make a conclusion about a <strong>population parameter</strong> based on a <strong>sample statistic</strong> obtained from a sample of the population.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Characteristic</th>
+<th align="right">Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mean</td>
+<td align="right"><span class="math">\(\mu\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Standard Dev.</td>
+<td align="right"><span class="math">\(\sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Correlation</td>
+<td align="right"><span class="math">\(\rho\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Median</td>
+<td align="right"><span class="math">\(\epsilon\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Proportion</td>
+<td align="right"><span class="math">\(\pi\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<div class="figure">
+<img src="itbs_infer.png" />
+
+</div>
+</div>
+<div id="population-terminology" class="slide section level1">
+<h1>Population Terminology</h1>
+<ul class="incremental">
+<li>Experimentally Accessible Population (EAP)
+<ul class="incremental">
+<li>The population from which we sample</li>
+<li>The EAP is what is available to the researcher when she does her study</li>
+</ul></li>
+<li>Target Population (TP)
+<ul class="incremental">
+<li>The population to which we generalize</li>
+</ul></li>
+</ul>
+</div>
+<div id="population-terminology-example" class="slide section level1">
+<h1>Population Terminology Example</h1>
+<div class="figure">
+<img src="infer_population.png" />
+
+</div>
+</div>
+<div id="population-example-1" class="slide section level1">
+<h1>Population Example 1</h1>
+<ul class="incremental">
+<li>Effects of Guidance on the Results of Standardized Tests.
+<ul class="incremental">
+<li><p>Purpose: &gt; &quot;to ascertain whether a group of students could be effectively motivated, through individual and group guidance activities, to achieve significantly higher results on the ITED than another group of students who were not afforded the same guidance services.&quot;</p></li>
+<li><p>Subjects: &gt; &quot;270 ninth grade students from a midwestern community of mixed social and ethnic background. One-half the students were randomly assigned to an experimental group and one-half to a control group&quot;</p></li>
+<li><p>Conclusions: &gt; &quot;the results of the standardized achievement testing were related to the motivational and teaching activities that were carried out prior to the testing&quot; &gt; &quot;improved test results are obtainable when students become personally involved in, motivated by, and interested in the testing program&quot; &gt; &quot;All schools are interested in improving their . . . standardized test [scores], but more important, they must be interested in the individual student and his development&quot;</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="population-example-2" class="slide section level1">
+<h1>Population Example 2</h1>
+<ul class="incremental">
+<li>The determination of Social Ranks and Roles
+<ul class="incremental">
+<li><p>Purpose: &gt; &quot;Are there individual differences in the quality of maternal care given kids and, if there are, do these lead to differences in social roles?&quot;</p></li>
+<li>Variables:
+<ul class="incremental">
+<li>speed of birth</li>
+<li>immediacy (latency) of maternal responses</li>
+<li>intensity of maternal responsiveness</li>
+<li>vigor of kid</li>
+<li>nursing latency, frequency, and duration</li>
+<li>weight and sex of kid</li>
+<li>relative dominance during play</li>
+<li>priority of access to mother</li>
+<li>spatial relations vis-a-vis other kids</li>
+</ul></li>
+<li><p>Subjects: &gt; &quot;a small group of inbred Toggenburg goats &quot;</p></li>
+<li><p>Conclusions: &gt; &quot;For goats, and other social species, it makes sense to diversify these capabilities as much as possible -- the reverse of the all-apples-in-one-basket strategy&quot;</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="population-examples-summary" class="slide section level1">
+<h1>Population Examples Summary</h1>
+<ul class="incremental">
+<li>In the strictest sense, the results of research studies are limited to generalizations directly to the EAP.</li>
+<li>Any generalizations to the TP require logical considerations of the similarities and differences between the EAP and TP and how these difference may affect the results.
+<ul class="incremental">
+<li>This is one place where the art of science enters.</li>
+</ul></li>
+</ul>
+</div>
+<div id="situations-where-eap-and-tp-may-differ" class="slide section level1">
+<h1>Situations where EAP and TP may differ</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Learning Experiments (cognitive function)
+<ul class="incremental">
+<li>Example: when subjects are undergraduate university students</li>
+</ul></li>
+<li>Methods Studies in Education
+<ul class="incremental">
+<li>Example: Method to teach fifth-graders to spell
+<ul class="incremental">
+<li>Commonly uses intact classrooms</li>
+</ul></li>
+<li>Can also happen in medical research</li>
+</ul></li>
+<li>Polls
+<ul class="incremental">
+<li>Time factor</li>
+</ul></li>
+<li>Medical Studies with Animals
+<ul class="incremental">
+<li>Example: Saccharine causes cancer in rats, therefore it is banned from human consumption.</li>
+</ul></li>
+</ol>
+</div>
+<div id="newspaper-example" class="slide section level1">
+<h1>Newspaper Example</h1>
+<div class="figure">
+<img src="science_project.png" />
+
+</div>
+</div>
+<div id="random-sampling" class="slide section level1">
+<h1>Random Sampling</h1>
+<ul class="incremental">
+<li>A <strong>random sample</strong> of a given population is a sample that is drawn so that each possible sample of that size has an equal probability of being selected from the population.
+<ul class="incremental">
+<li>Note: It is the method of selection, not the particular sample outcome that defines a random sample.</li>
+</ul></li>
+</ul>
+</div>
+<div id="sampling-error" class="slide section level1">
+<h1>Sampling Error</h1>
+<ul class="incremental">
+<li><strong>Sampling Error</strong> is the difference between the value of the population parameter (<span class="math">\(\theta\)</span>) and that of the sample statistic (<span class="math">\(T\)</span>)
+<ul class="incremental">
+<li><span class="math">\(E = T - \theta\)</span>
+<ul class="incremental">
+<li><span class="math">\(E\)</span> is the sampling error</li>
+<li><span class="math">\(T\)</span> is the value of the sample statistic</li>
+<li><span class="math">\(\theta\)</span> is the value of the population parameter</li>
+</ul></li>
+</ul></li>
+<li>The key to any situation in statistical inference is to know what sample values occur in repeated sampling, and with what probability.</li>
+<li>In other words, we need to know the sampling distribution of the statistic.</li>
+<li>We must be able to describe the sampling distribution of the statistic completely if we are to say what would happen when samples are drawn.</li>
+</ul>
+</div>
+<div id="bias" class="slide section level1">
+<h1>Bias</h1>
+<ul class="incremental">
+<li>If a sample is not done randomly, then there is a biased sample.</li>
+<li>It follows, if we have a biased sample, the sample statistic would not correspond to the population parameter and the sample statistic would be biased.</li>
+<li>This results in <strong>systematic error</strong> in addition to random/sampling error.</li>
+<li>Two major ways to have bias:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Sample selection - troublesome, no way to adjust</li>
+<li>Characteristic of the statistic - this we can adjust for if known.</li>
+</ol></li>
+</ul>
+</div>
+<div id="sampling-distribution-for-the-mean" class="slide section level1">
+<h1>Sampling Distribution for the Mean</h1>
+<div class="figure">
+<img src="sample_dist.png" />
+
+</div>
+</div>
+<div id="sampling-distribution-example" class="slide section level1">
+<h1>Sampling Distribution Example</h1>
+<ul class="incremental">
+<li>Suppose our population consists of 4 values: 2, 4, 6, 8 <img src="sample_dist_population.png" /></li>
+<li>We wish to draw random samples of size 2 from this population with replacement.</li>
+</ul>
+</div>
+<div id="possible-samples" class="slide section level1">
+<h1>Possible Samples</h1>
+<p><img src="sample_dist_outcomes.png" /> <img src="sample_dist_meanout.png" /></p>
+</div>
+<div id="sampling-distribution-of-the-mean" class="slide section level1">
+<h1>Sampling Distribution of the Mean</h1>
+<ul class="incremental">
+<li>For samples of size 2, drawn repeatedly with replacement from the population 2, 4, 6, 8. <img src="figure/sampdist-1.png" alt="plot of chunk sampdist" /> <img src="sample_dist_population.png" /></li>
+</ul>
+</div>
+<div id="sampling-distribution-process" class="slide section level1">
+<h1>Sampling Distribution Process</h1>
+<div class="figure">
+<img src="sample_dist_process.png" />
+
+</div>
+</div>
+<div id="sampling-distribution-of-the-mean-1" class="slide section level1">
+<h1>Sampling Distribution of the Mean</h1>
+<ul class="incremental">
+<li>The mean of any random sampling distribution of <span class="math">\(\bar{X}\)</span>, called the <strong>expected value of the sample mean</strong>, is the same as the mean of the population of scores. <span class="math">\[\mu_{\bar{X}} = \mu_{X}\]</span></li>
+<li>This is true regardless of the sample size (<span class="math">\(n\)</span>), standard deviation (<span class="math">\(\sigma_{X}\)</span>), and the shape of the population distribution.</li>
+<li>Assumes sampling with replacement, or <span class="math">\(n &lt; 5%\)</span> of <span class="math">\(N\)</span></li>
+</ul>
+</div>
+<div id="sampling-distribution-of-the-mean-2" class="slide section level1">
+<h1>Sampling Distribution of the Mean 2</h1>
+<ul class="incremental">
+<li>The standard deviation of the sampling distribution of <span class="math">\(\bar{X}\)</span>, called the <strong>standard error of the mean</strong>, depends on the standard deviation of the population, <span class="math">\(\sigma_{X}\)</span> and the sample size, <span class="math">\(n\)</span>. <span class="math">\[ \sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}} \]</span></li>
+<li>The standard error of the mean is based on samples of a specified size.</li>
+<li>Assumes sampling with replacement, or <span class="math">\(n &lt; 5%\)</span> of <span class="math">\(N\)</span></li>
+</ul>
+</div>
+<div id="sampling-distribution-graphic" class="slide section level1">
+<h1>Sampling Distribution Graphic</h1>
+<div class="figure">
+<img src="sample_dist_general.png" />
+
+</div>
+</div>
+<div id="sampling-distribution-example-2" class="slide section level1">
+<h1>Sampling Distribution Example 2</h1>
+<p><img src="figure/sampdist2-1.png" alt="plot of chunk sampdist2" /> <img src="sample_dist_population.png" /></p>
+</div>
+<div id="sampling-distribution-example-3" class="slide section level1">
+<h1>Sampling Distribution Example 3</h1>
+<p><img src="sample_dist_example.png" /> <img src="sample_dist_example2.png" /></p>
+</div>
+<div id="central-limit-theorem" class="slide section level1">
+<h1>Central Limit Theorem</h1>
+<ul class="incremental">
+<li>The random sampling distribution of the mean <strong>tends</strong> toward a normal distribution <strong>irrespective of the shape</strong> of the population of observations sampled.</li>
+<li>The approximation to the normal distribution improves as sample size increases. <img src="CLT_founders.png" /></li>
+</ul>
+</div>
+<div id="central-limit-theorem-example" class="slide section level1">
+<h1>Central Limit Theorem Example</h1>
+<div class="figure">
+<img src="CLT_example.png" />
+
+</div>
+</div>
+<div id="central-limit-theorem-summary" class="slide section level1">
+<h1>Central Limit Theorem Summary</h1>
+<ul class="incremental">
+<li>If raw scores are normally distributed:
+<ul class="incremental">
+<li>Then the sampling distribution of the mean is normally distributed regardless of the sample size.</li>
+</ul></li>
+<li>If raw scores are not normally distributed:
+<ul class="incremental">
+<li>Then the sample distribution of the mean is approximately normally distributed.</li>
+<li>The approximation is usually good enough as long as <span class="math">\(n \geq 25\)</span></li>
+<li>The larger the sample, the better the approximation.</li>
+</ul></li>
+</ul>
+</div>
+<div id="examples" class="slide section level1">
+<h1>Examples</h1>
+<ul class="incremental">
+<li>Given a normally distributed population with <span class="math">\(\mu_{X} = 70\)</span> and <span class="math">\(\sigma_{X} = 20\)</span>; that is <span class="math">\(X \sim N(70, 20)\)</span></li>
+<li>Assume that we take a random sample of size <span class="math">\(n = 25\)</span></li>
+</ul>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example 1</h1>
+<ul class="incremental">
+<li>What is the probability of obtaining a random sample with a mean of 80 or higher? <span class="math">\[ Pr (\bar{X} \geq 80 | X \sim N(70, 20)) \]</span> <span class="math">\[ Pr (\bar{X} \geq 80 | \bar{X} \sim N(70, 4)) \]</span></li>
+</ul>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example 2</h1>
+<ul class="incremental">
+<li>What is the probability of obtaining a random sample with a mean that differs from the population mean by more than 10 points? <span class="math">\[ Pr (\bar{X} \geq 80 or \bar{X} \leq 60 | X \sim N(70, 20)) \]</span> <span class="math">\[ Pr (\bar{X} \geq 80 or \bar{X} \leq 60 | \bar{X} \sim N(70, 4)) \]</span> <span class="math">\[ Pr (|\bar{X} - \mu_{X}| \geq 10 | \bar{X} \sim N(70, 4)) \]</span></li>
+</ul>
+</div>
+<div id="example-3" class="slide section level1">
+<h1>Example 3</h1>
+<ul class="incremental">
+<li>What sample mean has a value such that the probability of obtaining one at least that high in random sampling is .05?</li>
+<li>Find <span class="math">\(\bar{X}_{o}\)</span> such that: <span class="math">\[ Pr (\bar{X} \geq \bar{X}_{o} | \bar{X} \sim N(70, 4)) = 0.05 \]</span></li>
+</ul>
+</div>
+<div id="example-4" class="slide section level1">
+<h1>Example 4</h1>
+<ul class="incremental">
+<li>Within what limits would the central 95% of the sample means fall?</li>
+<li>Find <span class="math">\(\bar{X}_{1}\)</span> and <span class="math">\(\bar{X}_{2}\)</span> such that: <span class="math">\[ Pr (\bar{X}_{1} \leq \bar{X} \leq \bar{X}_{2} | \bar{X} \sim N(70, 4)) = 0.95 \]</span></li>
+</ul>
+</div>
+<div id="clt-overview" class="slide section level1">
+<h1>CLT Overview</h1>
+<div class="figure">
+<img src="CLT_overview.png" />
+
+</div>
+</div>
+</body>
+</html>
