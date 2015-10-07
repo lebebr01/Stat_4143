@@ -74,7 +74,7 @@ opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=
 	   > "a small group of inbred Toggenburg goats "
 	   
 	   - Conclusions:
-	   > "For goats, and other social species, it	makes  sense to diversify these	capabilities as much as possible -- the	reverse of the all-apples-in-one-basket strategy"
+	   > "For goats, and other social species, it	makes sense to diversify these	capabilities as much as possible -- the	reverse of the all-apples-in-one-basket strategy"
 	   
 # Population Examples Summary
 - In the strictest sense, the results of research studies are limited to generalizations directly to the EAP.
