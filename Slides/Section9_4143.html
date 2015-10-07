@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 9</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 9</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+  <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="review" class="slide section level1">
+<h1>Review</h1>
+<ul class="incremental">
+<li>For a randomly selected sample of size <span class="math">\(n\)</span> with a mean <span class="math">\(\mu\)</span> and a standard deviation <span class="math">\(\sigma\)</span>, the following is true:
+<ol class="incremental" style="list-style-type: decimal">
+<li>The distribution of sample means <span class="math">\(\bar{X}\)</span> is approximately normal, regardless of the population distribution.</li>
+<li>The mean of the distribution of sample means is equal to the mean of the population distribution, <span class="math">\(\mu_{x} = \mu\)</span>.</li>
+<li>The standard deviation of the distribution of sample means is equal to: <span class="math">\(\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\)</span></li>
+</ol></li>
+</ul>
+</div>
+<div id="using-the-central-limit-theorem" class="slide section level1">
+<h1>Using the Central Limit Theorem</h1>
+<ul class="incremental">
+<li>The average length of time a person stays at a job is 4.4 years with a standard deviation (<span class="math">\(\sigma_{X}\)</span>) of 1.8 years.</li>
+<li>With the Normal Distribution: What proportion of employees stay more than 7 years on the job?
+<ul class="incremental">
+<li><span class="math">\(z = \frac{x - \mu}{\sigma} = 1.44, A = .074\)</span></li>
+</ul></li>
+<li>With the CLT: What proportion of <em>sample means</em> would have values greater than 7 years? (i.e. What proportion of samples of size 10 would have an average years on the job greater than 7?)
+<ul class="incremental">
+<li><span class="math">\(z = \frac{\bar{X} - \mu_{\bar{X}}}{\sigma_{\bar{X}}} = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} = 4.57, A &lt; .0001\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="estimating-population-parameters" class="slide section level1">
+<h1>Estimating Population Parameters</h1>
+<ul class="incremental">
+<li>The point estimate of the population mean would be the sample mean.
+<ul class="incremental">
+<li>The sample mean would vary from sample to sample.</li>
+<li>One problem, is that the sample mean does not give us an idea of the accuracy to the real value.</li>
+<li>Our solution is to use a confidence interval.</li>
+</ul></li>
+</ul>
+</div>
+<div id="estimating-population-parameters-2" class="slide section level1">
+<h1>Estimating Population Parameters 2</h1>
+<ul class="incremental">
+<li>The confidence interval is a set of values that tell us with a specified accuracy level that the value of the parameter is contained within the values.</li>
+</ul>
+<p>Point Estimate <span class="math">\(\pm\)</span> Critical Value <span class="math">\(*\)</span> Standard Error<br />C% CI of <span class="math">\(\mu\)</span>: <span class="math">\(\bar{X} \pm z_{crit} * \frac{\sigma}{\sqrt{n}}\)</span><br /></p>
+<ul class="incremental"> 
+<li>Where <span class="math">\(\pm z\)</span> are the z-scores such that the proportion (or area) of the curve within the z-scores is equal to the confidence level.</li> 
+<li><span class="math">\(\pm z_{crit} * \frac{\sigma}{\sqrt{n}}\)</span> is referred to as the <strong>Margin of Error</strong>.</li>
+</ul>
+</div>
+<div id="alpha" class="slide section level1">
+<h1>Alpha</h1>
+<ul class="incremental">
+<li>Level of confidence refers to the probability that the researcher is making a correct conclusion.<br /></li>
+<li>There is an amount of error associated with the confidence. <strong>Alpha</strong> is the probability of an incorrect conclusion.<br /><span class="math">\[ \frac{C%}{100} = 1 - \alpha \]</span><br /></li>
+<li>We will talk more about this in the next chapter.</li>
+</ul>
+</div>
+<div id="confidence-interval-for-mu" class="slide section level1">
+<h1>Confidence Interval for <span class="math">\(\mu\)</span></h1>
+<ul class="incremental">
+<li>A 90% confidence interval for <span class="math">\(\mu\)</span>:<br /><span class="math">\[ \bar{X} \pm 1.64 * \frac{\sigma}{\sqrt{n}} \]</span></li>
+<li>A 95% confidence interval for <span class="math">\(\mu\)</span>:<br /><span class="math">\[ \bar{X} \pm 1.96 * \frac{\sigma}{\sqrt{n}} \]</span></li>
+<li>A 99% confidence interval for <span class="math">\(\mu\)</span>:<br /><span class="math">\[ \bar{X} \pm 2.58 * \frac{\sigma}{\sqrt{n}} \]</span></li>
+</ul>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>A team statistician for the University of Iowa wants to estimate the average number of points the team will score during the season. The population mean is unknown, but the population standard deviation is 5 points. A random sample of 12 games was selected from the past two seasons; the average number of points scored was 27.4.
+<ul class="incremental">
+<li>What is the best point estimate of the population mean?<br /></li>
+<li>What is the standard error?</li>
+<li>What is the 95% confidence interval?</li>
+<li>What is the 99% confidence interval?</li>
+</ul></li>
+</ul>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example 2</h1>
+<ul class="incremental">
+<li>A team statistician for the University of Iowa wants to estimate the average number of points the team will score during the season. The population mean is unknown, but the population standard deviation is 5 points. A random sample of 24 games was selected from the past two seasons; the average number of points scored was 27.4.
+<ul class="incremental">
+<li>What is going to change in this example compared to the previous example?</li>
+<li>What is the best point estimate of the population mean?<br /></li>
+<li>What is the standard error?</li>
+<li>What is the 95% confidence interval?</li>
+<li>What is the 99% confidence interval?</li>
+</ul></li>
+</ul>
+</div>
+<div id="what-do-we-mean-by-95-confidence" class="slide section level1">
+<h1>What do we mean by 95% confidence?</h1>
+<ul class="incremental">
+<li>Run R Shiny App</li>
+<li>Interpretations for 95% CI [25.4, 29.4]:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Does <span class="math">\(\mu\)</span> fall in this interval?</li>
+<li>Is there a 95% chance that <span class="math">\(\mu\)</span> falls in this interval?</li>
+<li>If 100 intervals were constructed, about how many intervals would contain <span class="math">\(\mu\)</span>?</li>
+<li>If we constructed an infinte number of intervals, how many would contain <span class="math">\(\mu\)</span>?</li>
+</ol></li>
+</ul>
+</div>
+<div id="students-t-distribution" class="slide section level1">
+<h1>Student's t-distribution</h1>
+<ul class="incremental">
+<li>Most often, the population standard deviation, <span class="math">\(\sigma\)</span> is not known, therefore we are unable to calculate the z-score.</li>
+<li>Luckily, we can estimate <span class="math">\(\sigma\)</span> with <span class="math">\(s\)</span>, the sample standard deviation.</li>
+<li>However, one new problem is that we no longer have a normal distribution by using <span class="math">\(s\)</span> as an estimate for <span class="math">\(\sigma\)</span>.</li>
+<li>We will now use the t-distribution when the population standard deviation in not known and sample size is small.</li>
+</ul>
+</div>
+<div id="comparing-t-distribution-to-normal-distribution." class="slide section level1">
+<h1>Comparing t-distribution to normal distribution.</h1>
+<ul class="incremental">
+<li>The two distributions are very similar.
+<ul class="incremental">
+<li>bell-shaped, symmetric, tails are asymptotic to the x-axis, area under the curve equals 1.</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="figure/normvst-1.png" alt="plot of chunk normvst" />
+<p class="caption">plot of chunk normvst</p>
+</div>
+</div>
+<div id="comparing-t-distribution-to-normal-distribution.-1" class="slide section level1">
+<h1>Comparing t-distribution to normal distribution.</h1>
+<ul class="incremental">
+<li><p>Formula comparisons:<br />Population SD: <span class="math">\(\sigma = \sqrt{\frac{\sum(X - \bar{X})^2}{n}}\)</span> z-score: <span class="math">\(z_{obs} = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}\)</span><br />Sample SD: <span class="math">\(s = \sqrt{\frac{\sum(X - \bar{X})^2}{n}}\)</span> t-score: <span class="math">\(t_{obs} = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n-1}}}\)</span>, <span class="math">\(df = n - 1\)</span></p></li>
+<li><p>As the degrees of freedom increase, the distribution becomes closer to a normal distribution (i.e. the tails have fewer values in them and more values fall in the center of the distribution.)</p></li>
+</ul>
+</div>
+<div id="degrees-of-freedom" class="slide section level1">
+<h1>Degrees of Freedom</h1>
+<p><span class="math">\[ s = \sqrt{\frac{\sum(X - \bar{X})^2}{n - 1}} \]</span><br /></p>
+<ul>
+<li> Degrees of freedom refers to the <span class="math">\(n-1\)</span> in the denominator.</li> 
+<li> Suppose we let 5 people pick any number. The only requirement we make is that the sum of these 5 numbers must equal 0.</li> 
+<li> In this scenario, the first 4 people can pick any number they want (are &quot;free to vary&quot;), while the 5th number is &quot;fixed&quot; to ensure our sum of the numbers is 0.</li> 
+<li> More generally from the sample standard deviation above, we say that <span class="math">\(n-1\)</span> numbers are &quot;free to vary&quot;.</li>
+</ul>
+</div>
+<div id="confidence-interval-for-t-distribution" class="slide section level1">
+<h1>Confidence Interval for t-distribution</h1>
+<ul class="incremental">
+<li>To calculate a confidence interval for the population mean when the population standard deviation is unknown:<br />C% CI of <span class="math">\(\mu\)</span>: <span class="math">\(\bar{X} \pm t_{crit} * \frac{s}{\sqrt{n}}\)</span><br /></li>
+<li>Where <span class="math">\(\pm t\)</span> are the t-scores such that the proportion (or area) of the curve within the t-scores is equal to the confidence level.</li>
+</ul>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>A team statistician for the University of Arkansas wants to estimate the average number of points the team will score during the season. A random sample of 18 games was selected from the past two seasons; the average number of points scored was 27.4, and the standard deviation was 4.7.
+<ul class="incremental">
+<li>What is the best point estimate of the population mean?<br /></li>
+<li>What is the standard error?</li>
+<li>What is the 95% confidence interval?</li>
+<li>What is the 99% confidence interval?</li>
+</ul></li>
+</ul>
+</div>
+<div id="big-picture-for-inferential-statistics" class="slide section level1">
+<h1>Big Picture for Inferential Statistics</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Establish a Research Hypothesis.</li>
+<li>Choose statistical test to use based on research question and data/information you have.</li>
+<li>Make a null and alternative hypothesis, one-tailed or two tailed hypotheses.</li>
+<li>Set level of significance (type I/II Error).
+<ul class="incremental">
+<li>Find a critical value.</li>
+<li>How confident do you want to be?</li>
+</ul></li>
+<li>Calculate test statistic.
+<ul class="incremental">
+<li>Find a p-value.</li>
+</ul></li>
+<li>Reach statistical conclusion.</li>
+<li>Make a research conclusion (i.e. translate statistical conclusion into real world terminology).</li>
+</ol>
+</div>
+<div id="research-question-and-type-of-test" class="slide section level1">
+<h1>Research Question and Type of Test</h1>
+<ul class="incremental">
+<li>What are you interested in knowing?</li>
+<li>What are you trying to discover by doing your research?</li>
+<li>One sample tests analyze a sample's mean versus the population mean.
+<ul class="incremental">
+<li>Use a Z-test when the population standard deviation is known.</li>
+<li>Use a t-test when the population standard deviation is unknown.</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypotheses" class="slide section level1">
+<h1>Hypotheses</h1>
+<ul class="incremental">
+<li>A hypothesis is a proposed explanation for a problem.</li>
+<li>The hypothesis is the general &quot;blue-print&quot; for collecting and interpreting data.</li>
+<li>A hypothesis provides direction to the research.
+<ul class="incremental">
+<li>Helps us specify the population, what type of data we need, relationship between variables, statistical analyses to use.</li>
+</ul></li>
+<li>A statistical hypothesis provides a specific relational statement that can be statistically tested.</li>
+<li><strong>The statistical hypothesis is always stated in terms of population parameter</strong> (<span class="math">\(\mu\)</span> for now).</li>
+<li>Can state the hypothesis with words and in notation.</li>
+<li>The type of test being conducted influences how the hypothesis will be stated.</li>
+</ul>
+</div>
+<div id="types-of-hypotheses" class="slide section level1">
+<h1>Types of Hypotheses</h1>
+<ul class="incremental">
+<li><strong>Null Hypthosis</strong> (<span class="math">\(H_{0}\)</span>): statement that there is NO relationship, NO impact, or NO difference.</li>
+<li>We assume the null hypothesis is true and test against the null hypothesis.
+<ul class="incremental">
+<li>We ultimately make statements about the likelihood the null hypothesis is true.</li>
+</ul></li>
+<li>The conclusions are stated in terms of the null hypothesis:
+<ul class="incremental">
+<li><em>Reject the null hypothesis</em>, which is not agreeing with the null hypothesis.</li>
+<li><em>Fail to reject the null hypothesis</em>, which is a statement of agreement with the null hypothesis. We never &quot;accept&quot; the null hypothesis, just provide evidence that our sample is not different from the population.</li>
+</ul></li>
+</ul>
+</div>
+<div id="types-of-hypotheses-2" class="slide section level1">
+<h1>Types of Hypotheses 2</h1>
+<ul class="incremental">
+<li><strong>Alternative Hypothesis</strong> (<span class="math">\(H_{1}\)</span> or <span class="math">\(H_{a}\)</span>): statement that there IS a relationship among variables or that there is a difference between groups.</li>
+<li>For conclusions, <em>failing to reject the null hypothesis</em> provides evidence in favor of the alternative hypothesis.</li>
+</ul>
+</div>
+<div id="hypotheses-for-one-sample-tests" class="slide section level1">
+<h1>Hypotheses for one-sample tests</h1>
+<ul class="incremental">
+<li>Non-directional (two-tailed) test:<br /><span class="math">\(H_{0}: \mu = \mu_{0}\)</span> and <span class="math">\(H_{1}: \mu \neq \mu_{0}\)</span></li>
+<li>Directional (one-tailed) test:<br /><span class="math">\(H_{0}: \mu = \mu_{0}\)</span> and <span class="math">\(H_{1}: \mu &gt; \mu_{0}\)</span> right tailed<br /><span class="math">\(H_{0}: \mu = \mu_{0}\)</span> and <span class="math">\(H_{1}: \mu &lt; \mu_{0}\)</span> left tailed</li>
+</ul>
+<p>where <span class="math">\(\mu_{0}\)</span> is the proposed population mean that is to be tested.</p>
+</div>
+<div id="one-tailed-vs-two-tailed-hypotheses" class="slide section level1">
+<h1>One-tailed vs two-tailed Hypotheses</h1>
+<ul class="incremental">
+<li>With a two-tailed (non-directional) test, you reject the null hypothesis if the sample mean is <strong>either</strong> significantly greater or less than the hypothesized value.</li>
+<li>In a one-tailed (directional) test, the null hypothesis would not be rejected unless the observed difference is in the hypothesized direction.
+<ul class="incremental">
+<li>The direction of the hypothesis affects which areas within the curve result in a rejection of <span class="math">\(H_{0}\)</span>. It also influences our choice for a critical value.</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypothesis-example-1" class="slide section level1">
+<h1>Hypothesis Example 1</h1>
+<p>Question: Is the average price of gas in Iowa City less than the national average of $2.30?<br /><br> <span class="math">\(H_{0}:\)</span><br /><br> <span class="math">\(H_{1}:\)</span></p>
+</div>
+<div id="hypothesis-example-2" class="slide section level1">
+<h1>Hypothesis Example 2</h1>
+<p>Question: Is the average Big 10 college football head coaches salary greater than the national average of $1.64 million?<br /><br> <span class="math">\(H_{0}:\)</span><br /><br> <span class="math">\(H_{1}:\)</span></p>
+</div>
+<div id="level-of-significance" class="slide section level1">
+<h1>Level of Significance</h1>
+<ul class="incremental">
+<li><strong>Level of Significance</strong> (i.e. <span class="math">\(\alpha\)</span>-level) is a predetermined level of rejecting the null when it is actually true.</li>
+<li>The level of significance is the area in the tail of direction stated in the hypothesis is equal to <span class="math">\(\alpha\)</span>.</li>
+<li>Confidence level (make correct conclusion C% of the time) <span class="math">\(C = 1 - \alpha\)</span></li>
+<li>Common values for <span class="math">\(\alpha\)</span> include: .05, .01, .001.</li>
+<li>The researcher <em>chooses</em> how confident he or she wants to be in their test. This also determines the chance of error the researcher is willing to make.</li>
+</ul>
+</div>
+<div id="critical-values" class="slide section level1">
+<h1>Critical Values</h1>
+<ul class="incremental">
+<li>Critical values are the values that separate the distribution into regions where the null hypothesis will be rejected or regions where the null hypothesis will failed to be rejected.</li>
+<li>The critical values separates the rejection region from the non-rejection region.</li>
+<li>Critical values are found using the distribution tables.</li>
+<li>To find a critical value, we need to know the level of significance, direction of test, and degrees of freedom (except for z-critical values).</li>
+</ul>
+</div>
+<div id="rejection-region" class="slide section level1">
+<h1>Rejection region</h1>
+<ul class="incremental">
+<li>The rejection region is the range of values for which the null hypothesis is not probable.
+<ul class="incremental">
+<li>It is always in the direction of the alternative hypothesis.</li>
+<li>The total area of the rejection area equal <span class="math">\(\alpha\)</span>.</li>
+</ul></li>
+<li>If our test statistic is so large that it falls in the rejection region, your conclusion is to reject the null hypothesis.</li>
+</ul>
+</div>
+<div id="two-tailed-rejection-region" class="slide section level1">
+<h1>Two-tailed Rejection Region</h1>
+<ul class="incremental">
+<li>For a level of significance of <span class="math">\(\alpha = 0.05\)</span>, the rejection region for a normal distribution would look like:</li>
+</ul>
+<div class="figure">
+<img src="figure/rejectz-1.png" alt="plot of chunk rejectz" />
+<p class="caption">plot of chunk rejectz</p>
+</div>
+</div>
+<div id="one-tailed-rejection-region-greater-than" class="slide section level1">
+<h1>One-tailed Rejection Region (greater than)</h1>
+<ul class="incremental">
+<li>For a level of significance of <span class="math">\(\alpha = 0.05\)</span>, the rejection region for a normal distribution would look like:</li>
+</ul>
+<div class="figure">
+<img src="figure/rejectzoneg-1.png" alt="plot of chunk rejectzoneg" />
+<p class="caption">plot of chunk rejectzoneg</p>
+</div>
+</div>
+<div id="one-tailed-rejection-region-less-than" class="slide section level1">
+<h1>One-tailed Rejection Region (less than)</h1>
+<ul class="incremental">
+<li>For a level of significance of <span class="math">\(\alpha = 0.05\)</span>, the rejection region for a normal distribution would look like:</li>
+</ul>
+<div class="figure">
+<img src="figure/rejectzonel-1.png" alt="plot of chunk rejectzonel" />
+<p class="caption">plot of chunk rejectzonel</p>
+</div>
+</div>
+<div id="critical-value-example" class="slide section level1">
+<h1>Critical Value Example</h1>
+<ul class="incremental">
+<li>Z
+<ul class="incremental">
+<li>What are the critical values for a two-tailed z-test with <span class="math">\(\alpha = .05\)</span>?</li>
+<li>What are the critical values for a left-tailed z-test with <span class="math">\(\alpha = .02\)</span>?</li>
+</ul></li>
+<li>T
+<ul class="incremental">
+<li>What are the critical values for a two-tailed t-test with <span class="math">\(\alpha = .05\)</span> and degrees of freedom of 10?</li>
+<li>What are the critical values for a right-tailed t-test with <span class="math">\(\alpha = .05\)</span> and degrees of freedom of 25?</li>
+</ul></li>
+</ul>
+</div>
+<div id="test-statistic" class="slide section level1">
+<h1>Test Statistic</h1>
+<ul class="incremental">
+<li>The type of test determines how the test statistic is calculated.</li>
+<li>In this class we will talk about these tests:
+<ul class="incremental">
+<li>One-sample z-test</li>
+<li>One-sample t-test</li>
+<li>Independent t-test</li>
+<li>Dependent/paired t-test</li>
+</ul></li>
+</ul>
+</div>
+<div id="test-statistic---one-sample-z-test" class="slide section level1">
+<h1>Test Statistic - One Sample Z-test</h1>
+<ul class="incremental">
+<li>A test for quantitative data.</li>
+<li>Information given (known):
+<ul class="incremental">
+<li>Population mean (<span class="math">\(\mu\)</span>)</li>
+<li>Population standard deviation (<span class="math">\(\sigma\)</span>)</li>
+</ul></li>
+<li>Questions answered:
+<ul class="incremental">
+<li>Did a particular sample come from a given population?</li>
+<li>Is a sample mean significantly different/less than/greater than the population mean?</li>
+</ul></li>
+</ul>
+</div>
+<div id="one-sample-z-test-z_obs" class="slide section level1">
+<h1>One Sample Z-test: <span class="math">\(z_{obs}\)</span></h1>
+<ul class="incremental">
+<li>Formula:<br /><span class="math">\(z_{obs} = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}\)</span><br />where <span class="math">\(\bar{X}\)</span> is the sample mean,<br /><span class="math">\(\mu\)</span> is the population mean (given),<br /><span class="math">\(\sigma\)</span> is the population standard deviation (given),<br /><span class="math">\(n\)</span> is the sample size.</li>
+</ul>
+</div>
+<div id="test-statistic-t-test" class="slide section level1">
+<h1>Test Statistic t-test</h1>
+<ul class="incremental">
+<li>A test for quantitative data.</li>
+<li>Information given (known):
+<ul class="incremental">
+<li>Population mean (<span class="math">\(\mu\)</span>)</li>
+<li><em>Sample</em> standard deviation (<span class="math">\(s\)</span>)</li>
+</ul></li>
+<li>Questions answered:
+<ul class="incremental">
+<li>Did a particular sample come from a given population?</li>
+<li>Is a sample mean significantly different/less than/greater than the population mean?</li>
+</ul></li>
+</ul>
+</div>
+<div id="one-sample-t-test-t_obs" class="slide section level1">
+<h1>One Sample t-test: <span class="math">\(t_{obs}\)</span></h1>
+<ul class="incremental">
+<li>Formula:<br /><span class="math">\(t_{obs} = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n - 1}}}\)</span><br />where <span class="math">\(\bar{X}\)</span> is the sample mean,<br /><span class="math">\(\mu\)</span> is the population mean (given or calculated from sample),<br /><span class="math">\(s\)</span> is the sample standard deviation (given or calculated from sample),<br /><span class="math">\(n\)</span> is the sample size.</li>
+</ul>
+</div>
+<div id="statistical-conclusion" class="slide section level1">
+<h1>Statistical Conclusion</h1>
+<ul class="incremental">
+<li>If the test statistic (either <span class="math">\(z_{obs}\)</span> or <span class="math">\(t_{obs}\)</span>) falls in the &quot;rejection region,&quot; or outside of the critical value(s), the conclusion is to <strong>reject the null hypothesis</strong>.
+<ul class="incremental">
+<li>More formally, we state that the results are &quot;statistically significant&quot; with a certain confidence level.</li>
+</ul></li>
+<li>If the observed test statistic (either <span class="math">\(z_{obs}\)</span> or <span class="math">\(t_{obs}\)</span>) does not fall in the &quot;rejection region,&quot; or inside of the critical value(s), the conclusion is to <strong>fail to reject the null hypothesis</strong>.</li>
+</ul>
+</div>
+<div id="research-conclusion" class="slide section level1">
+<h1>Research Conclusion</h1>
+<ul class="incremental">
+<li>The statistical conclusion can also be stated in terms of words.</li>
+<li>If we <strong>reject the null hypothesis</strong>, we can state that the sample mean differs, is greater than, or less than the population mean.
+<ul class="incremental">
+<li>The direction we can conclude stems back to the direction of our research hypotheses.</li>
+</ul></li>
+<li>If we <strong>fail to reject the null hypothesis</strong>, we state that the sample mean does not differ, is not greater than, or is less than the population mean.</li>
+</ul>
+</div>
+<div id="p-value" class="slide section level1">
+<h1>p-value</h1>
+<ul class="incremental">
+<li>The <strong>p-value</strong> is the probability of obtaining a result at least as extreme as the one that was actually observed, given that the null hypothesis is true.</li>
+<li>This probability corresponds to the area greater than the observed test-statistic, either <span class="math">\(z_{obs}\)</span> or <span class="math">\(t_{obs}\)</span>.</li>
+<li>When the conclusion is to <strong>reject the null hypothesis</strong> it is known that <span class="math">\(p &lt; \alpha\)</span>.</li>
+<li>When the conclusion is to <strong>fail to reject the null hypothesis</strong> it is known that <span class="math">\(p &gt; \alpha\)</span>.</li>
+</ul>
+</div>
+<div id="visualizing-p-value" class="slide section level1">
+<h1>Visualizing p-value</h1>
+<ul class="incremental">
+<li>Suppose we have a z-obs value of 2.3 with a one-tailed greater than hypothesis.</li>
+</ul>
+<div class="figure">
+<img src="figure/pvaluegreater-1.png" alt="plot of chunk pvaluegreater" />
+<p class="caption">plot of chunk pvaluegreater</p>
+</div>
+</div>
+<div id="visualizing-p-value-2" class="slide section level1">
+<h1>Visualizing p-value 2</h1>
+<ul class="incremental">
+<li>Suppose we have a z-obs value of 2.3 with a two-tailed hypothesis.</li>
+</ul>
+<div class="figure">
+<img src="figure/pvalueless-1.png" alt="plot of chunk pvalueless" />
+<p class="caption">plot of chunk pvalueless</p>
+</div>
+</div>
+<div id="example-3" class="slide section level1">
+<h1>Example</h1>
+<p>The average individual works out an average of 3.75 hours per week (45 minutes, 5 days a week), with a standard deviation of 1 hour. Suppose we collect a sample of 159 participants and the sample mean was 4.87 hours of exercise per week. Is our sample mean significantly greater than the national population at <span class="math">\(\alpha = .05\)</span>?</p>
+<ol class="incremental" style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="example-2-1" class="slide section level1">
+<h1>Example 2</h1>
+<p>The average height for US females 20 years and older is about 64 inches with a standard deviation about 4 inches. A sample of 28 players from the UI women's soccer team has an average height of 66.6 inches. How likely is it that the UI women's soccer team is significantly taller than the adult female population with an <span class="math">\(\alpha = .05\)</span>?</p>
+<ol class="incremental" style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="example-3-1" class="slide section level1">
+<h1>Example 3</h1>
+<p>Suppose you conduct an experiment to see if a given therapy works to reduce test anxiety in a sample of college students. A standard measure of test anxiety is known to produce a population mean (<span class="math">\(\mu\)</span>) of 20. With your sample of 61 students, the mean is 18 and the standard deviation is 9. Use an <span class="math">\(\alpha = .05\)</span>.</p>
+<ol class="incremental" style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+</body>
+</html>

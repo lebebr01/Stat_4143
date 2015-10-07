@@ -2,9 +2,7 @@
 % Brandon LeBeau
 
 
-```{r opts, echo = FALSE}
-opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
-```
+
 
 # Review
 - For a randomly selected sample of size $n$ with a mean $\mu$ and a standard deviation $\sigma$, the following is true:
@@ -81,18 +79,7 @@ $$ \bar{X} \pm 2.58 * \frac{\sigma}{\sqrt{n}} $$
 - The two distributions are very similar.  
     - bell-shaped, symmetric, tails are asymptotic to the x-axis, area under the curve equals 1.  
     
-```{r normvst, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- rbind(data.frame(dens = dnorm(x = seq(-3.5, 3.5, .001)),x = seq(-3.5, 3.5, .001), type = "norm"), data.frame(dens = dt(x = seq(-3.5, 3.5, .001), df = 2), x = seq(-3.5, 3.5, .001), type = "t"))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = dens, color = type)) + theme_bw(base_size = 26)
-p + geom_line(lwd = 2) + theme(legend.position = "none") + 
-  scale_color_manual(values = c("black", "steelblue")) + 
-  #geom_density(aes(x = t), color = "steelblue", lwd = 2, lty = 2) +
-  scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) + 
-  annotate("text", x = 2.5, y = .35, color = "black", label = "Normal", size = 8) + 
-  annotate("text", x = 2.5, y = .3, color = "steelblue", label = "t-dist (2)", size = 8)
-```
+![plot of chunk normvst](figure/normvst-1.png) 
 
 # Comparing t-distribution to normal distribution.
 - Formula comparisons:  
@@ -211,59 +198,17 @@ $H_{1}:$
 # Two-tailed Rejection Region
 - For a level of significance of $\alpha = 0.05$, the rejection region for a normal distribution would look like:  
 
-```{r rejectz, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- data.frame(x = seq(-3.5, 3.5, by = .0001))
-dataset$y <- dnorm(dataset$x)
-
-shade <- rbind(c(-3.5,0), subset(dataset, x < qnorm(0.025)), c(qnorm(0.025), 0))
-shade2 <- rbind(c(qnorm(.975),0), subset(dataset, x > qnorm(0.975)), c(3.5, 0))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = y)) + theme_bw(base_size = 26)
-p + scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) + 
-  geom_polygon(data = shade, aes(x = x, y = y), fill = "darkred") + 
-  geom_polygon(data = shade2, aes(x = x, y = y), fill = "darkred") +
-  geom_line(color = "black", size = 1.5) +
-  geom_vline(xintercept = c(qnorm(0.025), qnorm(0.975)), size = 1.25) + 
-  annotate("text", x = -2.6, y = .25, label = "z = -1.96", size = 8) + 
-  annotate("text", x = 2.6, y = .25, label = "z = 1.96", size = 8)
-```
+![plot of chunk rejectz](figure/rejectz-1.png) 
 
 # One-tailed Rejection Region (greater than)
 - For a level of significance of $\alpha = 0.05$, the rejection region for a normal distribution would look like:  
 
-```{r rejectzoneg, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- data.frame(x = seq(-3.5, 3.5, by = .0001))
-dataset$y <- dnorm(dataset$x)
-
-shade2 <- rbind(c(qnorm(.95),0), subset(dataset, x > qnorm(0.95)), c(3.5, 0))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = y)) + theme_bw(base_size = 26)
-p + scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) +
-  geom_polygon(data = shade2, aes(x = x, y = y), fill = "darkred") +
-  geom_line(color = "black", size = 1.5) + 
-  geom_vline(xintercept = qnorm(0.95), size = 1.25) + 
-  annotate("text", x = 2.3, y = .25, label = "z = 1.645", size = 8)
-```
+![plot of chunk rejectzoneg](figure/rejectzoneg-1.png) 
 
 # One-tailed Rejection Region (less than)
 - For a level of significance of $\alpha = 0.05$, the rejection region for a normal distribution would look like:    
 
-```{r rejectzonel, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- data.frame(x = seq(-3.5, 3.5, by = .0001))
-dataset$y <- dnorm(dataset$x)
-
-shade2 <- rbind(c(-3.5,0), subset(dataset, x < qnorm(0.05)), c(qnorm(0.05), 0))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = y)) + theme_bw(base_size = 26)
-p + scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) +
-  geom_polygon(data = shade2, aes(x = x, y = y), fill = "darkred") +
-  geom_line(color = "black", size = 1.5) + 
-  geom_vline(xintercept = qnorm(0.05), size = 1.25) + 
-  annotate("text", x = -2.3, y = .25, label = "z = -1.645", size = 8)
-```
+![plot of chunk rejectzonel](figure/rejectzonel-1.png) 
 
 # Critical Value Example
 - Z  
@@ -335,41 +280,12 @@ $n$ is the sample size.
 # Visualizing p-value
 - Suppose we have a z-obs value of 2.3 with a one-tailed greater than hypothesis.  
 
-```{r pvaluegreater, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- data.frame(x = seq(-3.5, 3.5, by = .0001))
-dataset$y <- dnorm(dataset$x)
-
-shade2 <- rbind(c(2.3,0), subset(dataset, x >= 2.3), c(3.5, 0))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = y)) + theme_bw(base_size = 26)
-p + scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) +
-  geom_polygon(data = shade2, aes(x = x, y = y), fill = "darkred") +
-  geom_line(color = "black", size = 1.5) + 
-  geom_vline(xintercept = 2.3, size = 1.25) + 
-  annotate("text", x = 2.75, y = .25, label = "z = 2.3", size = 8)
-```
+![plot of chunk pvaluegreater](figure/pvaluegreater-1.png) 
 
 # Visualizing p-value 2
 - Suppose we have a z-obs value of 2.3 with a two-tailed hypothesis.  
 
-```{r pvalueless, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-dataset <- data.frame(x = seq(-3.5, 3.5, by = .0001))
-dataset$y <- dnorm(dataset$x)
-
-shade <- rbind(c(-3.5, 0), subset(dataset, x <= -2.3), c(-2.3, 0))
-shade2 <- rbind(c(2.3,0), subset(dataset, x >= 2.3), c(3.5, 0))
-
-library(ggplot2)
-p <- ggplot(dataset, aes(x = x, y = y)) + theme_bw(base_size = 26)
-p + scale_x_continuous("", limits = c(-3.5, 3.5), breaks = seq(-3, 3, 1)) +
-  geom_polygon(data = shade2, aes(x = x, y = y), fill = "darkred") +
-  geom_polygon(data = shade, aes(x = x, y = y), fill = "darkred") + 
-  geom_line(color = "black", size = 1.5) + 
-  geom_vline(xintercept = c(-2.3, 2.3), size = 1.25) + 
-  annotate("text", x = 2.75, y = .25, label = "z = 2.3", size = 8) + 
-  annotate("text", x = -2.8, y = .25, label = "z = -2.3", size = 8)
-```
+![plot of chunk pvalueless](figure/pvalueless-1.png) 
 
 # Example
 The average individual works out an average of 3.75 hours per week (45 minutes, 5 days a week), with a standard deviation of 1 hour. Suppose we collect a sample of 159 participants and the sample mean was 4.87 hours of exercise per week. Is our sample mean significantly greater than the national population at $\alpha = .05$?  
