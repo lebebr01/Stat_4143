@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Brandon LeBeau},
+            pdftitle={PSQF 4143: Section 7 Supplemental},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{PSQF 4143: Section 7 Supplemental}
+\author{Brandon LeBeau}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Answers to More Excercise
+problems}\label{answers-to-more-excercise-problems}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Empirical Rule:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    \(Pr(X \geq 8.1 | X \sim ND, \mu = 7, \sigma = 1.1) = .1587\)
+  \item
+    \(Pr(X \leq 4.8 | X \sim ND, \mu = 7, \sigma = 1.1) = .0228\)
+  \item
+    \(Pr(5.9 \leq X \leq 8.1 | X \sim ND, \mu = 7, \sigma = 1.1) = .6826\)
+  \end{enumerate}
+\item
+  Z-table:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    \(Pr(X \leq 5 | X \sim ND, \mu = 7, \sigma = 1.1) = .0344\)
+  \item
+    \(Pr(X \geq 7.2 | X \sim ND, \mu = 7, \sigma = 1.1) = .4286\)
+  \item
+    \(Pr(4.9 \leq X \leq 7.1 | X \sim ND, \mu = 7, \sigma = 1.1) = .5078\)
+  \item
+    \(Z = 1.17; X = 1.17 * 1.1 + 7 = 8.287\)
+  \item
+    \(Z = 1.75; X = 1.75 * 1.1 + 7 = 8.925\)
+  \end{enumerate}
+\end{itemize}
+
+\end{document}
