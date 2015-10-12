@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 10</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 10</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+    <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="dichotomous-populations" class="slide section level1">
+<h1>Dichotomous Populations</h1>
+<div class="figure">
+<img src="dich_population.png" />
+
+</div>
+</div>
+<div id="dichotomous-populations-2" class="slide section level1">
+<h1>Dichotomous Populations 2</h1>
+<p><span class="math">\[ \phi = \frac{\mbox{# of Democrats}}{N} \]</span> <span class="math">\[ \phi = \frac{\sum X_{i}}{N} \]</span></p>
+<ul class="incremental">
+<li>Thus, <span class="math">\(\phi\)</span> is the mean of the population of dichotomous scores</li>
+<li>More simply, <span class="math">\(\phi = \mu\)</span></li>
+</ul>
+</div>
+<div id="dichotomous-populations-3" class="slide section level1">
+<h1>Dichotomous Populations 3</h1>
+<ul class="incremental">
+<li>Recall: <span class="math">\(\sigma^2 = \frac{\sum X_{i}^{2}}{N} - \mu^2\)</span></li>
+<li>Now: because <span class="math">\(X_{i}\)</span> is dichotomous, <span class="math">\(X_{i}^{2} = X_{i}\)</span></li>
+<li>Therefore: <span class="math">\[\sigma^{2} = \frac{\sum X_{i}}{N} - \mu^2\]</span> <span class="math">\[\sigma^2 = \phi - \phi^2\]</span> <span class="math">\[ \sigma^2 = \phi (1 - \phi)\]</span></li>
+</ul>
+</div>
+<div id="the-sampling-distribution-of-the-proportion" class="slide section level1">
+<h1>The sampling distribution of the proportion</h1>
+<div class="figure">
+<img src="sample_dist_proportion.png" />
+
+</div>
+</div>
+<div id="the-sampling-distribution-of-the-proportion-2" class="slide section level1">
+<h1>The sampling distribution of the proportion 2</h1>
+<ul class="incremental">
+<li>Definition:
+<ul class="incremental">
+<li>Given an infinite dichotomous population, the elements of which are assigned a score of 1 if they belong to Class A and a score of 0 if they do not belong to Class A, the sampling distribution of the proportion p in random samples of size n taken from this population, approaches the normal distribution with:</li>
+</ul></li>
+</ul>
+</div>
+<div id="sampling-disribution-of-the-proportion-3" class="slide section level1">
+<h1>Sampling disribution of the proportion 3</h1>
+<ul class="incremental">
+<li>Mean: <span class="math">\(\mu_{p} = \phi\)</span></li>
+<li>Variance: <span class="math">\(\sigma_{p}^{2} = \frac{\phi (1 - \phi)}{n}\)</span></li>
+<li>SD: <span class="math">\(\sigma_{p} = \sqrt{\frac{\phi (1 - \phi)}{n}}\)</span></li>
+</ul>
+<p>as <span class="math">\(n\)</span> increases: - Variance: <span class="math">\(\sigma_{\bar{X}}^{2} = \frac{\sigma_{X}^2}{n}\)</span> - SD: <span class="math">\(\sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}}\)</span></p>
+<ul class="incremental">
+<li>Note:
+<ul class="incremental">
+<li>This approximation (to the normal distribution) improves as <span class="math">\(n\)</span> gets larger, and the closer <span class="math">\(\phi\)</span> is to 0.5.</li>
+<li>The farther away <span class="math">\(\phi\)</span> is away from 0.5, and the smaller <span class="math">\(n\)</span>, the worse the approximation to the normal distribution.</li>
+</ul></li>
+</ul>
+</div>
+<div id="normal-approximation-example-n-5-p-0.5" class="slide section level1">
+<h1>Normal Approximation Example (n = 5; p = 0.5)</h1>
+<div class="figure">
+<img src="binom_norm_approx.png" />
+
+</div>
+<ul class="incremental">
+<li>These probabilities can be looked up from the binomial table in the course packet.</li>
+</ul>
+</div>
+<div id="sampling-distribution-of-the-proportion-4" class="slide section level1">
+<h1>Sampling distribution of the proportion 4</h1>
+<ul class="incremental">
+<li>The sampling distribution of the proportion follows the binomial distribution</li>
+<li>It is known that the normal distribution provides a good approximation to the binomial distribution when n is large</li>
+<li>Here, we have chosen the normal distribution as an approximation to the sampling distribution of proportion, rather than using its true binomial sampling distribution</li>
+</ul>
+</div>
+<div id="sampling-distribution-of-the-proportion-5" class="slide section level1">
+<h1>Sampling distribution of the proportion 5</h1>
+<ul class="incremental">
+<li>There are three reasons for doing this:
+<ol class="incremental" style="list-style-type: decimal">
+<li><span class="math">\(p\)</span> is a special case of <span class="math">\(\bar{X} | X_{i} = {0 \mbox{ or } 1}\)</span>
+<ul class="incremental">
+<li>As such, a sampling theory for <span class="math">\(p\)</span> is easily derived from a sampling theory for the mean.</li>
+</ul></li>
+<li>The normal distribution is a commonly used probability model.</li>
+<li>Based on the assumption of large samples.</li>
+</ol></li>
+</ul>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example 1</h1>
+<ul class="incremental">
+<li>A few days before the 2008 presidential election, an ABC News/Washington Post tracking poll surveyed a national random sample of 2,172 likely voters including landline and cell-phone-only respondents</li>
+<li>1,173 of those surveyed said they would vote for Barack Obama -Conduct a hypothesis test at the a = .05 level of significance to determine whether a majority of the population of likely voters would vote for Barack Obama</li>
+</ul>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example 2</h1>
+<ul class="incremental">
+<li>A news reporter wants to investigate the advertising claim that a particular speed reading course will “help to improve reading comprehension”</li>
+<li>She decides to conduct the following experiment:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Select 200 freshman at random from all UI freshman. What is the EAP? What is the TP?</li>
+<li>Form 100 matched pairs (using ACT Reading scores).</li>
+<li>Randomly assign one member of each pair to the speed reading course (assume all students will participate).</li>
+<li>After the course is completed, administer a reading achievement test to all 200 students.</li>
+<li>For each pair of students, subtract the reading score of the control student from that of the experimental student.</li>
+<li>For these 100 difference scores, calculate the proportion (p) that are positive (greater than 0). This proportion is the outcome (statistic) of interest.</li>
+</ol></li>
+</ul>
+</div>
+<div id="example-2-continued" class="slide section level1">
+<h1>Example 2 continued</h1>
+<ul class="incremental">
+<li>After completing the experiment, the news reporter found that 65% (p = 0.65) of the difference scores were positive</li>
+<li>Conduct a hypothesis test at the <span class="math">\(\alpha = .10\)</span> level of significance to determine whether the speed reading course was effective in increasing reading comprehension in the population of UI freshman
+<ul class="incremental">
+<li>What is the interpretation of <span class="math">\(\alpha = .10\)</span>?</li>
+</ul></li>
+</ul>
+</div>
+<div id="calculating-a-confidence-interval" class="slide section level1">
+<h1>Calculating a confidence interval</h1>
+<ul class="incremental">
+<li>Suppose we wanted to calculate a 95% confidence interval for <span class="math">\(\phi\)</span> of the 2008 presidential election data.
+<ul class="incremental">
+<li><span class="math">\(n = 2172, p = 0.54\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="calculating-a-confidence-interval---specifics" class="slide section level1">
+<h1>Calculating a confidence interval - specifics</h1>
+<p><span class="math">\[ \hat{\sigma}_{p} = \sqrt{\frac{p (1 - p)}{n - 1}} \]</span> <span class="math">\[ CI = p \pm z_{crit} * \hat{\sigma}_{p} \]</span> where <span class="math">\(z_{crit}\)</span> is based on the level of confidence or <span class="math">\(1 - \alpha\)</span>.</p>
+</div>
+<div id="interpretting-a-confidence-interval" class="slide section level1">
+<h1>Interpretting a confidence interval</h1>
+<ul class="incremental">
+<li>How is the confidence interval: <span class="math">\(c(0.52 \leq \phi \leq 0.56) = .95\)</span> interpretted?
+<ul class="incremental">
+<li>Does <span class="math">\(\phi\)</span> fall in the interval?</li>
+<li>Is there a 95% chance that <span class="math">\(\phi\)</span> falls in this interval?</li>
+<li>Do we know if <span class="math">\(\phi\)</span> falls in the interval?</li>
+<li>If we construct 100 such intervals, how many would contain <span class="math">\(\phi\)</span>?</li>
+<li>If we were to construct an infinite number of intervals, how many would contain <span class="math">\(\phi\)</span>?</li>
+</ul></li>
+</ul>
+</div>
+<div id="using-confidence-interval-to-do-hypothesis-testing" class="slide section level1">
+<h1>Using Confidence interval to do hypothesis testing</h1>
+<ul class="incremental">
+<li>You can use a 95% confidence interval to conduct a two-tailed test of any null hypothesis at the specificied <span class="math">\(\alpha\)</span> level.</li>
+<li>If the hypothesized value falls within the confidence interval, fail to reject <span class="math">\(H_{0}\)</span> (retain <span class="math">\(H_{0}\)</span>).</li>
+<li>If the hypothesized value falls outside the confidence interval, reject <span class="math">\(H_{0}\)</span>.</li>
+<li>Example:
+<ul class="incremental">
+<li><span class="math">\(H_{0}: \phi = 0.5\)</span></li>
+<li><span class="math">\(H_{1}: \phi \neq 0.5\)</span></li>
+<li><span class="math">\(c(0.52 \leq \phi \leq 0.56) = .95\)</span>, <span class="math">\(\alpha = 0.05\)</span></li>
+<li>0.5 lies outside of 95% confidence interval, therefore, reject <span class="math">\(H_{0}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="summary-of-one-sample-hypothesis-tests" class="slide section level1">
+<h1>Summary of one-sample hypothesis tests</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math">\(H_{0}\)</span></th>
+<th align="right">Standard Error</th>
+<th align="right">Test Statistic</th>
+<th align="right">Confidence Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math">\(\mu = constant\)</span>; <span class="math">\(\sigma_{x}\)</span> known</td>
+<td align="right"><span class="math">\(\sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}}\)</span></td>
+<td align="right"><span class="math">\(z = \frac{\bar{X} - \mu_{0}}{\sigma_{\bar{X}}}\)</span></td>
+<td align="right"><span class="math">\(\bar{X} \pm \sigma_{\bar{X}} * z_{crit}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(\mu = constant\)</span>; <span class="math">\(\sigma_{x}\)</span> unknown</td>
+<td align="right"><span class="math">\(\hat{\sigma}_{\bar{X}} = \frac{s_{X}}{\sqrt{n - 1}}\)</span>; <span class="math">\(df = n - 1\)</span></td>
+<td align="right"><span class="math">\(t_{n - 1} = \frac{\bar{X} - \mu_{0}}{\hat{\sigma}_{\bar{X}}}\)</span></td>
+<td align="right"><span class="math">\(\bar{X} \pm \hat{\sigma}_{\bar{X}} * t_{crit(n - 1)}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(\phi = constant\)</span></td>
+<td align="right"><span class="math">\(\sigma_{p} = \sqrt{\frac{\phi_{0} (1 - \phi_{0})}{n}}\)</span></td>
+<td align="right"><span class="math">\(z = \frac{p - \phi_{0}}{\sigma_{p}}\)</span></td>
+<td align="right"><span class="math">\(p \pm \hat{\sigma}_{p} * z_{crit}\)</span>; <span class="math">\(\hat{\sigma}_{p} = \sqrt{\frac{p (1 - p)}{n - 1}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

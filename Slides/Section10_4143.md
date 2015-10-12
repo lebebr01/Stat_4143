@@ -2,9 +2,7 @@
 % Brandon LeBeau
 
 
-```{r opts, echo = FALSE}
-opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE)
-```
+
 
 # Dichotomous Populations
 ![](dich_population.png)
@@ -113,7 +111,7 @@ where $z_{crit}$ is based on the level of confidence or $1 - \alpha$.
 | $H_{0}$ | Standard Error |  Test Statistic | Confidence Interval | 
 |:--------|---------------:|----------------:|--------------------:|
 | $\mu = constant$; $\sigma_{x}$ known | $\sigma_{\bar{X}} = \frac{\sigma_{X}}{\sqrt{n}}$ | $z = \frac{\bar{X} - \mu_{0}}{\sigma_{\bar{X}}}$ | $\bar{X} \pm \sigma_{\bar{X}} * z_{crit}$ |
-| $\mu = constant$; $\sigma_{x}$ unknown | $\hat{\sigma}_{\bar{X}} = \frac{\s_{X}}{\sqrt{n - 1}}$; $df = n - 1$ | $t_{n - 1} = \frac{\bar{X} - \mu_{0}}{\hat{\sigma}_{\bar{X}}}$ | $\bar{X} \pm \hat{\sigma}_{\bar{X}} * t_{crit(n - 1)}$ |
+| $\mu = constant$; $\sigma_{x}$ unknown | $\hat{\sigma}_{\bar{X}} = \frac{s_{X}}{\sqrt{n - 1}}$; $df = n - 1$ | $t_{n - 1} = \frac{\bar{X} - \mu_{0}}{\hat{\sigma}_{\bar{X}}}$ | $\bar{X} \pm \hat{\sigma}_{\bar{X}} * t_{crit(n - 1)}$ |
 $\phi = constant$ | $\sigma_{p} = \sqrt{\frac{\phi_{0} (1 - \phi_{0})}{n}}$ | $z = \frac{p - \phi_{0}}{\sigma_{p}}$ | $p \pm \hat{\sigma}_{p} * z_{crit}$; $\hat{\sigma}_{p} = \sqrt{\frac{p (1 - p)}{n - 1}}$ |
 
 
