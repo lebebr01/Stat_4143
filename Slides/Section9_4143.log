@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.23)  7 OCT 2015 12:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.23)  13 OCT 2015 10:32
 entering extended mode
 **Section9_4143.tex
 
@@ -1082,11 +1082,11 @@ Package rerunfilecheck Info: File `Section9_4143.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 925.
  ) 
 Here is how much of TeX's memory you used:
- 12368 strings out of 493921
- 180208 string characters out of 3144879
- 278163 words of memory out of 3000000
+ 12366 strings out of 493921
+ 180188 string characters out of 3144879
+ 279163 words of memory out of 3000000
  15343 multiletter control sequences out of 15000+200000
- 58929 words of font info for 95 fonts, out of 3000000 for 9000
+ 58838 words of font info for 94 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  31i,6n,35p,348b,461s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Progr
@@ -1106,7 +1106,7 @@ MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/l
 msy8.pfb>
-Output written on Section9_4143.pdf (13 pages, 280937 bytes).
+Output written on Section9_4143.pdf (13 pages, 281001 bytes).
 PDF statistics:
  349 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
