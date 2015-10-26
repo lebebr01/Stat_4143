@@ -13,8 +13,8 @@
 
 ~                     | $H_{0}$ is true       | $H_{0}$ is false  
 --------------------- | --------------------- | ----------------  
-Reject $H_{0}$        | Type I Error $\alpha$ | Correct  
-Fail to reject $H_{0} | Correct               | Type II Error $\beta$  
+Reject $H_{0}$        | Type I Error $\alpha$ | Correct  $1 - \beta$
+Fail to reject $H_{0} | Correct $1-\alpha$    | Type II Error $\beta$  
 
 # Type I Errors
 - Type I Error occurs when we find an effect or relationship in our sample that is not in the population.
@@ -68,6 +68,12 @@ Fail to reject $H_{0} | Correct               | Type II Error $\beta$
 - What is the type II error?
     - Conclude team is not taller when it is actually taller.
     
+# Type I Error Rate Control
+- As a researcher, we have direct control over $\alpha$. 
+    - Why not make this really small to protect against a type I error?
+        - This makes it more difficult to reject $H_{0}$ when we should
+        - $\alpha$ and $\beta$ are inversely related, therefore decreasing the $\alpha$ will increase $\beta$.
+    
 # Guidelines for $\alpha$ level
 - Laboratory Studies
     - $\alpha = .05$ or smaller
@@ -95,6 +101,8 @@ $$ \mbox{Test Statistic} = \frac{\mbox{OBS - HYP}}{SE} $$
 - When the null hypothesis is false, the difference between observed mean and hypothesized mean depends partly on random variation and partly between difference between hypothesized mean and true mean.
     - Other things equal, the larger the discrepancy between hypothesized mean and true mean, the larger the numerator, hence the larger the test statistic.
     
+![](prac_num.png)
+    
 # Test Statistic Denominator
 1. The standard error
 2. This measures only random variation
@@ -103,17 +111,31 @@ $$ \mbox{Test Statistic} = \frac{\mbox{OBS - HYP}}{SE} $$
     - Therefore, even with a very small difference between observed mean and hypothesized mean, you can end up with a large value for the test statistic, thus leading to a statistically significant result.
 5. However, the result may not be of practical importance - too small to make a difference in the real world.
 
+![](prac_den.png)
+
 # Practical vs Statistical Significance 2
 - In other words, with a large enough sample, even a very small difference between observed mean and hypothesized mean can lead to a rejection of the null hypothesis.
 - In cases like this, we have a result that is statistically significant, but in which the difference between hypothesized mean and true mean is so small as to be unimportant in a practical sense.
 
+# Type I Errors, Type II Errors, and Power
+- $Pr(\mbox{Reject true } H_{0}) = Pr(\mbox{Type I Error}) = \alpha$
+- $Pr(\mbox{Reject false } H_{0}) = Pr(\mbox{Type II Error}) = \beta$
+- $Pr(\mbox{Reject false } H_{0}) = Power = 1 - \beta$
+- As $\alpha$ increases (decreases)
+    - Power increases (decreases)
+    - $\beta$ decreases (increases)
+- Changing the sample size does not affect $\alpha$
+    - As n increases, $\beta$ decreases, power increases, $\alpha$ does not change.
     
-# Effect Sizes
-- Effect size - the extent to which the intervention has an *effect* of separating two populations.  
-- Effect Size $= \frac{\bar{X}_{trt} - \bar{X}_{con}}{SD_{comb}}$  
-- A statistical test reports statistical significance, or the probability that results are not due to chance, but does not indicate how large an effect is.
-- The effect size is interpreted like a z-score, how many standard deviations different is the treatment mean from the control mean.
-- Commonly used effect size magnitudes: 
-     - Small = .2
-     - Medium = .5
-     - Large = .8
+# Type I Errors, Type II Errors, and Power Examples
+![](t1e_examp.png)
+![](t1e_examp2.png)
+    
+# Calculating $\beta$ and Power
+![](Calc_power1.png)
+
+- Suppose $\mu_{true} = 12$ for this example.
+
+# Power Curve
+![](power_curve.png)
+
