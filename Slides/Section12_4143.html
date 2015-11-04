@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 12</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 12</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+    <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example 1</h1>
+<ul class="incremental">
+<li>Does speed reading help or hurt reading comprehension?</li>
+<li>Random sample of UI freshman students, <span class="math">\(n = 100\)</span></li>
+<li>Divide randomly in 2 groups of 50
+<ul class="incremental">
+<li><strong>Independent</strong> groups</li>
+<li>No matching</li>
+<li>No equating</li>
+</ul></li>
+<li>Experimental group (<span class="math">\(n_{e} = 50\)</span>): take speed reading course</li>
+<li>Control group (<span class="math">\(n_{c} = 50\)</span>)</li>
+</ul>
+</div>
+<div id="example-1-cont." class="slide section level1">
+<h1>Example 1 (cont).</h1>
+<ul class="incremental">
+<li>State the statistical hypotheses.
+<ul class="incremental">
+<li><span class="math">\(H_{0}\)</span>: The treatment has no effect</li>
+<li><span class="math">\(H_{0}\)</span>: The two groups are the same (after the speed reading course)</li>
+<li><span class="math">\(H_{0}\)</span>: <span class="math">\(\mu_{E} = \mu_{C}\)</span></li>
+<li><span class="math">\(H_{0}\)</span>: <span class="math">\(\mu_{E} - \mu_{C} = 0\)</span></li>
+</ul></li>
+<li>Conduct Experiment:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Experimental</th>
+<th align="left">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">50</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(\bar{X}\)</span></td>
+<td align="left">35</td>
+<td align="left">31</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(\sigma\)</span></td>
+<td align="left">8</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Is <span class="math">\(\bar{X}_{E} - \bar{X}_{C} = 4\)</span> an unlikely result?</li>
+<li>To answer this, we need a probability distribution for <span class="math">\(\bar{X}_{E} - \bar{X}_{C}\)</span></li>
+</ul>
+</div>
+<div id="sampling-distribution-barx_e---barx_c" class="slide section level1">
+<h1>Sampling Distribution <span class="math">\(\bar{X}_{E} - \bar{X}_{C}\)</span></h1>
+<ul class="incremental">
+<li>The sampling distribution of the difference between two independent means (<span class="math">\(\sigma_{E}\)</span> and <span class="math">\(\sigma_{C}\)</span> known). <img src="samp_dist_2samp.png" /></li>
+</ul>
+</div>
+<div id="example-1-cont.-1" class="slide section level1">
+<h1>Example 1 (cont.)</h1>
+<p><span class="math">\[ \sigma_{\bar{X}_{E} - \bar{X}_{C}} = \sqrt{\frac{\sigma_{E}^{2}}{n_{E}} + \frac{\sigma_{C}^{2}}{n_{C}}} \]</span> - What is the <span class="math">\(Pr(\bar{X}_{E} - \bar{X}_{C} \geq 4)\)</span>? <span class="math">\[ z = \frac{(\bar{X}_{E} - \bar{X}_{C}) - (\mu_{E} - \mu_{C})_{HYP}}{\sigma_{\bar{X}_{E} - \bar{X}_{C}}} \]</span></p>
+</div>
+<div id="sampling-distribution-explanation" class="slide section level1">
+<h1>Sampling Distribution Explanation</h1>
+<p><img src="samp_dist_2samp_comb.png" /> <img src="samp_dist_2samp_comb_all.png" /></p>
+</div>
+<div id="when-population-sds-are-unknown" class="slide section level1">
+<h1>When population SDs are unknown</h1>
+<ul class="incremental">
+<li>Recall: <span class="math">\(\sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_{X}^{2}}{n_{X}} + \frac{\sigma_{Y}^{2}}{n_{Y}}}\)</span></li>
+<li>Assumption: <span class="math">\(\sigma_{X}^{2} = \sigma^2_{X} = \sigma^2\)</span></li>
+<li>Then: <span class="math">\(\sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma^{2}}{n_{X}} + \frac{\sigma^{2}}{n_{Y}}}\)</span></li>
+<li>Now: <span class="math">\(\hat{\sigma}_{\bar{X} - \bar{Y}} = \sqrt{\frac{\hat{\sigma}^{2}}{n_{X}} + \frac{\hat{\sigma}^{2}}{n_{Y}}} = \sqrt{\hat{\sigma}^2\left(\frac{1}{n_{X}} + \frac{1}{n_{Y}}\right)}\)</span></li>
+</ul>
+</div>
+<div id="when-population-sds-are-unknown-2" class="slide section level1">
+<h1>When population SDs are unknown 2</h1>
+<ul class="incremental">
+<li><span class="math">\(\hat{\sigma}_{\bar{X} - \bar{Y}} = \sqrt{\frac{\hat{\sigma}^{2}}{n_{X}} + \frac{\hat{\sigma}^{2}}{n_{Y}}} = \sqrt{\hat{\sigma}^2\left(\frac{1}{n_{X}} + \frac{1}{n_{Y}}\right)}\)</span></li>
+<li><span class="math">\(\hat{\sigma}^2\)</span> is a weighted average of the unbiased estimates of <span class="math">\(\sigma^2_{X}\)</span> and <span class="math">\(\sigma^2_{Y}\)</span></li>
+<li>Since <span class="math">\(\sigma^2_{X}\)</span> and <span class="math">\(\sigma^2_{Y}\)</span> are both not known to us: <span class="math">\(\hat{\sigma}_{\bar{X} - \bar{Y}} = \sqrt{\frac{n_{X}S^2_{X} + n_{Y}S^2_{Y}}{(n_{X} - 1) + (n_{Y} = 1)} \left(\frac{1}{n_{X}} + \frac{1}{n_{Y}}\right)}\)</span></li>
+</ul>
+</div>
+<div id="putting-all-together-pop-sds-unknown" class="slide section level1">
+<h1>Putting all together: Pop SDs unknown</h1>
+<div class="figure">
+<img src="samp_dist_2samp_tdist.png" />
+
+</div>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example 2</h1>
+<ul class="incremental">
+<li>Does speed reading help or hurt reading comprehension?</li>
+<li>Random sample of UI freshman students, <span class="math">\(n = 100\)</span></li>
+<li>Divide randomly in 2 groups of 50</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Experimental</th>
+<th align="left">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">50</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(\bar{X}\)</span></td>
+<td align="left">35</td>
+<td align="left">31</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(S\)</span></td>
+<td align="left">8</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Conduct the hypothesis test at <span class="math">\(\alpha = 0.01\)</span> significance level.</li>
+</ul>
+</div>
+<div id="summary" class="slide section level1">
+<h1>Summary</h1>
+<ul class="incremental">
+<li>If Population SDs are known: <span class="math">\[ \sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_{X}^{2}}{n_{X}} + \frac{\sigma_{Y}^{2}}{n_{Y}}} \]</span> <span class="math">\[ TS = \frac{(\bar{X} - \bar{Y}) - (\mu_{X} - \mu_{Y})_{HYP}}{\sigma_{\bar{X} - \bar{Y}}} \sim Z \]</span></li>
+<li>If Population Sds are <strong>NOT</strong> known: <span class="math">\[ \hat{\sigma}_{\bar{X} - \bar{Y}} = \sqrt{\frac{n_{X}S^2_{X} + n_{Y}S^2_{Y}}{(n_{X} - 1) + (n_{Y} - 1)} \left(\frac{1}{n_{X}} + \frac{1}{n_{Y}}\right)} \]</span> <span class="math">\[ TS = \frac{(\bar{X} - \bar{Y}) - (\mu_{X} - \mu_{Y})_{HYP}}{\hat{\sigma}_{\bar{X} - \bar{Y}}} \sim t_{df} \]</span> <span class="math">\[ df = n_{X} + n_{Y} - 2 \]</span></li>
+</ul>
+</div>
+<div id="example-3" class="slide section level1">
+<h1>Example 3</h1>
+<ul class="incremental">
+<li>2 methods (A &amp; B) of teaching addition of fractions</li>
+<li>Is method A more effective than Method B?</li>
+<li>Randomly sample 2 classes</li>
+<li>Results:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">A</th>
+<th align="left">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">10</td>
+<td align="left">24</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(\bar{X}\)</span></td>
+<td align="left">115</td>
+<td align="left">105</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(S\)</span></td>
+<td align="left">14</td>
+<td align="left">17</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Conduct the hypothesis test at the <span class="math">\(\alpha = .05\)</span> significance level.</li>
+</ul>
+</div>
+<div id="assumptions" class="slide section level1">
+<h1>Assumptions</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Each sample is drawn at random from its respective population</li>
+<li>The two samples must be independently selected.</li>
+<li>Sampling with replacement, or $ n &lt; 5%$ of N.</li>
+<li>The two populations (of raw scores) are normally distributed.</li>
+<li>The unknown population variances are equal (homogeneity of variances assumption).</li>
+</ol>
+</div>
+<div id="assumptions-1---3" class="slide section level1">
+<h1>Assumptions 1 - 3</h1>
+<ul class="incremental">
+<li>In Example 2, we analyzed the data as if we had drawn each of the two samples
+<ul class="incremental">
+<li>independent (assumption 2)</li>
+<li>from its respective population randomly (assumption 1)</li>
+<li>with replacement (assumption 3)</li>
+</ul></li>
+<li>However, that is not how the experiment was done.
+<ul class="incremental">
+<li>First, we randomly sampled without replacement from a single population</li>
+<li>Then, we randomly assigned each participant to one of two groups (experimental or control)</li>
+<li>This is called a randomized experiment</li>
+</ul></li>
+</ul>
+</div>
+<div id="assumptions-1---3-cont" class="slide section level1">
+<h1>Assumptions 1 - 3 (cont)</h1>
+<ul class="incremental">
+<li>In other words, a random sampling model (Independent Means t-Test) was used to analyze data that came from two groups formed by random assignment</li>
+<li>Technically, a random assignment model (Permutation Test) should have been used to analyze the data</li>
+<li>Two mistakes when analyzing the data as we did
+<ol class="incremental" style="list-style-type: decimal">
+<li>Draws were made without replacement (inflates the SE)</li>
+<li>There was a slight degree of dependency between the two groups (deflates the SE)</li>
+</ol></li>
+</ul>
+</div>
+<div id="assumptions-1---3-cont-1" class="slide section level1">
+<h1>Assumptions 1 - 3 (cont)</h1>
+<ul class="incremental">
+<li>It is a lucky break that in randomized experiments, the first mistake outweighs the second
+<ul class="incremental">
+<li>Thus, when the random sampling model is applied to randomized experiments, the statistical test is conservative (the SE tends to be overestimated)</li>
+</ul></li>
+<li>For most randomized experiments, using the random sampling model yields the same statistical conclusions as the random assignment model</li>
+<li>However, with only random assignment of available participants, conclusions do not generalize beyond
+<ul class="incremental">
+<li>the participants studied, and</li>
+<li>the conditions of the study</li>
+</ul></li>
+</ul>
+</div>
+<div id="random-sampling-vs-random-assignment" class="slide section level1">
+<h1>Random Sampling vs Random Assignment</h1>
+<ul class="incremental">
+<li>Random Sampling
+<ul class="incremental">
+<li>a method for obtaining a sample from an experimentally accessible population</li>
+<li>a basic assumption underlying statistical inference</li>
+<li>this is what makes it possible for us to make statistical conclusions based on theoretical probability models, and generalize those conclusions to a population</li>
+</ul></li>
+<li>Random Assignment
+<ul class="incremental">
+<li>a method for dividing an available group of participants into two or more subgroups</li>
+<li>its purpose is to make the comparison groups randomly equivalent to each other prior to any treatment(s)</li>
+<li>it controls for extraneous variables (known and unknown)</li>
+</ul></li>
+</ul>
+</div>
+<div id="the-normality-assumption" class="slide section level1">
+<h1>The normality assumption</h1>
+<ul class="incremental">
+<li>The independent means t-test is robust with respect to violations of the normality assumption
+<ul class="incremental">
+<li>If the two sample sizes are equal, the t-test gives fairly accurate p-values for a broad range of population distributions, provided the populations
+<ul class="incremental">
+<li>have similar shapes</li>
+<li>are unimodal</li>
+<li>have no outliers</li>
+</ul></li>
+<li>This holds for sample sizes as small as <span class="math">\(n_{X} = n_{Y} = 5\)</span></li>
+</ul></li>
+<li>When <span class="math">\(n_{X}\)</span> and <span class="math">\(n_{Y}\)</span> are both greater than 30, the normality assumption is unimportant, thanks to the central limit theorem</li>
+</ul>
+</div>
+<div id="the-homogeneity-of-variance-assumption" class="slide section level1">
+<h1>The homogeneity of variance assumption</h1>
+<ul class="incremental">
+<li>The independent means t-test is robust with respect to violations of the assumption of equal population variances, provided that <span class="math">\(n_{X} = n_{Y}\)</span></li>
+<li>There is a statistical test of the equality of population variances
+<ul class="incremental">
+<li>F-test</li>
+</ul></li>
+<li>If the population variances are unequal, and if <span class="math">\(n_{X} \neq n_{Y}\)</span>, the sample variances should not be pooled
+<ul class="incremental">
+<li>A modified t-statistic with modified df can be used, often times called the Welch t-test</li>
+</ul></li>
+</ul>
+</div>
+<div id="confidence-intervals" class="slide section level1">
+<h1>Confidence Intervals</h1>
+<ul class="incremental">
+<li>Recall the speed reading data:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Experimental</th>
+<th align="left">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">50</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(\bar{X}\)</span></td>
+<td align="left">35</td>
+<td align="left">31</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(S\)</span></td>
+<td align="left">8</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Find a 99% CI for <span class="math">\(\mu_{E} - \mu_{C}\)</span></li>
+<li>Confidence form looks as follows: <span class="math">\[ (\bar{X} - \bar{X}) \pm t_{crit} \hat{\sigma}_{\bar{X} - \bar{Y}} \]</span></li>
+</ul>
+</div>
+<div id="confidence-interval-interpretations" class="slide section level1">
+<h1>Confidence Interval Interpretations</h1>
+<ul class="incremental">
+<li>Interpretations for 99% CI [0.24, 7.76]:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Does <span class="math">\(\mu\)</span> fall in this interval?</li>
+<li>Is there a 99% chance that <span class="math">\(\mu\)</span> falls in this interval?</li>
+<li>If 100 intervals were constructed, about how many intervals would contain <span class="math">\(\mu\)</span>?</li>
+<li>If we constructed an infinte number of intervals, how many would contain <span class="math">\(\mu\)</span>?</li>
+</ol></li>
+</ul>
+</div>
+<div id="using-confidence-intervals-to-conduct-a-two-tailed-hypothesis" class="slide section level1">
+<h1>Using confidence intervals to conduct a two-tailed hypothesis</h1>
+<ul class="incremental">
+<li>You can use a confidence interval to conduct a two-tailed hypothesis of any null hypothesis.
+<ul class="incremental">
+<li>If the hypothesized value falls within the CI, fail to reject <span class="math">\(H_{0}\)</span></li>
+<li>If the hypothesized value falls outside the CI, reject <span class="math">\(H_{0}\)</span></li>
+</ul></li>
+<li>Using the previous example [0.24, 7.76], would we fail to reject or reject <span class="math">\(H_{0}\)</span>?</li>
+</ul>
+</div>
+</body>
+</html>

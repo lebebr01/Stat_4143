@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[margin = 1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{graphicx}
+\usepackage{float}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+{%
+ \catcode`\@=11\relax%
+ \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+}%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Brandon LeBeau},
+            pdftitle={ESRM 5393: Inference Introduction},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\section{Central Limit Theorem}\label{central-limit-theorem}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  For a randomly selected sample of size $n$ with a mean $\mu$ and a
+  standard deviation $\sigma$, the following is true:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    The distribution of sample means $\bar{X}$ is approximately normal,
+    regardless of the population distribution. For markedly non-normal populations, the approximation is good enough when the sample size is 25 or more.
+  \item
+    The mean of the distribution of sample means is equal to the mean of
+    the population distribution, $\mu_{\bar{x}} = \mu$.
+  \item
+    The standard deviation of the distribution of sample means is equal
+    to: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$
+  \end{enumerate}
+\end{itemize}
+
+\section{Examples}\label{examples}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Given a normally distributed population with \(\mu_{X} = 70\) and
+  \(\sigma_{X} = 20\); that is \(X \sim N(70, 20)\)
+\item
+  Assume that we take a random sample of size \(n = 25\)
+\item Use with examples 1 - 4
+\end{itemize}
+
+\section{Example 1}\label{example-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  What is the probability of obtaining a random sample with a mean of 80
+  or higher? \[ Pr (X \geq 80 | X \sim N(70, 20)) \]
+  \[ Pr (\bar{X} \geq 80 | \bar{X} \sim N(70, 4)) \]
+\end{itemize}
+
+\section{Example 2}\label{example-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  What is the probability of obtaining a random sample with a mean that
+  differs from the population mean by more than 10 points?
+  \[ Pr (X \geq 80 or X \leq 60 | X \sim N(70, 20)) \]
+  \[ Pr (\bar{X} \geq 80 or \bar{X} \leq 60 | \bar{X} \sim N(70, 4)) \]
+  \[ Pr (|\bar{X} - \mu_{X}| \geq 10 | \bar{X} \sim N(70, 4)) \]
+\end{itemize}
+
+\section{Example 3}\label{example-3}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  What sample mean has a value such that the probability of obtaining
+  one at least that high in random sampling is .05?
+\item
+  Find \(\bar{X}_{o}\) such that:
+  \[ Pr (\bar{X} \geq \bar{X}_{o} | \bar{X} \sim N(70, 4)) = 0.05 \]
+\end{itemize}
+
+\section{Example 4}\label{example-4}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Within what limits would the central 95\% of the sample means fall?
+\item
+  Find \(\bar{X}_{1}\) and \(\bar{X}_{2}\) such that:
+  \[ Pr (\bar{X}_{1} \leq \bar{X} \leq \bar{X}_{2} | \bar{X} \sim N(70, 4)) = 0.95 \]
+\end{itemize}
+
+\section{Example 5}
+
+Suppose we are interested in knowing on average how early students show up prior to kickoff for a home UI football game. We know the population has $\mu = 15$, $\sigma = 20$, and the population is severely positively skewed. Use this information to answer the following questions:
+\begin{itemize}
+\item We take a random sample of 10 students and get a sample mean of $\bar{X} = 45$. Can we safely use the central limit theorem here? 
+\item We take a random sample of 50 students where $\bar{X} = 19$. What is the probability of getting a sample mean greater or equal to this value? How many students would we expect to show up 19 minutes or earlier (assume 10000 students attend the game).
+\item What are the limits in which the central 95\% of the sample means will fall when $n = 25$ and when $n = 100$? How do these compare? Why is this pattern occurring?
+\item Given a random sample of 25 students ($n = 25$), how likely is it for those 25 students to on average show up at kickoff or after?
+\end{itemize}
+
+
+\end{document}

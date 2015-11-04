@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 11</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 11</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+  <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="possible-errors" class="slide section level1">
+<h1>Possible Errors</h1>
+<ul class="incremental">
+<li>In making a conclusion from our statistical analysis, there are four possible conclusions that can be made:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Reject the null hypothesis that is false (correct conclusion).</li>
+<li>Fail to reject a null hypothesis that is true (correct conclusion).</li>
+<li>Reject a null hypothesis even though it is true (Type I Error).</li>
+<li>Fail to reject a null hypothesis even though it is false (Type II Error).</li>
+</ol></li>
+</ul>
+</div>
+<div id="type-i-and-type-ii-errors" class="slide section level1">
+<h1>Type I and Type II Errors</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">~</th>
+<th align="left"><span class="math">\(H_{0}\)</span> is true</th>
+<th align="left"><span class="math">\(H_{0}\)</span> is false</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Reject <span class="math">\(H_{0}\)</span></td>
+<td align="left">Type I Error <span class="math">\(\alpha\)</span></td>
+<td align="left">Correct <span class="math">\(1 - \beta\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Fail to reject $H_{0}</td>
+<td align="left">Correct <span class="math">\(1-\alpha\)</span></td>
+<td align="left">Type II Error <span class="math">\(\beta\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="type-i-errors" class="slide section level1">
+<h1>Type I Errors</h1>
+<ul class="incremental">
+<li>Type I Error occurs when we find an effect or relationship in our sample that is not in the population.
+<ul class="incremental">
+<li>Have a significant result when in fact it is not significant.</li>
+<li>Reject a true null hypothesis.</li>
+<li>The probability of a Type I Error <span class="math">\(= \alpha\)</span>.</li>
+<li>The conventional (historical) <span class="math">\(\alpha\)</span> value is .05.</li>
+<li>Since the probability of a Type I Error is <span class="math">\(\alpha\)</span>, the researcher has direct control over how likely a Type I Error would occur.</li>
+<li>Using an <span class="math">\(\alpha = .05\)</span> means that even when no difference exists in the population, 5% of random samples will show a significant difference.</li>
+<li>To reduct type I errors, simply use a smaller <span class="math">\(\alpha\)</span>, (i.e. .01 or .001).</li>
+</ul></li>
+</ul>
+</div>
+<div id="type-ii-errors" class="slide section level1">
+<h1>Type II Errors</h1>
+<ul class="incremental">
+<li>Type II Error occurs when we do not find an effect or relationship in our sample that exists in the population.
+<ul class="incremental">
+<li>Have a non-significant result when in fact it is significant.</li>
+<li>Fail to reject a false null hypothesis.</li>
+<li>Probability of a Type II Error <span class="math">\(= \beta\)</span></li>
+</ul></li>
+<li>Type II Errors (<span class="math">\(\beta\)</span>) depends on the size of the difference in the population and the sample size.</li>
+<li>A similar measure is <strong>power</strong> (<span class="math">\(1-\beta\)</span>), the probability that a study will produce a statistically significant result <strong>if the research hypothesis is true</strong>.</li>
+<li>The conventional level for power is .8, this is what researchers strive for when planning a research study.</li>
+</ul>
+</div>
+<div id="type-i-and-type-ii-error-example" class="slide section level1">
+<h1>Type I and Type II Error Example</h1>
+<ul class="incremental">
+<li>Suppose we're interested in examining the safety of a drug.
+<ul class="incremental">
+<li><span class="math">\(H_{0}\)</span>: The drug is unsafe.</li>
+<li><span class="math">\(H_{1}\)</span>: The drug is safe.</li>
+</ul></li>
+<li>What is the type I error?
+<ul class="incremental">
+<li>Reject <span class="math">\(H_{0}\)</span> when true; more specifically, conclude drug is safe when in fact it is unsafe.</li>
+</ul></li>
+<li>What is the type II error?
+<ul class="incremental">
+<li>Fail to reject <span class="math">\(H_{0}\)</span> when it is actually false; more specifically, conclude drug is unsafe when it is actually safe.</li>
+</ul></li>
+<li>In this example, which error is more harmful?
+<ul class="incremental">
+<li>Would like want to make the likelihood of a Type I Error to be very small.</li>
+</ul></li>
+</ul>
+</div>
+<div id="type-i-and-type-ii-error-example-2" class="slide section level1">
+<h1>Type I and Type II Error Example 2</h1>
+<ul class="incremental">
+<li>Suppose we are testing blood to determine if it is appropriate for use (contaminated or not contaminated)
+<ul class="incremental">
+<li><span class="math">\(H_{0}\)</span>: The blood is not contaminated.</li>
+<li><span class="math">\(H_{1}\)</span>: The blood is contaminated.</li>
+</ul></li>
+<li>What is the type I error?
+<ul class="incremental">
+<li>Conclude blood is contaminated when in fact it is not.</li>
+</ul></li>
+<li>What is the type II error?
+<ul class="incremental">
+<li>Conclude blood is not contaminated when it is contaminated.</li>
+</ul></li>
+<li>In this example, which error is more harmful?
+<ul class="incremental">
+<li>Type II Error is probably worse here.</li>
+</ul></li>
+<li>What if there was a blood shortage?
+<ul class="incremental">
+<li>If there was a serious shortage, you may take the increased type II error risk as opposed to not getting the blood transfusion.</li>
+</ul></li>
+</ul>
+</div>
+<div id="type-i-and-type-ii-error-example-3" class="slide section level1">
+<h1>Type I and Type II Error Example 3</h1>
+<ul class="incremental">
+<li>Is the U of A women's soccer team significantly taller than the adult women population?
+<ul class="incremental">
+<li><span class="math">\(H_{0}\)</span>: The team is not significantly taller.</li>
+<li><span class="math">\(H_{1}\)</span>: The team is significantly taller.</li>
+</ul></li>
+<li>What is the type I error?
+<ul class="incremental">
+<li>Conclude team is taller when in fact it is not.</li>
+</ul></li>
+<li>What is the type II error?
+<ul class="incremental">
+<li>Conclude team is not taller when it is actually taller.</li>
+</ul></li>
+</ul>
+</div>
+<div id="type-i-error-rate-control" class="slide section level1">
+<h1>Type I Error Rate Control</h1>
+<ul class="incremental">
+<li>As a researcher, we have direct control over <span class="math">\(\alpha\)</span>.
+<ul class="incremental">
+<li>Why not make this really small to protect against a type I error?
+<ul class="incremental">
+<li>This makes it more difficult to reject <span class="math">\(H_{0}\)</span> when we should</li>
+<li><span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> are inversely related, therefore decreasing the <span class="math">\(\alpha\)</span> will increase <span class="math">\(\beta\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="guidelines-for-alpha-level" class="slide section level1">
+<h1>Guidelines for <span class="math">\(\alpha\)</span> level</h1>
+<ul class="incremental">
+<li>Laboratory Studies
+<ul class="incremental">
+<li><span class="math">\(\alpha = .05\)</span> or smaller</li>
+<li>Type I error is considered to be more serious</li>
+<li>Don't want to risk lives or cause harm</li>
+</ul></li>
+<li>Exploratory Studies
+<ul class="incremental">
+<li><span class="math">\(\alpha = .10\)</span> rarely, if ever, bigger than this</li>
+<li>Type II error is considered to be more serious</li>
+<li>Don't want to ignore something unnecessarily</li>
+</ul></li>
+</ul>
+</div>
+<div id="how-to-increase-power" class="slide section level1">
+<h1>How to increase power</h1>
+<ul class="incremental">
+<li>Increase sample size</li>
+<li>Intensify or prolong treatment</li>
+<li>Increase the type I error rate (i.e. <span class="math">\(\alpha\)</span>)</li>
+<li>Use a one-tailed test rather than a two-tailed test</li>
+<li>Use a stronger research design: e.g. paired t-test rather than pooled t-test</li>
+</ul>
+</div>
+<div id="practical-vs-statistical-significance" class="slide section level1">
+<h1>Practical vs Statistical Significance</h1>
+<ul class="incremental">
+<li>Having a statistically significant result, does not necessarily mean that we have a result that is of practical importance. <span class="math">\[ \mbox{Test Statistic} = \frac{\mbox{OBS - HYP}}{SE} \]</span></li>
+<li>The magnitude of the test statistic depends on both the numerator and denominator.</li>
+</ul>
+</div>
+<div id="test-statistic-numerator" class="slide section level1">
+<h1>Test Statistic Numerator</h1>
+<ul class="incremental">
+<li>When the null hypothesis is true, the difference between observed mean and hypothesized mean is due to random variation.</li>
+<li>When the null hypothesis is false, the difference between observed mean and hypothesized mean depends partly on random variation and partly between difference between hypothesized mean and true mean.
+<ul class="incremental">
+<li>Other things equal, the larger the discrepancy between hypothesized mean and true mean, the larger the numerator, hence the larger the test statistic.</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="prac_num.png" />
+
+</div>
+</div>
+<div id="test-statistic-denominator" class="slide section level1">
+<h1>Test Statistic Denominator</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>The standard error</li>
+<li>This measures only random variation</li>
+<li>Other things being equal, the larger the sample size, the smaller the standard error</li>
+<li>If you have a very large sample size, the standard error can be very small.
+<ul class="incremental">
+<li>Therefore, even with a very small difference between observed mean and hypothesized mean, you can end up with a large value for the test statistic, thus leading to a statistically significant result.</li>
+</ul></li>
+<li>However, the result may not be of practical importance - too small to make a difference in the real world.</li>
+</ol>
+<div class="figure">
+<img src="prac_den.png" />
+
+</div>
+</div>
+<div id="practical-vs-statistical-significance-2" class="slide section level1">
+<h1>Practical vs Statistical Significance 2</h1>
+<ul class="incremental">
+<li>In other words, with a large enough sample, even a very small difference between observed mean and hypothesized mean can lead to a rejection of the null hypothesis.</li>
+<li>In cases like this, we have a result that is statistically significant, but in which the difference between hypothesized mean and true mean is so small as to be unimportant in a practical sense.</li>
+</ul>
+</div>
+<div id="type-i-errors-type-ii-errors-and-power" class="slide section level1">
+<h1>Type I Errors, Type II Errors, and Power</h1>
+<ul class="incremental">
+<li><span class="math">\(Pr(\mbox{Reject true } H_{0}) = Pr(\mbox{Type I Error}) = \alpha\)</span></li>
+<li><span class="math">\(Pr(\mbox{Reject false } H_{0}) = Pr(\mbox{Type II Error}) = \beta\)</span></li>
+<li><span class="math">\(Pr(\mbox{Reject false } H_{0}) = Power = 1 - \beta\)</span></li>
+<li>As <span class="math">\(\alpha\)</span> increases (decreases)
+<ul class="incremental">
+<li>Power increases (decreases)</li>
+<li><span class="math">\(\beta\)</span> decreases (increases)</li>
+</ul></li>
+<li>Changing the sample size does not affect <span class="math">\(\alpha\)</span>
+<ul class="incremental">
+<li>As n increases, <span class="math">\(\beta\)</span> decreases, power increases, <span class="math">\(\alpha\)</span> does not change.</li>
+</ul></li>
+</ul>
+</div>
+<div id="type-i-errors-type-ii-errors-and-power-examples" class="slide section level1">
+<h1>Type I Errors, Type II Errors, and Power Examples</h1>
+<p><img src="t1e_examp.png" /> <img src="t1e_examp2.png" /></p>
+</div>
+<div id="calculating-beta-and-power" class="slide section level1">
+<h1>Calculating <span class="math">\(\beta\)</span> and Power</h1>
+<div class="figure">
+<img src="Calc_power1.png" />
+
+</div>
+<ul class="incremental">
+<li>Suppose <span class="math">\(\mu_{true} = 12\)</span> for this example.</li>
+</ul>
+</div>
+<div id="power-curve" class="slide section level1">
+<h1>Power Curve</h1>
+<div class="figure">
+<img src="power_curve.png" />
+
+</div>
+</div>
+</body>
+</html>
