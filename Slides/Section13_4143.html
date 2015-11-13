@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 13</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 13</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+      <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="dependent-groups" class="slide section level1">
+<h1>Dependent Groups</h1>
+<ul class="incremental">
+<li>Dependency between groups usually occurs in one of the following ways:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Repeated measures</li>
+<li>Matching</li>
+<li>Obtaining sets of identical twins or litter mates</li>
+<li>Obtaining pairs of participants who are matched by mutual selection (e.g. husband-wife pairs, business partners).</li>
+</ol></li>
+</ul>
+</div>
+<div id="exprimental-designs" class="slide section level1">
+<h1>Exprimental Designs</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Random Assignment (Independent Groups)</li>
+<li>Matched Pairs (Dependent Groups)</li>
+<li>Repeated Measures (Dependent Groups)</li>
+</ol>
+</div>
+<div id="random-assignment-example" class="slide section level1">
+<h1>Random Assignment Example</h1>
+<ul class="incremental">
+<li>Randomly select 50 UI freshmen</li>
+<li>Randomly assign 25 to E-group and 25 to C-group</li>
+<li>assuming the experiment is properly executed, with no biasing influences, the difference is due to
+<ul class="incremental">
+<li>chance factors associated with random assignment, and</li>
+<li>the treatment effect</li>
+</ul></li>
+</ul>
+</div>
+<div id="matched-pairs-example" class="slide section level1">
+<h1>Matched Pairs Example</h1>
+<ul class="incremental">
+<li>Randomly select 100 UI freshmen</li>
+<li>Rank order by IQ</li>
+<li>Form 50 matched pairs by randomly assigning one person from the first pair to E-group and the other to C-group, etc.</li>
+<li>assuming the experiment is properly executed, with no biasing influences, the difference <span class="math">\(\bar{X}_{E} - \bar{X}_{C}\)</span> is due to
+<ul class="incremental">
+<li>chance factors associated with random assignment, and</li>
+<li>the treatment effect, but</li>
+<li>not IQ, because it has been controlled for by matching</li>
+</ul></li>
+</ul>
+</div>
+<div id="repeated-measures-example" class="slide section level1">
+<h1>Repeated Measures Example</h1>
+<ul class="incremental">
+<li>Randomly select 50 UI freshmen</li>
+<li>Administer pre-test</li>
+<li>All participants take speed reading course</li>
+<li>Administer post-test</li>
+<li>Assuming no memory or practice effects associated with the pre-test, the difference <span class="math">\(\bar{X}_{post} - \bar{X}_{pre}\)</span> is due to
+<ul class="incremental">
+<li>chance factors associated with random assignment, and</li>
+<li>the treatment effect, but</li>
+<li>not IQ, nor any other individual background characteristics, because they have been controlled for (each person serves as his/her own control)</li>
+</ul></li>
+</ul>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example 1</h1>
+<ul class="incremental">
+<li>Does speed reading help or hurt reading comprehension?</li>
+<li>Random sample of UI freshman students, n = 100</li>
+<li>Students are rank ordered on ACT composite score</li>
+<li>50 matched pairs of students are formed</li>
+<li>One student from each pair is randomly assigned to the E-group, the other to the C-group</li>
+<li>Experimental group (<span class="math">\(n_{E} = 50\)</span>): speed reading course</li>
+<li>Control group (<span class="math">\(n_{C} = 50\)</span>)</li>
+</ul>
+</div>
+<div id="two-ways-to-analyze" class="slide section level1">
+<h1>Two ways to analyze</h1>
+<ul class="incremental">
+<li>There are two ways to analyze this data, the easy way and the hard way.
+<ul class="incremental">
+<li>The easy way we have seen before, the hard way is something completely new.</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Pair</th>
+<th align="left">Experimental</th>
+<th align="left">Control</th>
+<th align="left">Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">38</td>
+<td align="left">36</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">37</td>
+<td align="left">38</td>
+<td align="left">-1</td>
+</tr>
+<tr class="odd">
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
+</tr>
+<tr class="even">
+<td align="left">50</td>
+<td align="left">28</td>
+<td align="left">25</td>
+<td align="left">3</td>
+</tr>
+</tbody>
+</table>
+<ul class="incremental">
+<li>Easy Way:
+<ul class="incremental">
+<li>We take the mean and standard deviation of the difference scores</li>
+</ul></li>
+<li>Hard Way:
+<ul class="incremental">
+<li>Mean of both groups, standard deviations of both groups and the correlation between the two groups.</li>
+</ul></li>
+</ul>
+</div>
+<div id="example-1-cont" class="slide section level1">
+<h1>Example 1 (cont)</h1>
+<ul class="incremental">
+<li>Suppose:
+<ul class="incremental">
+<li><span class="math">\(\bar{D} = 4\)</span></li>
+<li><span class="math">\(S_{D} = 7\)</span></li>
+</ul></li>
+<li>Is <span class="math">\(\bar{D} = 4\)</span> an unlikely outcome?</li>
+<li>We need a probability distribution for <span class="math">\(\bar{D}\)</span>.</li>
+</ul>
+</div>
+<div id="sampling-distribution-of-difference-scores" class="slide section level1">
+<h1>Sampling Distribution of difference scores</h1>
+<div class="figure">
+<img src="samp_dist_diff.png" />
+
+</div>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example 2</h1>
+<div class="figure">
+<img src="dep_ttest_example2.png" />
+
+</div>
+</div>
+<div id="standard-error-hard-way" class="slide section level1">
+<h1>Standard Error Hard Way</h1>
+<div class="figure">
+<img src="dep_se_hardway.png" />
+
+</div>
+</div>
+<div id="standard-error-hard-way-2" class="slide section level1">
+<h1>Standard Error Hard Way 2</h1>
+<ul class="incremental">
+<li>Independent (uncorrelated) means: <span class="math">\[ \sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_{X}^{2}}{n_{X}} + \frac{\sigma_{Y}^{2}}{n_{Y}}} \]</span></li>
+<li><p>Dependent (correlated) means: <span class="math">\[ \sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_{X}^{2}}{n_{X}} + \frac{\sigma_{Y}^{2}}{n_{Y}} - 2 \rho_{XY} \frac{\sigma_{X}}{\sqrt{n_{X}}} \frac{\sigma_{Y}}{\sqrt{n_{Y}}}} \]</span></p></li>
+<li>When <span class="math">\(\rho = 0\)</span>, <span class="math">\(SE_{dep} = SE_{ind}\)</span></li>
+<li>When <span class="math">\(\rho &gt; 0\)</span>, <span class="math">\(SE_{dep} &lt; SE_{ind}\)</span></li>
+<li><p>When <span class="math">\(\rho &lt; 0\)</span>, <span class="math">\(SE_{dep} &gt; SE_{ind}\)</span></p></li>
+</ul>
+</div>
+<div id="advantages-of-dependent-means-design" class="slide section level1">
+<h1>Advantages of dependent means design</h1>
+<ul class="incremental">
+<li>Repeated measures or pairing of observations makes possible the elimination of an extraneous source of variation</li>
+<li>The reduction in standard error that is induced by pairing the observations depends on the value of <span class="math">\(\rho_{XY}\)</span> (population correlation between X and Y)</li>
+<li>so how do we know whether <span class="math">\(\rho_{XY}\)</span> is 0 , + , or – ?
+<ul class="incremental">
+<li>when the matching variable is positively related to the outcome of interest, <span class="math">\(\rho_{XY}\)</span> is positive</li>
+<li>when the matching variable is negatively related to the outcome of interest, <span class="math">\(\rho_{XY}\)</span> is negative</li>
+</ul></li>
+</ul>
+</div>
+<div id="advantages-of-dependent-means-design-2" class="slide section level1">
+<h1>Advantages of dependent means design 2</h1>
+<ul class="incremental">
+<li>When pairing is on the basis of a variable that is positively and importantly related to the performance of the participants on the outcome variable, <span class="math">\(\rho_{XY}\)</span> will be higher than otherwise
+<ul class="incremental">
+<li>consequently, the reduction in the standard error will be greater</li>
+<li>decreased standard error results in increased power</li>
+</ul></li>
+</ul>
+</div>
+<div id="advantages-of-dependent-means-design-3" class="slide section level1">
+<h1>Advantages of dependent means design 3</h1>
+<ul class="incremental">
+<li>However, note that pairing of observations cuts the df in half
+<ul class="incremental">
+<li>smaller df results in decreased power</li>
+<li>the smaller the df, the thicker the tails of the t-distribution</li>
+<li>and the further out in the tails the critical region</li>
+<li>this effect is especially pronounced when sample size is small (<span class="math">\(n &lt; 50\)</span>)</li>
+</ul></li>
+<li>Thus, <span class="math">\(\rho_{XY}\)</span> must be large enough to offset the decrease in power, induced by the lower df which results from pairing</li>
+</ul>
+</div>
+<div id="assumptions" class="slide section level1">
+<h1>Assumptions</h1>
+<ul class="incremental">
+<li>In testing <span class="math">\(H_{0}: \mu_{D} = 0\)</span>, it is assumed that the population of differences (<span class="math">\(D = X - Y\)</span>) is normally distributed
+<ul class="incremental">
+<li>These differences will be normally distributed if X and Y are normally distributed</li>
+</ul></li>
+<li>If repeated measures are obtained, it is assumed that participants are a random sample from the population of interest
+<ul class="incremental">
+<li>The order in which the conditions are presented should be randomized for each participant if the nature of the independent variable permits it</li>
+</ul></li>
+<li>If pairs of matched participants are used, the participants in each pair should be randomly assigned to experimental and control conditions</li>
+</ul>
+</div>
+<div id="calculating-a-confidence-interval" class="slide section level1">
+<h1>Calculating a confidence interval</h1>
+<ul class="incremental">
+<li>Recall speed reading data
+<ul class="incremental">
+<li><span class="math">\(n = 50\)</span>; <span class="math">\(\bar{D} = 4\)</span>; <span class="math">\(S_{D} = 7\)</span></li>
+</ul></li>
+<li>Suppose we wanted to calculate a 99% CI for <span class="math">\(\mu_{D}\)</span></li>
+<li>We can do that with the following form: <span class="math">\[ \bar{X}_{D} \pm t_{crit} * \frac{S_{D}}{\sqrt{n - 1}} \]</span></li>
+</ul>
+</div>
+<div id="interpreting-a-confidence-interval" class="slide section level1">
+<h1>Interpreting a confidence interval</h1>
+<ul class="incremental">
+<li>Interpretations for 99% CI [1.32, 6.68]:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Does <span class="math">\(\mu_{D}\)</span> fall in this interval?</li>
+<li>Is there a 99% chance that <span class="math">\(\mu_{D}\)</span> falls in this interval?</li>
+<li>If 100 intervals were constructed, about how many intervals would contain <span class="math">\(\mu_{D}\)</span>?</li>
+<li>If we constructed an infinte number of intervals, how many would contain <span class="math">\(\mu_{D}\)</span>?</li>
+</ol></li>
+</ul>
+</div>
+<div id="using-confidence-intervals-to-conduct-a-two-tailed-hypothesis" class="slide section level1">
+<h1>Using confidence intervals to conduct a two-tailed hypothesis</h1>
+<ul class="incremental">
+<li>You can use a confidence interval to conduct a two-tailed hypothesis of any null hypothesis.
+<ul class="incremental">
+<li>If the hypothesized value falls within the CI, fail to reject <span class="math">\(H_{0}\)</span></li>
+<li>If the hypothesized value falls outside the CI, reject <span class="math">\(H_{0}\)</span></li>
+</ul></li>
+<li>Using the previous example [1.32, 6.68], would we fail to reject or reject <span class="math">\(H_{0}\)</span>?</li>
+</ul>
+</div>
+<div id="three-experimental-designs" class="slide section level1">
+<h1>Three Experimental Designs</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Random Assignment (Independent Groups)
+<ul class="incremental">
+<li>Randomly select 50 UI freshmen</li>
+<li>Randomly assign 25 to E-group and 25 to C-group</li>
+</ul></li>
+<li>Matched Pairs (Dependent Groups)
+<ul class="incremental">
+<li>Randomly select 100 UI freshmen</li>
+<li>Rank order by IQ</li>
+<li>Randomly assign one person from the first pair to E-group and the other to C-group, etc.</li>
+</ul></li>
+<li>Repeated Measures (Dependent Groups)
+<ul class="incremental">
+<li>Randomly select 50 UI freshmen</li>
+<li>Administer pre-test</li>
+<li>All participants take speed reading course</li>
+<li>Administer post-test</li>
+</ul></li>
+</ol>
+</div>
+</body>
+</html>

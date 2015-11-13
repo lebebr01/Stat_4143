@@ -341,9 +341,9 @@ t-distribution}\label{confidence-interval-for-t-distribution}
 \item
   To calculate a confidence interval for the population mean when the
   population standard deviation is unknown:\\C\% CI of \(\mu\):
-  \(\bar{X} \pm t_{crit} * \frac{s}{\sqrt{n}}\)\\
+  \(\bar{X} \pm t_{crit} * \frac{s}{\sqrt{n - 1}}\)\\
 \item
-  Where \(\pm t\) are the t-scores such that the proportion (or area) of
+  Where \(\pm t_{crit}\) are the t-scores such that the proportion (or area) of
   the curve within the t-scores is equal to the confidence level.
 \end{itemize}
 
@@ -352,7 +352,7 @@ t-distribution}\label{confidence-interval-for-t-distribution}
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  A team statistician for the University of Arkansas wants to estimate
+  A team statistician for the University of Iowa wants to estimate
   the average number of points the team will score during the season. A
   random sample of 18 games was selected from the past two seasons; the
   average number of points scored was 27.4, and the standard deviation

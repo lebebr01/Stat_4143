@@ -1,0 +1,85 @@
+% PSQF 4143: Section 13
+% Brandon LeBeau
+
+# Correlation Introduction
+- Up to now, we have primarily focused on univariate statistics.
+- We will now shift to bivariate distributions.
+- To display the relationship between two variables, we will use a scatterplot.
+
+- Example: 
+```{r eruptions, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+library(ggplot2)
+
+s <- ggplot(faithful, aes(x = eruptions, y = waiting)) + theme_bw(base_size= 26)
+s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes")
+```
+
+```{r eruptionslinear, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes") + stat_smooth(method = "lm", se = FALSE, size = 1.5)
+```
+
+# Correlation 2
+- The correlation gives us a measure to describe the relationship between two variables.
+    - The form of the relationship
+    - The direction of the relationship
+    - The strength of the relationship
+- The pearson product-moment correlation coefficient (correlation) describes the amount of **linear** relationship between two variables.
+- Notation:
+    - Sample: $r$
+    - Population: $\rho$
+
+    
+# Correlation 3
+- Correlations can be either positive or negative:
+    - Positive: Effort and Achievement -- People who expend more effort tend to achieve more.
+    - Negative: Cholesterol level and life expectancy -- People with lower cholesterol levels tend to live longer.
+- A correlation of 1 represents a perfect positive relationship.
+    - Example: Annual precipitation in inches and annual precipitation in centimeters.
+- A correlation of -1 represents a perfect negative relationship.
+    - Example: Number of days in class and number of days absent.
+- A correlation of 0 represents no relationship.
+    - Example: height and last digit of social security number.
+    
+# Examples
+```{r height, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+women$heightcm <- women$height * 2.54
+s <- ggplot(women, aes(x = height, y = heightcm)) + theme_bw(base_size=26)
+s + geom_point(size = 4) + xlab("Height in Inches") + ylab("Height in cm") + stat_smooth(method = "lm", size = 1, se = FALSE)
+```
+
+```{r ozone, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+s <- ggplot(airquality, aes(x = Day, y = Ozone)) + theme_bw(base_size=26)
+s + geom_point(size = 4) + xlab("Day") + ylab("Ozone Quality") + stat_smooth(method = "lm", size = 1.25, se = FALSE)
+```
+
+# Real world Examples
+![Twins](twins.jpg)
+
+# Real World Example 2
+![Florida Election](floridaBB.jpg)
+
+# Real World Example 2 cont.
+![ballot](palmballot.jpg)
+
+# Guessing Correlations
+
+http://istics.net/stat/Correlations/  
+
+# Calculating the Correlation
+```{r faithful2, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
+s <- ggplot(faithful, aes(x = eruptions, y = waiting)) + theme_bw(base_size= 26)
+s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes")
+```
+
+# Correlation Formula 
+$$ r = \frac{degree to which X and Y vary together}{degree to which X and Y vary separately} $$
+
+$$ r = \frac{s_{XY}}{s_{X}s_{Y}} = \frac{\sum(X-\bar{X})(Y-\bar{Y})}{n-1}*\frac{1}{s_{X}s_{Y}} $$
+
+where $s_{XY} = \frac{\sum(X-\bar{X})(Y-\bar{Y})}{n-1}$ is the **covariance**  
+and $s_{X}$ and $s_{Y}$ are the standard deviations of the $X$ and $Y$ respectively.
+
+# Correlation Formula 2
+- Formula for raw scores:
+$$ r = \frac{\sum (X - \bar{X})(Y- \bar{Y})}{(n-1)s_{x}s_{y}} $$
+$$ \rho = \frac{\sum (X - \mu_{X})(Y- \mu_{Y})}{(N)\sigma_{x}\sigma_{y}} $$
