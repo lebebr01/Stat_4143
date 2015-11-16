@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 13</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 13</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+        <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+</div>
+<div id="correlation-introduction" class="slide section level1">
+<h1>Correlation Introduction</h1>
+<ul class="incremental">
+<li>Up to now, we have primarily focused on statistics for single variables</li>
+<li>We will now shift to discuss how to quantify and explore the relationship between two variables.</li>
+<li>To display the relationship between two variables, could use a bivariate frequency distribution or a scatterplot.</li>
+</ul>
+</div>
+<div id="bivariate-frequency-distribution" class="slide section level1">
+<h1>Bivariate Frequency Distribution</h1>
+<div class="figure">
+<img src="bivariate_freq.png" />
+
+</div>
+</div>
+<div id="scatterplot" class="slide section level1">
+<h1>Scatterplot</h1>
+<div class="figure">
+<img src="figure/eruptions-1.png" alt="plot of chunk eruptions" />
+<p class="caption">plot of chunk eruptions</p>
+</div>
+<div class="figure">
+<img src="figure/eruptionslinear-1.png" alt="plot of chunk eruptionslinear" />
+<p class="caption">plot of chunk eruptionslinear</p>
+</div>
+</div>
+<div id="correlation-2" class="slide section level1">
+<h1>Correlation 2</h1>
+<ul class="incremental">
+<li>The correlation gives us a measure to describe the relationship between two variables.
+<ul class="incremental">
+<li>The form of the relationship</li>
+<li>The direction of the relationship</li>
+<li>The strength of the relationship</li>
+</ul></li>
+<li>The pearson product-moment correlation coefficient (correlation) describes the amount of <strong>linear</strong> relationship between two variables.</li>
+<li>Notation:
+<ul class="incremental">
+<li>Sample: <span class="math">\(r\)</span></li>
+<li>Population: <span class="math">\(\rho\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="correlation-3" class="slide section level1">
+<h1>Correlation 3</h1>
+<ul class="incremental">
+<li>Correlations can be either positive or negative:
+<ul class="incremental">
+<li>Positive: Effort and Achievement -- People who expend more effort tend to achieve more.</li>
+<li>Negative: Cholesterol level and life expectancy -- People with lower cholesterol levels tend to live longer.</li>
+</ul></li>
+<li>A correlation of 1 represents a perfect positive relationship.
+<ul class="incremental">
+<li>Example: Annual precipitation in inches and annual precipitation in centimeters.</li>
+</ul></li>
+<li>A correlation of -1 represents a perfect negative relationship.
+<ul class="incremental">
+<li>Example: Number of days in class and number of days absent.</li>
+</ul></li>
+<li>A correlation of 0 represents no relationship.
+<ul class="incremental">
+<li>Example: height and last digit of social security number.</li>
+</ul></li>
+</ul>
+</div>
+<div id="examples" class="slide section level1">
+<h1>Examples</h1>
+<div class="figure">
+<img src="figure/height-1.png" alt="plot of chunk height" />
+<p class="caption">plot of chunk height</p>
+</div>
+<div class="figure">
+<img src="figure/ozone-1.png" alt="plot of chunk ozone" />
+<p class="caption">plot of chunk ozone</p>
+</div>
+</div>
+<div id="real-world-examples" class="slide section level1">
+<h1>Real world Examples</h1>
+<div class="figure">
+<img src="twins.jpg" alt="Twins" />
+<p class="caption">Twins</p>
+</div>
+</div>
+<div id="real-world-example-2" class="slide section level1">
+<h1>Real World Example 2</h1>
+<div class="figure">
+<img src="floridaBB.jpg" alt="Florida Election" />
+<p class="caption">Florida Election</p>
+</div>
+</div>
+<div id="real-world-example-2-cont." class="slide section level1">
+<h1>Real World Example 2 cont.</h1>
+<div class="figure">
+<img src="palmballot.jpg" alt="ballot" />
+<p class="caption">ballot</p>
+</div>
+</div>
+<div id="guessing-correlations" class="slide section level1">
+<h1>Guessing Correlations</h1>
+<p>http://istics.net/stat/Correlations/</p>
+</div>
+<div id="correlation-formula" class="slide section level1">
+<h1>Correlation Formula</h1>
+<p><span class="math">\[ r = \frac{\mbox{degree to which X and Y vary together}}{\mbox{degree to which X and Y vary separately}} \]</span></p>
+<p><span class="math">\[ r = \frac{s_{XY}}{s_{X}s_{Y}} = \frac{\sum(X-\bar{X})(Y-\bar{Y})}{s_{X}s_{Y}}*\frac{1}{n} \]</span></p>
+<p>where <span class="math">\(s_{XY} = \frac{\sum(X-\bar{X})(Y-\bar{Y})}{n}\)</span> is the <strong>covariance</strong><br />and <span class="math">\(s_{X}\)</span> and <span class="math">\(s_{Y}\)</span> are the standard deviations of the <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> respectively.</p>
+<p><span class="math">\[ r = \frac{\sum z_{x} z_{y}}{n} \]</span></p>
+</div>
+<div id="calculating-the-correlation" class="slide section level1">
+<h1>Calculating the Correlation</h1>
+<div class="figure">
+<img src="figure/faithful2-1.png" alt="plot of chunk faithful2" />
+<p class="caption">plot of chunk faithful2</p>
+</div>
+</div>
+<div id="correlation-formula-2" class="slide section level1">
+<h1>Correlation Formula 2</h1>
+<ul class="incremental">
+<li>Formula for raw scores: <span class="math">\[ r = \frac{\sum (X - \bar{X})(Y- \bar{Y})}{(n)s_{x}s_{y}} \]</span> <span class="math">\[ \rho = \frac{\sum (X - \mu_{X})(Y- \mu_{Y})}{(N)\sigma_{x}\sigma_{y}} \]</span></li>
+</ul>
+</div>
+<div id="correlation-properties" class="slide section level1">
+<h1>Correlation Properties</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li><span class="math">\(r\)</span> ranges from -1 (perfect negative relationship) to +1 (perfect positive relationship)</li>
+<li><span class="math">\(r = 0\)</span> when there is no <strong>linear</strong> relationship between the variables.</li>
+<li>The closer <span class="math">\(r\)</span> is to +1 or -1, the stronger the relationship
+<ul class="incremental">
+<li>For example, <span class="math">\(r = -0.7\)</span> is stronger than <span class="math">\(r = 0.49\)</span>.</li>
+</ul></li>
+<li>Changes in the scale are not uniform.
+<ul class="incremental">
+<li>For example, a change from <span class="math">\(r = 0.4\)</span> does not represent half the relationship as <span class="math">\(r = 0.8\)</span></li>
+</ul></li>
+</ol>
+</div>
+<div id="correlation-properties-2" class="slide section level1">
+<h1>Correlation Properties 2</h1>
+<ol class="incremental" start="5" style="list-style-type: decimal">
+<li>Linear transformations do not impact the correlation.
+<ul class="incremental">
+<li>Example, the corelation between the temperatures in Boston and New York would be identical on Fahrenheit or Celsius scales</li>
+</ul></li>
+</ol>
+<div class="figure">
+<img src="linear_corr.png" />
+
+</div>
+<ol class="incremental" start="6" style="list-style-type: decimal">
+<li>Flipping the X and Y variables does not change the correlation.</li>
+</ol>
+<div class="figure">
+<img src="flip_xy_corr.png" />
+
+</div>
+</div>
+<div id="perfect-linearity" class="slide section level1">
+<h1>Perfect Linearity</h1>
+<ul class="incremental">
+<li>Perfect linearity does not always imply perfect correlation.</li>
+</ul>
+<div class="figure">
+<img src="perfect_nocorr.png" />
+
+</div>
+</div>
+<div id="non-linear-trends" class="slide section level1">
+<h1>Non-linear Trends</h1>
+<ul class="incremental">
+<li>Remember that the correlation we have discussed measures the <strong>linear</strong> relationship, not non-linear.</li>
+</ul>
+<div class="figure">
+<img src="nonlinear.png" />
+
+</div>
+</div>
+<div id="interpretation-of-the-correlation" class="slide section level1">
+<h1>Interpretation of the Correlation</h1>
+<ul class="incremental">
+<li>Assuming linearity exists, what does <span class="math">\(r = 0.75\)</span> mean?</li>
+</ul>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Interpret <span class="math">\(r\)</span> in an absolute sense (can be troublesome out of context):
+<ul class="incremental">
+<li><span class="math">\(| r | &gt; 0.75\)</span>; strong correlation</li>
+<li><span class="math">\(| r | &gt; 0.3\)</span>; medium correlation</li>
+<li><span class="math">\(| r | &lt; 0.3\)</span>; weak correlation</li>
+</ul></li>
+<li>Interpret in a relative sense:
+<ul class="incremental">
+<li>Parallel test forms (Form A -- Form B); <span class="math">\(r = 0.75\)</span> is low</li>
+<li>ACT to Freshman GPA; <span class="math">\(r = 0.75\)</span> is high</li>
+</ul></li>
+</ol>
+</div>
+<div id="interpretation-of-the-correlation-2" class="slide section level1">
+<h1>Interpretation of the Correlation 2</h1>
+<ol class="incremental" start="3" style="list-style-type: decimal">
+<li><span class="math">\(r^2\)</span> is an indication of the amount of variability one variable explains in the other variable.
+<ul class="incremental">
+<li>Example: <span class="math">\(r = 0.75\)</span>, <span class="math">\(r^2 = 0.56\)</span>; 56% of the variation in Y is explained by X.</li>
+</ul></li>
+<li><span class="math">\(r\)</span> as an index of prediction accuracy.</li>
+</ol>
+<div class="figure">
+<img src="corr_predaccur.png" />
+
+</div>
+</div>
+<div id="correlation-is-not-causation" class="slide section level1">
+<h1>Correlation is not Causation</h1>
+<ul class="incremental">
+<li>We find a relationship between X and Y
+<ul class="incremental">
+<li>This relationship may be that X <strong>causes</strong> Y</li>
+<li>Or it could be that Y <strong>causes</strong> X</li>
+<li>It could be that a third variable causes both X and Y</li>
+</ul></li>
+<li>Most likely, there is a complex web of variables that are at play.</li>
+</ul>
+</div>
+<div id="confounding" class="slide section level1">
+<h1>Confounding</h1>
+<ul class="incremental">
+<li>Confounding is when Y is caused by X and a third variable (but the third variable is not related to X). Therefore, the effect of X is confounded with a third variables</li>
+</ul>
+<div class="figure">
+<img src="confounding.png" />
+
+</div>
+</div>
+<div id="correlation-with-time" class="slide section level1">
+<h1>Correlation with time</h1>
+<div class="figure">
+<img src="corr_time.png" />
+
+</div>
+</div>
+<div id="correlation-is-not-causation-summary" class="slide section level1">
+<h1>Correlation is not Causation Summary</h1>
+<ul class="incremental">
+<li>Correlation specifically measures association/relationships</li>
+<li>Being associated or related is not the same as causation</li>
+<li>Inferences about causation can only be made with logic and careful experimental design/control.</li>
+<li>The value of <span class="math">\(r\)</span> itself can not be used for causation</li>
+</ul>
+</div>
+<div id="restriction-of-range" class="slide section level1">
+<h1>Restriction of Range</h1>
+<ul class="incremental">
+<li>Restriction of range can have the effect of decreasing the correlation.</li>
+<li>This happens due to decreasing the variability.</li>
+</ul>
+<p><img src="restriction_range1.png" /> <img src="restriction_range2.png" /></p>
+</div>
+<div id="correlations-with-subpopulations" class="slide section level1">
+<h1>Correlations with subpopulations</h1>
+<p><img src="corr_subpop.png" /> <img src="corr_subpop2.png" /></p>
+</div>
+<div id="cautions-for-correlation-summary" class="slide section level1">
+<h1>Cautions for Correlation Summary</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Careful about causation, remember correlation does not imply causation</li>
+<li>Outliers can alter the correlation.</li>
+<li>We discussed the correlation for <strong>linear</strong> relationships, not non-linear.</li>
+<li>Restriction of range can decrease (attenuate) correlations.</li>
+<li>More than one population can change the effect of the correlation.</li>
+<li>Correlations of averages can be stronger than correlation of raw scores.</li>
+</ol>
+</div>
+</body>
+</html>

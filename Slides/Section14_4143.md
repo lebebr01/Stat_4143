@@ -10,16 +10,9 @@
 ![](bivariate_freq.png)
 
 # Scatterplot 
-```{r eruptions, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-library(ggplot2)
+![plot of chunk eruptions](figure/eruptions-1.png) 
 
-s <- ggplot(faithful, aes(x = eruptions, y = waiting)) + theme_bw(base_size= 26)
-s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes")
-```
-
-```{r eruptionslinear, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes") + stat_smooth(method = "lm", se = FALSE, size = 1.5)
-```
+![plot of chunk eruptionslinear](figure/eruptionslinear-1.png) 
 
 # Correlation 2
 - The correlation gives us a measure to describe the relationship between two variables.
@@ -44,16 +37,9 @@ s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time
     - Example: height and last digit of social security number.
     
 # Examples
-```{r height, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-women$heightcm <- women$height * 2.54
-s <- ggplot(women, aes(x = height, y = heightcm)) + theme_bw(base_size=26)
-s + geom_point(size = 4) + xlab("Height in Inches") + ylab("Height in cm") + stat_smooth(method = "lm", size = 1, se = FALSE)
-```
+![plot of chunk height](figure/height-1.png) 
 
-```{r ozone, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-s <- ggplot(airquality, aes(x = Day, y = Ozone)) + theme_bw(base_size=26)
-s + geom_point(size = 4) + xlab("Day") + ylab("Ozone Quality") + stat_smooth(method = "lm", size = 1.25, se = FALSE)
-```
+![plot of chunk ozone](figure/ozone-1.png) 
 
 # Real world Examples
 ![Twins](twins.jpg)
@@ -79,11 +65,7 @@ and $s_{X}$ and $s_{Y}$ are the standard deviations of the $X$ and $Y$ respectiv
 $$ r = \frac{\sum z_{x} z_{y}}{n} $$
 
 # Calculating the Correlation
-```{r faithful2, error=FALSE, warning=FALSE, message=FALSE, dev='png', fig.height=8, fig.width=12,background='white', echo=FALSE}
-s <- ggplot(faithful, aes(x = eruptions, y = waiting)) + theme_bw(base_size= 26)
-s + geom_point(size = 3) + xlab("Eruption Time in Minutes") + ylab("Waiting Time in Minutes") + geom_hline(yintercept = 70.9, color = "blue", size = 1.5) + 
-  geom_vline(xintercept = 3.49, color = "blue", size = 1.5)
-```
+![plot of chunk faithful2](figure/faithful2-1.png) 
 
 # Correlation Formula 2
 - Formula for raw scores:
