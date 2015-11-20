@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brandon LeBeau" />
+  <title>PSQF 4143: Section 15</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="slidy.css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">PSQF 4143: Section 15</h1>
+  <p class="author">
+Brandon LeBeau
+  </p>
+          <div class="figure">
+    <img src = "DomeWdUnit-W-L.gif" alt="" width='300' />
+  </div>
+
+</div>
+<div id="hypothesis-tests-for-correlations" class="slide section level1">
+<h1>Hypothesis Tests for Correlations</h1>
+<ul class="incremental">
+<li>Many researchers may be interested in testing if the correlation differs from 0.</li>
+<li>The hypotheses would be:
+<ul class="incremental">
+<li><span class="math">\(H_{0}: \rho = 0\)</span></li>
+<li><span class="math">\(H_{1}: \rho \neq 0\)</span></li>
+<li>Can also do one-sided hypotheses here.</li>
+</ul></li>
+</ul>
+</div>
+<div id="test-statistic" class="slide section level1">
+<h1>Test Statistic</h1>
+<p><span class="math">\[ TS = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}} \sim t_{df} \]</span></p>
+<ul class="incremental">
+<li><span class="math">\(df = n - 2\)</span></li>
+<li><span class="math">\(n\)</span> denotes the number of pairs of observations</li>
+</ul>
+</div>
+<div id="example" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>A researcher wants to determine whether <span class="math">\(r = 0.66\)</span> is significantly greater than 0.</li>
+<li>The sample size was 50 (50 observations on X and Y scores)</li>
+<li>Let's use <span class="math">\(\alpha = .01\)</span></li>
+</ul>
+</div>
+<div id="testing-a-constant-other-than-0" class="slide section level1">
+<h1>Testing a constant other than 0</h1>
+<ul class="incremental">
+<li>The sampling distribution is distributed as a <span class="math">\(t_{df}\)</span> when testing against 0.</li>
+<li>However, what if we wanted to test the following hypotheses?
+<ul class="incremental">
+<li><span class="math">\(H_{0}: \rho = 0.50\)</span></li>
+<li><span class="math">\(H_{1}: \rho &gt; 0.50\)</span></li>
+</ul></li>
+<li>Since the correlation can only go as large as +1 (or as small as -1), testing constants other than 0 can lead to skewed sampling distributions.</li>
+<li>Fortunately, a procedure developed by R.A. Fisher can be used in these situations.</li>
+</ul>
+</div>
+<div id="fishers-r-to-z-transformation" class="slide section level1">
+<h1>Fisher's r to z Transformation</h1>
+<ul class="incremental">
+<li>We will use the table D.7 of the course packet (page 230) to convert correlations (<span class="math">\(r\)</span>) to the <span class="math">\(z&#39;\)</span> metric.
+<ul class="incremental">
+<li>Note, that for negative correlations, just make the <span class="math">\(z&#39;\)</span> value negative.</li>
+</ul></li>
+<li>The sampling distribution will now be normally distributed.</li>
+</ul>
+<p><span class="math">\[ TS = \frac{z&#39; - z&#39;_{0}}{\frac{1}{\sqrt{n - 3}}} \sim Z \]</span> <span class="math">\[ \hat{\sigma}_{z&#39;} = \frac{1}{\sqrt{n - 3}} \]</span></p>
+</div>
+<div id="example-1" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>A researcher wants to determine whether <span class="math">\(r = 0.66\)</span> is significantly greater than 0.50.</li>
+<li>The sample size was 50 (50 observations on X and Y scores)</li>
+<li>Let's use <span class="math">\(\alpha = .05\)</span></li>
+</ul>
+</div>
+<div id="assumptions" class="slide section level1">
+<h1>Assumptions</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li><span class="math">\(r\)</span> computed from a random sample</li>
+<li>The population is bivariate normal</li>
+<li><span class="math">\(n &gt; 10\)</span></li>
+<li><span class="math">\(\rho\)</span> is not too close to 1 or -1</li>
+</ol>
+</div>
+<div id="confidence-interval-for-a-correlation" class="slide section level1">
+<h1>Confidence interval for a correlation</h1>
+<ul class="incremental">
+<li>A two-sided confidence interval for <span class="math">\(z&#39;_{pop}\)</span> is given by:</li>
+</ul>
+<p><span class="math">\[ z&#39; \pm z_{crit} \frac{1}{\sqrt{n - 3}} \]</span></p>
+<ul class="incremental">
+<li>The confidence limits calculated above are in the <span class="math">\(z&#39;\)</span> metric. After calculation, we will backtransform them into the <span class="math">\(r\)</span> metric using table D.7 from the coursepacket.</li>
+</ul>
+</div>
+<div id="example-2" class="slide section level1">
+<h1>Example</h1>
+<ul class="incremental">
+<li>Find a 95% confidence interval for <span class="math">\(\rho\)</span>, given that a sample of <span class="math">\(n = 50\)</span> and <span class="math">\(r = .66\)</span>.</li>
+</ul>
+</div>
+</body>
+</html>
